@@ -1,6 +1,5 @@
 import clientPromise from '../../utils/dbConnect'
 
-//Need to always run npm run build before commiting
 export default async function handler(req, res) {
   const client = await clientPromise
   const db1 = client.db('galinato')

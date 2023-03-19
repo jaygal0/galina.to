@@ -140,21 +140,21 @@ export async function getStaticProps(context: any) {
   }
   const resNowAudiobook = await fetch(`${site}/api/nowAudiobook`)
   const dbsNowAudiobook = await resNowAudiobook.json()
-  if (!dbsNowReading) {
+  if (!dbsNowAudiobook) {
     return {
       notfound: true,
     }
   }
   const resNowCareer = await fetch(`${site}/api/nowCareer`)
   const dbsNowCareer = await resNowCareer.json()
-  if (!dbsNowReading) {
+  if (!dbsNowCareer) {
     return {
       notfound: true,
     }
   }
   const resNowLocation = await fetch(`${site}/api/nowLocation`)
   const dbsNowLocation = await resNowLocation.json()
-  if (!dbsNowReading) {
+  if (!dbsNowLocation) {
     return {
       notfound: true,
     }
