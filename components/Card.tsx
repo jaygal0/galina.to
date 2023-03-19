@@ -5,6 +5,7 @@ import IconDeath from './IconDeath'
 import IconLocation from './IconLocation'
 import IconProfession from './IconProfession'
 import IconBook from './IconBook'
+import IconAudiobook from './IconAudiobook'
 import IconChess from './IconChess'
 
 const Container = styled.div`
@@ -83,6 +84,7 @@ const Card = ({
   location,
   profession,
   book,
+  audiobook,
   chess,
 }: {
   children: any
@@ -93,6 +95,7 @@ const Card = ({
   location?: Boolean
   profession?: Boolean
   book?: Boolean
+  audiobook?: Boolean
   chess?: Boolean
 }) => {
   return (
@@ -104,6 +107,7 @@ const Card = ({
         {location && <IconLocation />}
         {profession && <IconProfession />}
         {book && <IconBook />}
+        {audiobook && <IconAudiobook />}
         {chess && <IconChess />}
       </Square>
     </Container>

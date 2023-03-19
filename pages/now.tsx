@@ -16,6 +16,7 @@ import Meta from '../components/Meta'
 const now = ({
   dbsNowText,
   dbsNowReading,
+  dbsNowAudiobook,
   dbsNowCareer,
   dbsNowLocation,
   lichess,
@@ -101,6 +102,14 @@ const now = ({
             secondary={`By ${dbsNowReading.data[firstDocument].author}`}
           />
         </Card>
+        <Card isIcon audiobook>
+          <Label text="Listening to" />
+          <NowText
+            key={dbsNowAudiobook.data[firstDocument]._id}
+            main={dbsNowAudiobook.data[firstDocument].title}
+            secondary={`By ${dbsNowAudiobook.data[firstDocument].author}`}
+          />
+        </Card>
         <Card isIcon chess>
           <Label text="Chess Rating" />
           <NowText main={`Rapid: ${lichess.perfs.rapid.rating}`} chess />
@@ -124,6 +133,13 @@ export async function getStaticProps(context: any) {
   }
   const resNowReading = await fetch(`${site}/api/nowReading`)
   const dbsNowReading = await resNowReading.json()
+  if (!dbsNowReading) {
+    return {
+      notfound: true,
+    }
+  }
+  const resNowAudiobook = await fetch(`${site}/api/nowAudiobook`)
+  const dbsNowAudiobook = await resNowAudiobook.json()
   if (!dbsNowReading) {
     return {
       notfound: true,
@@ -159,6 +175,7 @@ export async function getStaticProps(context: any) {
     props: {
       dbsNowText,
       dbsNowReading,
+      dbsNowAudiobook,
       dbsNowCareer,
       dbsNowLocation,
       lichess,
