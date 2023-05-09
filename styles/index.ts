@@ -31,7 +31,45 @@ export const IndexMain = styled.main`
   }
   &.blog {
     background: ${({ theme }) => theme.color.blog.background};
+    align-items: flex-start;
   }
+  &.blogPost {
+    background: ${({ theme }) => theme.color.blog.background};
+    padding-top: 35vh;
+    align-items: flex-start;
+    padding-left: 30vw;
+    padding-right: 30vw;
+    gap: 1.6rem;
+    font-size: ${({ theme }) => theme.type.size.body.lg};
+    line-height: ${({ theme }) => theme.type.height.lg};
+
+    & h2 {
+      line-height: ${({ theme }) => theme.type.height.lg};
+    }
+    & ol {
+      margin-left: ${({ theme }) => theme.spacing.md};
+
+      & li {
+        margin-bottom: ${({ theme }) => theme.spacing.xs};
+      }
+    }
+    & p {
+      margin-bottom: 1.6rem;
+    }
+
+    & pre code {
+      white-space: pre-wrap;
+      max-width: 40vw;
+      display: inline-block;
+      background: #46465b;
+      color: white;
+      border-radius: ${({ theme }) => theme.radius.sm};
+      padding: ${({ theme }) => theme.spacing.md};
+      font-size: ${({ theme }) => theme.type.size.body.md};
+      margin-bottom: ${({ theme }) => theme.spacing.md};
+    }
+  }
+
   &.now {
     background: ${({ theme }) => theme.color.now.background};
   }
@@ -70,4 +108,7 @@ export const IndexFlexRowContainer = styled.div`
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     flex-direction: column;
   }
+`
+export const GenericLabel = styled.div`
+  font-size: ${({ theme }) => theme.type.size.a};
 `

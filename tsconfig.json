@@ -20,9 +20,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.mdx",
     "pages/api/now.js",
     "components/Face.js",
-    "components/CardTimeline.tsx"
+    "components/CardTimeline.tsx",
+    "pages/blog/[slug].tsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -71,9 +71,9 @@ export default {
     xs: '0.8rem',
   },
   radius: {
-    lg: '',
+    lg: '16px',
     md: '8px',
-    sm: '',
+    sm: '4px',
   },
   breakPoint: {
     desklg: '2561px',
