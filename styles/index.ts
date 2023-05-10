@@ -64,6 +64,9 @@ export const IndexMain = styled.main`
     & p {
       margin-bottom: 1.6rem;
     }
+    & a {
+      text-decoration: underline;
+    }
 
     & pre code {
       white-space: pre-wrap;
