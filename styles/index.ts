@@ -10,7 +10,7 @@ export const IndexMain = styled.main`
   padding-top: 35vh;
   padding-bottom: 13.6rem;
 
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phoneLarge}) {
+  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
     padding-top: 20vh;
   }
 
@@ -31,18 +31,26 @@ export const IndexMain = styled.main`
   }
   &.blog {
     background: ${({ theme }) => theme.color.blog.background};
-    align-items: flex-start;
   }
   &.blogPost {
     background: ${({ theme }) => theme.color.blog.background};
     padding-top: 35vh;
     align-items: flex-start;
-    padding-left: 30vw;
-    padding-right: 30vw;
+    padding-left: 25vw;
+    padding-right: 25vw;
     gap: 1.6rem;
     font-size: ${({ theme }) => theme.type.size.body.lg};
     line-height: ${({ theme }) => theme.type.height.lg};
 
+    @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
+      padding-top: 35vh;
+      padding-left: ${({ theme }) => theme.spacing.md};
+      padding-right: ${({ theme }) => theme.spacing.md};
+    }
+
+    & h1 {
+      line-height: ${({ theme }) => theme.type.height.md};
+    }
     & h2 {
       line-height: ${({ theme }) => theme.type.height.lg};
     }
@@ -67,6 +75,16 @@ export const IndexMain = styled.main`
       padding: ${({ theme }) => theme.spacing.md};
       font-size: ${({ theme }) => theme.type.size.body.md};
       margin-bottom: ${({ theme }) => theme.spacing.md};
+
+      @media screen and (max-width: 500px) {
+        max-width: calc(100vw - 4.8rem);
+      }
+    }
+
+    & blockquote {
+      font-style: italic;
+      padding-left: ${({ theme }) => theme.spacing.md};
+      border-left: 2px ${({ theme }) => theme.color.black} solid;
     }
   }
 

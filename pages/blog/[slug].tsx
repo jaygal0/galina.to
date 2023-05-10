@@ -11,7 +11,9 @@ import moment from 'moment'
 
 const Title = styled.h1``
 const Subtitle = styled.h2`
-  font-size: ${({ theme }) => theme.type.size.body.lg};
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-size: ${({ theme }) => theme.type.size.title.sm};
   margin-bottom: 1.2rem;
   text-transform: capitalize;
   line-height: 3.2rem;
@@ -34,7 +36,7 @@ const PostPage = ({
       <Navigation />
       <IndexMain className="blogPost">
         <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        <Subtitle>{subtitle}.</Subtitle>
         {updated ? (
           <Posted>Updated on {moment(updated).format('MMMM Do, YYYY')}</Posted>
         ) : (

@@ -7,11 +7,8 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import CardBlog from '../../components/CardBlog'
-import moment from 'moment'
 
 const blog = ({ posts }: { posts: any }) => {
-  console.log(posts)
-
   return (
     <>
       <Meta title="Blog" />
@@ -19,24 +16,26 @@ const blog = ({ posts }: { posts: any }) => {
       <IndexMain className="projects">
         <Heading
           title="Blog"
-          text="Here's a space where I get my random thoughts out and capture it here. "
+          text="A space for me to write about whatever I want."
         />
-        {posts.map((post: any, index: any) => {
-          console.log(`what's going on here: ${post.frontMatter.updated}`)
-
-          return (
-            <CardBlog
-              key={index}
-              link={post.slug}
-              title={post.frontMatter.title}
-              subtitle={post.frontMatter.subtitle}
-              posted={post.frontMatter.posted}
-              updated={post.frontMatter.updated}
-              tags={post.frontMatter.tags}
-              category={post.frontMatter.category}
-            />
-          )
-        })}
+        {posts
+          .map((post: any, index: any) => {
+            return (
+              <CardBlog
+                key={index}
+                link={post.slug}
+                title={post.frontMatter.title}
+                subtitle={post.frontMatter.subtitle}
+                posted={post.frontMatter.posted}
+                updated={post.frontMatter.updated}
+                tags={post.frontMatter.tags}
+                category={post.frontMatter.category}
+              />
+            )
+          })
+          .sort((a: any, b: any) => {
+            return a.props.posted < b.props.posted ? 1 : -1
+          })}
       </IndexMain>
     </>
   )

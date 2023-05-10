@@ -311,7 +311,7 @@ export const Navigation = () => {
               Contact
             </ColorDiv>
           </Link>{' '}
-          <Link href="/unoffice-hours">
+          {/* <Link href="/unoffice-hours">
             <ColorDiv
               onMouseEnter={() => {
                 IsBackgroundColor('timeline')
@@ -322,7 +322,7 @@ export const Navigation = () => {
             >
               Unoffice-hours
             </ColorDiv>
-          </Link>{' '}
+          </Link>{' '} */}
           {/* ////////////////// RESPONSIVE DESIGN ///////////////// */}
           <Link href="/blog">
             <ColorDiv className="responsive">Blog</ColorDiv>
@@ -330,9 +330,9 @@ export const Navigation = () => {
           <Link href="/now">
             <ColorDiv className="responsive">Now</ColorDiv>
           </Link>
-          <Link href="/unoffice-hours">
+          {/* <Link href="/unoffice-hours">
             <ColorDiv className="responsive">UnOffice hours</ColorDiv>
-          </Link>
+          </Link> */}
         </Wrapper>
       </SlideOutMenu>
     </NavContainer>
