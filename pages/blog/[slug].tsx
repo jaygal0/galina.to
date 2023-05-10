@@ -8,6 +8,7 @@ import Meta from '../../components/Meta'
 import { Navigation } from '../../components/Navigation'
 import styled from 'styled-components'
 import moment from 'moment'
+import Birthday from '../../components/Birthday'
 
 const Title = styled.h1``
 const Subtitle = styled.h2`
@@ -24,7 +25,7 @@ const Posted = styled.p`
 `
 
 const PostPage = ({
-  frontMatter: { title, subtitle, posted, updated },
+  frontMatter: { title, subtitle, posted, updated, category },
   mdxSource,
 }: {
   frontMatter: any
@@ -42,8 +43,8 @@ const PostPage = ({
         ) : (
           <Posted>Posted on {moment(posted).format('MMMM Do, YYYY')}</Posted>
         )}
-
         <MDXRemote {...mdxSource} />
+        {category == 'birthday' && <Birthday />}
       </IndexMain>
     </>
   )
