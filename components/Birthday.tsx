@@ -25,7 +25,7 @@ const Birthday = () => {
       <Container>
         <Link href="/blog/32">32 /</Link>
         <Link href="/blog/33">33 /</Link>
-        {/* <Link href="/blog/34">34 /</Link> */}
+        <Link href="/blog/34">34 /</Link>
         {/* <Link href="/blog/35">35 /</Link> */}
         {/* <Link href="/blog/36">36 /</Link> */}
         {/* <Link href="/blog/37">37 /</Link> */}
