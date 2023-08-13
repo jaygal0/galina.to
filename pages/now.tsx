@@ -26,7 +26,7 @@ const Expand = styled.div`
   }
 `
 
-const now = ({
+const Now = ({
   dbsNowText,
   dbsNowReading,
   dbsNowAudiobook,
@@ -163,7 +163,7 @@ const now = ({
   )
 }
 
-export default now
+export default Now
 
 export async function getStaticProps(context: any) {
   const site = process.env.WEB_SITE
