@@ -34,8 +34,8 @@ const now = ({
   dbsNowLocation,
   lichess,
 }: any) => {
-  const [isLocationExpand, setIsLocationExpand] = useState<Boolean>(false)
-  const [isCareerExpand, setIsCareerExpand] = useState<Boolean>(false)
+  const [isLocationExpand, setIsLocationExpand] = useState<boolean>(false)
+  const [isCareerExpand, setIsCareerExpand] = useState<boolean>(false)
   const firstDocument = 0
 
   return (
