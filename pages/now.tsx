@@ -5,13 +5,26 @@ import DeathCount from '../components/DeathCount'
 import Heading from '../components/Heading'
 import Label from '../components/Label'
 import LocationNow from '../components/LocationNow'
-import LocationStriked from '../components/LocationStriked'
 import { Navigation } from '../components/Navigation'
 import NowText from '../components/NowText'
 import ProfessionNow from '../components/ProfessionNow'
-import ProfessionStriked from '../components/ProfessionStriked'
 import { ExternalLink, IndexMain } from '../styles'
 import Meta from '../components/Meta'
+import LocationPrevious from '../components/LocationPrevious'
+import styled from 'styled-components'
+import ProfessionPrevious from '../components/ProfessionPrevious'
+
+const Expand = styled.div`
+  font-size: ${({ theme }) => theme.type.size.body.md};
+  font-weight: ${({ theme }) => theme.type.weight.normal};
+  transition: color 0.7s ease-in-out;
+  margin-bottom: 1.2rem;
+
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.color.home.subtitle};
+  }
+`
 
 const now = ({
   dbsNowText,
@@ -21,6 +34,8 @@ const now = ({
   dbsNowLocation,
   lichess,
 }: any) => {
+  const [isLocationExpand, setIsLocationExpand] = useState<Boolean>(false)
+  const [isCareerExpand, setIsCareerExpand] = useState<Boolean>(false)
   const firstDocument = 0
 
   return (
@@ -50,20 +65,6 @@ const now = ({
         </Card>
         <Card isIcon location>
           <Label text="location" />
-          {dbsNowLocation.data.map((location: any) => {
-            if (
-              location.city !=
-              dbsNowLocation.data[dbsNowLocation.data.length - 1].city
-            ) {
-              return (
-                <LocationStriked
-                  key={location._id}
-                  city={location.city}
-                  country={location.country}
-                />
-              )
-            }
-          })}
           <LocationNow
             key={dbsNowLocation.data[dbsNowLocation.data.length - 1]._id}
             city={dbsNowLocation.data[dbsNowLocation.data.length - 1].city}
@@ -71,28 +72,71 @@ const now = ({
               dbsNowLocation.data[dbsNowLocation.data.length - 1].country
             }
           />
+          <Expand
+            onClick={() => {
+              setIsLocationExpand(!isLocationExpand)
+            }}
+          >
+            {isLocationExpand
+              ? 'Hide previous locations'
+              : 'Show previous locations'}
+          </Expand>
+          {isLocationExpand && (
+            <>
+              {dbsNowLocation.data.map((location: any) => {
+                if (
+                  location.city !=
+                  dbsNowLocation.data[dbsNowLocation.data.length - 1].city
+                ) {
+                  return (
+                    <LocationPrevious
+                      key={location._id}
+                      city={location.city}
+                      country={location.country}
+                      date={location.date}
+                    />
+                  )
+                }
+              })}
+            </>
+          )}
         </Card>
         <Card isIcon profession>
           <Label text="career" />
-          {dbsNowCareer.data.map((career: any) => {
-            if (
-              career.role !=
-              dbsNowCareer.data[dbsNowCareer.data.length - 1].role
-            ) {
-              return (
-                <ProfessionStriked
-                  key={career._id}
-                  job={career.role}
-                  company={career.company}
-                />
-              )
-            }
-          })}
+
           <ProfessionNow
             key={dbsNowCareer.data[dbsNowCareer.data.length - 1]._id}
             job={dbsNowCareer.data[dbsNowCareer.data.length - 1].role}
             company={dbsNowCareer.data[dbsNowCareer.data.length - 1].company}
           />
+          <Expand
+            onClick={() => {
+              setIsCareerExpand(!isCareerExpand)
+            }}
+          >
+            {isCareerExpand
+              ? 'Hide previous professions'
+              : 'Show previous professions'}
+          </Expand>
+          {isCareerExpand && (
+            <>
+              {dbsNowCareer.data.map((career: any) => {
+                if (
+                  career.role !=
+                  dbsNowCareer.data[dbsNowCareer.data.length - 1].role
+                ) {
+                  return (
+                    <ProfessionPrevious
+                      key={career._id}
+                      job={career.role}
+                      company={career.company}
+                      date={career.date}
+                    />
+                  )
+                }
+              })}
+            </>
+          )}
         </Card>
         <Card isIcon book>
           <Label text="reading" />

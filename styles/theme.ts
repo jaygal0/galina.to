@@ -17,6 +17,7 @@ export default {
   },
   color: {
     text: '#1C1C1C',
+    alt: '#3e3e3e',
     disabled: '#cecece',
     gray: '#D9D9D9',
     button: {
