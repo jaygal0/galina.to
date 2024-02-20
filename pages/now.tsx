@@ -146,14 +146,14 @@ const now = ({
             secondary={`By ${dbsNowReading.data[firstDocument].author}`}
           />
         </Card>
-        <Card isIcon audiobook>
+        {/* <Card isIcon audiobook>
           <Label text="Listening to" />
           <NowText
             key={dbsNowAudiobook.data[firstDocument]._id}
             main={dbsNowAudiobook.data[firstDocument].title}
             secondary={`By ${dbsNowAudiobook.data[firstDocument].author}`}
           />
-        </Card>
+        </Card> */}
         <Card isIcon chess>
           <Label text="Chess Rating" />
           <NowText main={`Rapid: ${lichess.perfs.rapid.rating}`} chess />
