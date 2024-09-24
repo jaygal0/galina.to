@@ -18,7 +18,10 @@ export type textComponents = {
     heading: string;
     desc: string
     ctas?: boolean
+    now?: any
+
 }
+
 
 export type EmailData = {
     to: string;

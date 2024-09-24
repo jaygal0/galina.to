@@ -1,5 +1,5 @@
 import React from 'react'
-import Heading from '../../../components/Heading'
+import Heading from '../../../components/HeroText'
 import Meta from '../../../components/Meta'
 import { Navigation } from '../../../components/Navigation'
 import { IndexMain } from '../../../styles'

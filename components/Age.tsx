@@ -1,51 +1,8 @@
+"use client"
+
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
-import styled from 'styled-components'
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`
-const NumAndLabel = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Share Tech Mono', monospace;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-`
-const Num = styled.div`
-  font-size: ${({ theme }) => theme.type.size.display.sm};
-  line-height: ${({ theme }) => theme.type.height.sm};
-
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
-    font-size: ${({ theme }) => theme.type.size.title.lg};
-    margin-right: 1.6rem;
-  }
-`
-const Label = styled.div`
-  font-family: 'DM Sans', sans-serif;
-  margin-top: ${({ theme }) => theme.spacing.xs};
-  font-size: ${({ theme }) => theme.type.size.body.md};
-  line-height: ${({ theme }) => theme.type.height.sm};
-  text-align: center;
-  text-transform: capitalize;
-  letter-spacing: 0.5px;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
-    font-size: ${({ theme }) => theme.type.size.body.lg};
-    margin-right: 1.6rem;
-  }
-`
+import Number from './now/Number'
 
 const Age = () => {
   let a = moment(new Date())
@@ -77,32 +34,32 @@ const Age = () => {
   }
 
   return (
-    <Container>
-      <NumAndLabel>
-        <Num>{addLeadingZeros(years, 2)}</Num>
-        <Label>years</Label>
-      </NumAndLabel>
-      <NumAndLabel>
-        <Num>{addLeadingZeros(months, 2)}</Num>
-        <Label>months</Label>
-      </NumAndLabel>{' '}
-      <NumAndLabel>
-        <Num>{addLeadingZeros(days, 2)}</Num>
-        <Label>days</Label>
-      </NumAndLabel>{' '}
-      <NumAndLabel>
-        <Num>{addLeadingZeros(hours, 2)}</Num>
-        <Label>hours</Label>
-      </NumAndLabel>{' '}
-      <NumAndLabel>
-        <Num>{addLeadingZeros(minutes, 2)}</Num>
-        <Label>minutes</Label>
-      </NumAndLabel>{' '}
-      <NumAndLabel>
-        <Num>{addLeadingZeros(seconds, 2)}</Num>
-        <Label>seconds</Label>
-      </NumAndLabel>
-    </Container>
+    <>
+      <div>
+        <Number interval={addLeadingZeros(years, 2)} />
+        <p>years</p>
+      </div>
+      <div>
+        <Number interval={addLeadingZeros(months, 2)} />
+        <p>months</p>
+      </div>{' '}
+      <div>
+        <Number interval={addLeadingZeros(days, 2)} />
+        <p>days</p>
+      </div>{' '}
+      <div>
+        <Number interval={addLeadingZeros(hours, 2)} />
+        <p>hours</p>
+      </div>{' '}
+      <div>
+        <Number interval={addLeadingZeros(minutes, 2)} />
+        <p>minutes</p>
+      </div>{' '}
+      <div>
+        <Number interval={addLeadingZeros(seconds, 2)} />
+        <p>seconds</p>
+      </div>
+    </>
   )
 }
 

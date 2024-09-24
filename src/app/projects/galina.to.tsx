@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Heading from '../../../components/Heading'
+import Heading from '../../../components/HeroText'
 import Label from '../../../components/Label'
 import Card from '../../../components/Card'
 import { Navigation } from '../../../components/Navigation'
