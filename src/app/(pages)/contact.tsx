@@ -1,8 +1,8 @@
 import React from 'react'
-import { Navigation } from '../components/Navigation'
-import { IndexMain } from '../styles'
-import Heading from '../components/Heading'
-import Meta from '../components/Meta'
+import { Navigation } from '../../../components/Navigation'
+import { IndexMain } from '../../../styles'
+import Heading from '../../../components/Heading'
+import Meta from '../../../components/Meta'
 
 const contact = () => {
   return (

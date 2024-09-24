@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
-import Heading from '../../components/Heading'
-import Label from '../../components/Label'
-import Card from '../../components/Card'
-import { Navigation } from '../../components/Navigation'
+import Heading from '../../../components/Heading'
+import Label from '../../../components/Label'
+import Card from '../../../components/Card'
+import { Navigation } from '../../../components/Navigation'
 import {
   BodyText,
   IndexMain,
   TechStack,
   IndexFlexRowContainer,
-} from '../../styles'
-import Button from '../../components/Button'
+} from '../../../styles'
+import Button from '../../../components/Button'
 import Image from 'next/image'
 import styled from 'styled-components'
-import ButtonClose from '../../components/ButtonClose'
-import Meta from '../../components/Meta'
+import ButtonClose from '../../../components/ButtonClose'
+import Meta from '../../../components/Meta'
 
 const Lightbox = styled.div`
   position: relative;

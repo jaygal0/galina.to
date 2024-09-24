@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
-import IndexHero from '../components/IndexHero'
-import { Navigation } from '../components/Navigation'
-import { IndexMain } from '../styles'
-import Meta from '../components/Meta'
+import IndexHero from '../../../components/IndexHero'
+import { Navigation } from '../../../components/Navigation'
+import { IndexMain } from '../../../styles'
+import Meta from '../../../components/Meta'
 
 const Home: NextPage = () => {
   return (

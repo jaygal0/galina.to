@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import styled from 'styled-components'
 import Face from './Face'
@@ -14,14 +16,7 @@ const Container = styled.div`
   @media screen and (max-width: 1280px) {
     padding-left: 15rem;
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
-    padding-left: 4rem;
-  }
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
-    padding-left: 0rem;
-    position: absolute;
-    bottom: 3.2rem;
-  }
+
 `
 
 const FaceWrapper = styled.div`
@@ -39,23 +34,13 @@ const FaceWrapper = styled.div`
     transform: translate(-25rem, 5%);
     width: 30%;
   }
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
-    width: 30%;
-    transform: translate(-56rem, 5%);
-  }
-  @media screen and (max-width: ${({ theme }) => theme.breakPoint.phonelg}) {
-    position: absolute;
-    transform: translate(0);
-    top: -30vh;
-    left: 1.6rem;
-    width: 50%;
-  }
+
 `
 
 const IndexHero = () => {
   return (
     <Container>
-      <Hero />
+      {/* <Hero /> */}
       <FaceWrapper>
         <Face />
       </FaceWrapper>

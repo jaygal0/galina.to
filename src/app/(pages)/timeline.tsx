@@ -1,8 +1,8 @@
-import CardTimeLine from '../components/CardTimeline'
-import Heading from '../components/Heading'
-import Meta from '../components/Meta'
-import { Navigation } from '../components/Navigation'
-import { IndexMain } from '../styles'
+import CardTimeLine from '../../../components/CardTimeline'
+import Heading from '../../../components/Heading'
+import Meta from '../../../components/Meta'
+import { Navigation } from '../../../components/Navigation'
+import { IndexMain } from '../../../styles'
 
 const timeline = ({ dbs }: { dbs: any }) => {
   const { data } = dbs

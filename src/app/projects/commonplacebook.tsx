@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
-import Heading from '../../components/Heading'
-import Label from '../../components/Label'
-import Card from '../../components/Card'
-import { Navigation } from '../../components/Navigation'
-import { BodyText, IndexMain, TechStack } from '../../styles'
-import Button from '../../components/Button'
+import Heading from '../../../components/Heading'
+import Label from '../../../components/Label'
+import Card from '../../../components/Card'
+import { Navigation } from '../../../components/Navigation'
+import {
+  BodyText,
+  IndexMain,
+  TechStack,
+  IndexFlexRowContainer,
+} from '../../../styles'
+import Button from '../../../components/Button'
 import Image from 'next/image'
 import styled from 'styled-components'
-import ButtonClose from '../../components/ButtonClose'
-import Meta from '../../components/Meta'
+import ButtonClose from '../../../components/ButtonClose'
+import Meta from '../../../components/Meta'
 
 const Lightbox = styled.div`
   position: relative;
@@ -43,40 +48,39 @@ const LightboxBackground = styled.div`
   z-index: -1;
 `
 
-const Galinato = ({ dbs }: { dbs: any }) => {
+const Commonplacebook = ({ dbs }: { dbs: any }) => {
   const [lightboxImage, setLightboxImage] = useState<string>('/dummy-image.png')
   const [isLightbox, setIsLightbox] = useState<Boolean>(false)
   const { data } = dbs
-  const project = 'galina.to'
+  const project = 'commonplacebook'
 
   const handleClick = (e: React.MouseEvent<HTMLImageElement>) => {
     let event = e.target as HTMLImageElement
     setLightboxImage(event.dataset.set as string)
     setIsLightbox(!isLightbox)
   }
-
   return (
     <>
-      <Meta title="Galina.to" />
+      <Meta title="Commonplacebook" />
       <Navigation />
-      <Lightbox
-        onClick={() => {
-          setIsLightbox(!isLightbox)
-        }}
-        className={isLightbox && 'isLightbox'}
-      >
-        <Image
-          src={lightboxImage}
-          layout="responsive"
-          width={16}
-          height={9}
-          objectFit="cover"
-          alt="lightbox"
-        />
-        <ButtonClose />
-        <LightboxBackground />
-      </Lightbox>
       <IndexMain className="now">
+        <Lightbox
+          onClick={() => {
+            setIsLightbox(!isLightbox)
+          }}
+          className={isLightbox && 'isLightbox'}
+        >
+          <Image
+            src={lightboxImage}
+            layout="responsive"
+            width={16}
+            height={9}
+            objectFit="cover"
+            alt="lightbox"
+          />
+          <ButtonClose />
+          <LightboxBackground />
+        </Lightbox>
         {data.map((item: any) => {
           if (item.title == project) {
             return (
@@ -105,8 +109,8 @@ const Galinato = ({ dbs }: { dbs: any }) => {
         <Card padding>
           <Label text="defining the problem" />
           <Image
-            src="/galinato-sketches.jpg"
-            data-set="/galinato-sketches.jpg"
+            src="/cpb-sketches.jpg"
+            data-set="/cpb-sketches.jpg"
             layout="responsive"
             width={4}
             height={3}
@@ -116,39 +120,36 @@ const Galinato = ({ dbs }: { dbs: any }) => {
             alt="sketches"
           />
           <BodyText>
-            In previous versions of this website, the data, text and images
-            derived from the source files itself. This meant that whenever I
-            wanted to make a small change in text, I had to open up VS Code and
-            push my latest commit to Github for the changes to take effect.
-            Since I was updating my site regularly you could see how tidious
-            this could get. I needed a better way of working.
-            <br />
+            I mostly read books on my Kindle and I often highlight phrases that
+            are worth remembering. My issue was that I had a lot of highlights
+            that I didn&apos;t know what to do with them, nor did I have a
+            system to review them all. That&apos;s why I went to the drawing
+            board to figure out if I could solve my problem.
           </BodyText>
         </Card>
         <Card>
           <Label text="getting to work" />
           <Image
-            src="/galinato-figma.jpg"
-            data-set="/galinato-figma.jpg"
+            src="/cpb-figma.jpg"
+            data-set="/cpb-figma.jpg"
             layout="responsive"
             width={16}
             height={9}
             objectFit="cover"
             className="image-hover"
             onClick={handleClick}
-            alt="figma"
+            alt="A screenshot of the Commonplacebook Figma file"
           />
           <BodyText>
-            Once I sorted out the logic and how I was going to connect this site
-            to a database, it was a matter of redesigning the website to work
-            effectively with the different technologies involved.
+            Once I figured out the overall concept as well as the logic, I went
+            straight to Figma to design the app.
           </BodyText>
         </Card>
         <Card>
           <Label text="laying out the system" />
           <Image
-            src="/galinato-design-system.jpg"
-            data-set="/galinato-design-system.jpg"
+            src="/cpb-design-systems.jpg"
+            data-set="/cpb-design-systems.jpg"
             layout="responsive"
             width={16}
             height={9}
@@ -165,39 +166,38 @@ const Galinato = ({ dbs }: { dbs: any }) => {
           </BodyText>
           <Button
             cta="View design system"
-            link="https://www.figma.com/file/EI5KVwwDI858pVO578ZX7N/galina.to-v2.0?node-id=2814%3A5561&viewport=1603%2C535%2C0.1"
+            link="https://www.figma.com/file/Y4CJlNg4H0oH5h31bFfjFW/Commonplace-book?node-id=1911%3A3949"
           />
         </Card>
         <Card>
           <Label text="developing the idea" />
           <Image
-            src="/galinato-develop.jpg"
-            data-set="/galinato-develop.jpg"
+            src="/cpb-app.gif"
             layout="responsive"
             width={16}
-            height={9}
+            height={10}
             objectFit="cover"
-            className="image-hover"
-            onClick={handleClick}
             alt="app"
           />
           <BodyText>
             As always, I translate my designs to code and develop everything
-            myself. Since I was pulling all the data from a database, it took a
-            bit of time to understand the logic, but by doing so it helped me
-            become a better developer.
+            myself.
           </BodyText>
-          <Button
-            cta="View source code"
-            link="https://github.com/jaygal0/galina.to"
-          />
+          <IndexFlexRowContainer>
+            <Button cta="View app" link="https://cpb-jaygal0.vercel.app" />
+            <Button
+              secondary
+              cta="View source code"
+              link="https://github.com/jaygal0/cpb"
+            />
+          </IndexFlexRowContainer>
         </Card>
       </IndexMain>
     </>
   )
 }
 
-export default Galinato
+export default Commonplacebook
 
 export async function getStaticProps(context: any) {
   const site = process.env.WEB_SITE

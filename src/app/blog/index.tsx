@@ -1,12 +1,12 @@
 import React from 'react'
-import Heading from '../../components/Heading'
-import Meta from '../../components/Meta'
-import { Navigation } from '../../components/Navigation'
-import { IndexMain } from '../../styles'
+import Heading from '../../../components/Heading'
+import Meta from '../../../components/Meta'
+import { Navigation } from '../../../components/Navigation'
+import { IndexMain } from '../../../styles'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import CardBlog from '../../components/CardBlog'
+import CardBlog from '../../../components/CardBlog'
 
 const blog = ({ posts }: { posts: any }) => {
   return (

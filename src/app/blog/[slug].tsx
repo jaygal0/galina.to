@@ -3,12 +3,12 @@ import { MDXRemote } from 'next-mdx-remote'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { IndexMain } from '../../styles'
-import Meta from '../../components/Meta'
-import { Navigation } from '../../components/Navigation'
+import { IndexMain } from '../../../styles'
+import Meta from '../../../components/Meta'
+import { Navigation } from '../../../components/Navigation'
 import styled from 'styled-components'
 import moment from 'moment'
-import Birthday from '../../components/Birthday'
+import Birthday from '../../../components/Birthday'
 
 const Title = styled.h1``
 const Subtitle = styled.h2`
