@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HeroText from "../../../../components/global/HeroText";
 import Role from "../../../../components/projects/Role";
 
@@ -7,43 +8,43 @@ export default function Page() {
       heading: "Reload Sessions",
       desc: "",
       role: "Founder",
-      slug: "",
+      slug: "reload-sessions",
     },
     {
       heading: "Vegans of LDN",
       desc: "",
       role: "Creative Director",
-      slug: "",
+      slug: "vegans-of-ldn",
     },
     {
       heading: "Delaval",
       desc: "",
       role: "UX Designer",
-      slug: "",
+      slug: "delaval",
     },
     {
       heading: "Volvo",
       desc: "",
       role: "Lead UX Designer",
-      slug: "",
+      slug: "volvo",
     },
     {
       heading: "SQLI",
       desc: "",
       role: "Lead UX Designer",
-      slug: "",
+      slug: "sqli",
     },
     {
       heading: "Orbi",
       desc: "",
       role: "Lead UX Designer",
-      slug: "",
+      slug: "orbi",
     },
     {
       heading: "Manchester Utd",
       desc: "",
       role: "Intern",
-      slug: "",
+      slug: "manchester-united",
     },
   ];
   return (
@@ -55,7 +56,11 @@ export default function Page() {
       <div className="grid grid-cols-3 gap-x-4 gap-y-8">
         {projects.map((project, index) => {
           return (
-            <div key={index} className="flex flex-col gap-2">
+            <Link
+              href={`/projects/${project.slug}`}
+              key={index}
+              className="flex flex-col gap-2"
+            >
               <div className="aspect-video w-full bg-slate-400 rounded-3xl hover:scale-105 transition-all flex justify-center items-center">
                 {project.heading}
               </div>
@@ -63,7 +68,7 @@ export default function Page() {
                 <div className="text-lg">{project.heading}</div>
                 <Role label={project.role} />
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
