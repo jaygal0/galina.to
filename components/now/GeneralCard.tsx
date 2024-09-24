@@ -1,5 +1,14 @@
-export default function GeneralCard({children} : any) {
-return(
-    <div className="flex p-12 border rounded-3xl w-full items-center justify-between">{children}</div>
-)
+export default function GeneralCard({
+  heading,
+  children,
+}: {
+  heading: string;
+  children: any;
+}) {
+  return (
+    <div className="flex flex-col p-20 border rounded-3xl w-full">
+      <h2 className="font-bold text-xl">{heading}</h2>
+      {children}
+    </div>
+  );
 }

@@ -22,6 +22,11 @@ a .underline {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  padding-bottom: 1.6rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-bottom: 0.8rem;
 }

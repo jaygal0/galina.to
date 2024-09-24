@@ -1,30 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import Age from '../../../../components/Age'
-import Card from '../../../../components/Card'
-import DeathCount from '../../../../components/DeathCount'
-import Heading from '../../../../components/HeroText'
-import Label from '../../../../components/Label'
-import LocationNow from '../../../../components/LocationNow'
-import NowText from '../../../../components/NowText'
-import ProfessionNow from '../../../../components/ProfessionNow'
-import { ExternalLink, IndexMain } from '../../../../styles'
-import Meta from '../../../../components/Meta'
-import LocationPrevious from '../../../../components/LocationPrevious'
-import ProfessionPrevious from '../../../../components/ProfessionPrevious'
-import GeneralCard from '../../../../components/now/GeneralCard'
+import React, { useEffect, useState } from "react";
+import Age from "../../../../components/Age";
+import HeroText from "@/../components/global/HeroText";
+import LocationNow from "../../../../components/LocationNow";
+import NowText from "../../../../components/NowText";
+import ProfessionNow from "../../../../components/ProfessionNow";
+import { ExternalLink, IndexMain } from "../../../../styles";
+import Meta from "../../../../components/Meta";
+import LocationPrevious from "../../../../components/LocationPrevious";
+import ProfessionPrevious from "../../../../components/ProfessionPrevious";
+import GeneralCard from "../../../../components/now/GeneralCard";
 
 const Now = () => {
   return (
     <>
-      <Heading
+      <HeroText
         key="0"
         heading="What I'm up to now"
         desc="hello"
         now={Date.now()}
       />
-      <div className='flex gap-2 my-8'>
-        <GeneralCard>
+      <div className="flex flex-col gap-8 my-8">
+        <GeneralCard heading="Age">
           <Age />
+        </GeneralCard>
+        <GeneralCard heading="Location">
+          <p>Gothenburg, Sweden</p>
+        </GeneralCard>
+        <GeneralCard heading="Career">
+          <p>Lead UX Designer at Orbi</p>
+        </GeneralCard>
+        <GeneralCard heading="Reading">
+          <p>Book</p>
+          <p>By Author</p>
+        </GeneralCard>
+        <GeneralCard heading="LiChess Rating">
+          <p>Rating</p>
+          <p>Live from: </p>
         </GeneralCard>
       </div>
       {/* <Card isIcon age>
@@ -137,7 +148,7 @@ const Now = () => {
           <NowText main={`Rapid: ${lichess.perfs.rapid.rating}`} chess />
         </Card> */}
     </>
-  )
-}
+  );
+};
 
-export default Now
+export default Now;
