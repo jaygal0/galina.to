@@ -12,6 +12,7 @@
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.3.2",
+    "@tailwindcss/typography": "^0.5.15",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "gsap": "^3.11.0",
@@ -23,8 +24,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark-frontmatter": "^4.0.1",
-    "remark-mdx-frontmatter": "^3.0.0",
-    "styled-components": "^5.3.5"
+    "remark-mdx-frontmatter": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "18.7.6",
@@ -32,7 +32,6 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "^5.1.25",
     "autoprefixer": "^10.4.20",
-    "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
     "postcss": "^8.4.47",

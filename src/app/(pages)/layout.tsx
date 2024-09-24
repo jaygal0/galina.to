@@ -1,3 +1,6 @@
+import Navigation from "../../../components/global/Navigation";
+import "@/app/globals.css"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,12 +8,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <head>
+      <head>
       </head>
-      <body
-        className='bg-stone-950'
-      >
-        <main className="px-4 pb-20 md:px-2">
+      <body>
+        <main className="">
+          <Navigation />
           <div className="mx-auto max-w-screen-md">{children}</div>
         </main>
       </body>
