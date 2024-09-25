@@ -1,8 +1,8 @@
-import HeroText from "../../../../components/global/HeroText";
+import HeroText from "../../../components/global/HeroText";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import CardBlog from "../../../../components/CardBlog";
+import CardBlog from "../../../components/CardBlog";
 
 export default async function Page({ posts }: any) {
   const blogDir = "blogs";

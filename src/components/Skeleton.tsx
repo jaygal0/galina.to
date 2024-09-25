@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { IndexMain } from '../styles'
-import { useRouter } from 'next/router'
+import React from "react";
+import styled from "styled-components";
+import { IndexMain } from "../../styles";
+import { useRouter } from "next/router";
 
 const Container = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const Container = styled.div`
     width: 90vw;
     padding-bottom: 2.4rem;
   }
-`
+`;
 const Title = styled.div`
   height: 4.8rem;
   margin-bottom: 0.8rem;
@@ -46,7 +46,7 @@ const Title = styled.div`
 
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
   }
-`
+`;
 const Text = styled.div`
   background: linear-gradient(0.25turn, transparent, #cecece, transparent),
     linear-gradient(#d9d9d9, #eeeeee), linear-gradient(#d9d9d9, #eeeeee);
@@ -75,13 +75,13 @@ const Text = styled.div`
     width: 90%;
     border-radius: 4px;
   }
-`
+`;
 const Skeleton = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <>
-      <IndexMain className={router.asPath.replace(/\//g, '')}>
+      <IndexMain className={router.asPath.replace(/\//g, "")}>
         <Container>
           <Title />
           <Text className="lg" />
@@ -90,7 +90,7 @@ const Skeleton = () => {
         </Container>
       </IndexMain>
     </>
-  )
-}
+  );
+};
 
-export default Skeleton
+export default Skeleton;

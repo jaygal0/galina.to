@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import Link from "next/link";
+import NavigationMenu from "@/components/global/NavigationMenu";
 
 export default function RootLayout({
   children,
@@ -10,13 +11,12 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body>
-        <main className="relative w-full h-screen">
-          <Link href="/" className="fixed top-5 left-5">
+        <main className="relative h-screen w-full">
+          <NavigationMenu />
+          <Link href="/" className="fixed left-5 top-5">
             Logo
           </Link>
-          <Link href="/" className="fixed top-5 right-4">
-            Menu
-          </Link>
+          <button className="fixed right-4 top-5">Menu</button>
           <Link href="/now" className="fixed bottom-5 left-5">
             Now
           </Link>

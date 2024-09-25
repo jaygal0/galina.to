@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Age from "../../../../components/Age";
-import HeroText from "@/../components/global/HeroText";
-import LocationNow from "../../../../components/LocationNow";
-import NowText from "../../../../components/NowText";
-import ProfessionNow from "../../../../components/ProfessionNow";
+import Age from "../../../components/Age";
+import HeroText from "@/components/global/HeroText";
+import LocationNow from "../../../components/LocationNow";
+import NowText from "../../../components/NowText";
+import ProfessionNow from "../../../components/ProfessionNow";
 import { ExternalLink, IndexMain } from "../../../../styles";
-import Meta from "../../../../components/Meta";
-import LocationPrevious from "../../../../components/LocationPrevious";
-import ProfessionPrevious from "../../../../components/ProfessionPrevious";
-import GeneralCard from "../../../../components/now/GeneralCard";
+import Meta from "../../../components/Meta";
+import LocationPrevious from "../../../components/LocationPrevious";
+import ProfessionPrevious from "../../../components/ProfessionPrevious";
+import GeneralCard from "../../../components/now/GeneralCard";
 
 const Now = () => {
   return (

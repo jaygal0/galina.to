@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -28,18 +24,16 @@
     }
   },
   "include": [
-    "components/Face.js",
+    "src/components/Face.js",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.mdx",
     "src/api/now.js",
-    "components/Face.js",
-    "components/CardTimeline.tsx",
+    "src/components/Face.js",
+    "src/components/CardTimeline.tsx",
     "src/blog/[slug].tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
