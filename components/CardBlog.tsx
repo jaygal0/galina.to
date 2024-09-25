@@ -21,11 +21,13 @@ export default function CardBlog({
 }) {
   return (
     <Link href={`/blog/${link}`}>
-      <div>
-        <div>{title}</div>
+      <div className="w-100 border rounded-lg px-16 py-8">
+        <h2 className="text-4xl">{title}</h2>
         <div>{subtitle}.</div>
         <div>Posted on: {moment(posted).format("MMM Do, yyy")}</div>
-        <div>{category}</div>
+        <div className="w-min px-3 py-1 border bg-slate-400 text-sm rounded-md">
+          {category}
+        </div>
       </div>
     </Link>
   );

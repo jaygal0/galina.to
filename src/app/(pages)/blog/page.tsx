@@ -5,25 +5,38 @@ import matter from "gray-matter";
 import CardBlog from "../../../../components/CardBlog";
 
 export default async function Page({ posts }: any) {
+  const blogDir = "blogs";
+
+  const files = fs.readdirSync(path.join(blogDir));
+
+  const blogs = files.map((filename) => {
+    const fileContent = fs.readFileSync(path.join(blogDir, filename), "utf-8");
+
+    const { data: frontMatter } = matter(fileContent);
+    return {
+      meta: frontMatter,
+      slug: filename.replace(".mdx", ""),
+    };
+  });
   return (
     <div>
       <HeroText
         heading="Blog"
         desc="This is a description to let you know that I'm adding a projects page."
       />
-      <div className="grid grid-cols-3 gap-x-4 gap-y-8">
-        {posts
-          .map((post: any, index: any) => {
+      <div className="flex flex-col gap-8">
+        {blogs
+          .map((blog: any, index: any) => {
             return (
               <CardBlog
                 key={index}
-                link={post.slug}
-                title={post.frontMatter.title}
-                subtitle={post.frontMatter.subtitle}
-                posted={post.frontMatter.posted}
-                updated={post.frontMatter.updated}
-                tags={post.frontMatter.tags}
-                category={post.frontMatter.category}
+                link={blog.slug}
+                title={blog.meta.title}
+                subtitle={blog.meta.subtitle}
+                posted={blog.meta.posted}
+                updated={blog.meta.updated}
+                tags={blog.meta.tags}
+                category={blog.meta.category}
               />
             );
           })
@@ -34,25 +47,3 @@ export default async function Page({ posts }: any) {
     </div>
   );
 }
-
-// TODO: Figure out how to bring in these props in next14
-// export const getStaticProps = async () => {
-//   const files = fs.readdirSync(path.join("blogs"));
-
-//   const posts = files.map((filename) => {
-//     const markdownWithMeta = fs.readFileSync(
-//       path.join("blogs", filename),
-//       "utf-8"
-//     );
-//     const { data: frontMatter } = matter(markdownWithMeta);
-//     return {
-//       frontMatter,
-//       slug: filename.split(".")[0],
-//     };
-//   });
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// };
