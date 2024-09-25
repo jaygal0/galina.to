@@ -27,9 +27,9 @@ export default function NavigationMenu() {
   }, [showMobileMenu]);
 
   return (
-    <div className="fixed left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-8 bg-stone-950 p-4">
+    <div className="fixed z-50 flex flex-col items-center justify-center gap-8 bg-slate-400 p-4">
       {showMobileMenu && <MobileSidebar state={toggleMobileMenu} />}
-      {!showMobileMenu && (
+      {showMobileMenu && (
         <svg
           onClick={toggleMobileMenu}
           className="md:hidden"
