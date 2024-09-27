@@ -1,18 +1,23 @@
 "use client";
 
-import * as React from "react";
+import { useState, useEffect } from "react";
 import { MobileSidebar } from "./MobileSidebar";
 import { desktopMenu } from "@/config/navigation";
 import Link from "next/link";
 
 export default function NavigationMenu() {
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const closeMobileMenuOnClickOutside = (event: MouseEvent) => {
       if (showMobileMenu) {
         setShowMobileMenu(false);
@@ -26,35 +31,43 @@ export default function NavigationMenu() {
     };
   }, [showMobileMenu]);
 
+  console.log(isMenuOpen);
+
   return (
-    <div className="fixed z-50 flex flex-col items-center justify-center gap-8 bg-slate-400 p-4">
-      {showMobileMenu && <MobileSidebar state={toggleMobileMenu} />}
-      {showMobileMenu && (
-        <svg
-          onClick={toggleMobileMenu}
-          className="md:hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M3 17h18M3 12h18M3 7h18"
-          />
-        </svg>
-      )}
-      {desktopMenu.map((menu, index) => {
-        return (
-          <Link key={index} href={menu.href} className="text-4xl font-bold">
-            {menu.title}
-          </Link>
-        );
-      })}
-    </div>
+    <>
+      <Link href="/" className="fixed left-5 top-5 z-10">
+        Logo
+      </Link>
+      <button className="fixed right-4 top-5 z-10" onClick={toggleMenu}>
+        Menu
+      </button>
+      <Link href="/now" className="fixed bottom-5 left-5 z-10">
+        Now
+      </Link>
+      <Link href="/projects" className="fixed bottom-5 right-5 z-10">
+        Projects
+      </Link>
+      <div
+        className={`fixed right-0 top-0 flex h-full w-full transform items-center justify-center bg-slate-400 transition-transform duration-700 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <nav className="mt-8 flex flex-col gap-8 space-y-4 text-center">
+          <button onClick={toggleMenu}>hit me</button>
+          {desktopMenu.map((menu, index) => {
+            return (
+              <Link
+                key={index}
+                href={menu.href}
+                className="text-4xl font-bold"
+                onClick={toggleMenu}
+              >
+                {menu.title}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </>
   );
 }
