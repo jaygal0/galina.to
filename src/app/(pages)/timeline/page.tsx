@@ -1,65 +1,49 @@
+import HeroText from "@/components/global/HeroText";
 import CardTimeLine from "../../../components/CardTimeline";
-import Heading from "../../../components/Heading";
-import Meta from "../../../components/Meta";
-import { Navigation } from "../../../components/Navigation";
-import { IndexMain } from "../../../styles";
 
-const timeline = ({ dbs }: { dbs: any }) => {
-  const { data } = dbs;
+async function getData() {
+  const res = await fetch(`${process.env.WEB_SITE}/api/timeline`, {
+    cache: "no-store",
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return data;
+}
 
+export default async function Page() {
+  const data = await getData();
   return (
     // TODO: Sort out this page
     <>
-      <Meta title="Timeline" />
-      <Navigation />
-      <IndexMain className="timeline">
-        <Heading
-          title="timeline"
-          text="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
-        />
-        {data
-          .sort((a: any, b: any) => {
-            if (a.date > b.date) {
-              return 1;
-            } else {
-              return -1;
-            }
-          })
-          .map((item: any) => {
-            return (
-              <CardTimeLine
-                key={item._id}
-                start={item.start}
-                heading={item.title}
-                desc={item.desc}
-                date={item.date}
-                category={item.category}
-                image={item.image}
-                buttonText={item.buttonText}
-                buttonLink={item.buttonLink}
-              />
-            );
-          })}
-      </IndexMain>
+      <HeroText
+        heading="timeline"
+        desc="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
+      />
+      {data
+        .sort((a: any, b: any) => {
+          if (a.date > b.date) {
+            return 1;
+          } else {
+            return -1;
+          }
+        })
+        .map((item: any) => {
+          return (
+            <CardTimeLine
+              key={item._id}
+              start={item.start}
+              heading={item.title}
+              desc={item.desc}
+              date={item.date}
+              category={item.category}
+              image={item.image}
+              buttonText={item.buttonText}
+              buttonLink={item.buttonLink}
+            />
+          );
+        })}
     </>
   );
-};
-
-export default timeline;
-
-export async function getStaticProps(context: any) {
-  const site = process.env.WEB_SITE;
-
-  const res = await fetch(`${site}/api/timeline`);
-  const dbs = await res.json();
-
-  if (!dbs) {
-    return {
-      notfound: true,
-    };
-  }
-
-  return {
-    props: { dbs },
-  };
 }
