@@ -1,13 +1,14 @@
-import CardTimeLine from '../../../components/CardTimeline'
-import Heading from '../../../components/Heading'
-import Meta from '../../../components/Meta'
-import { Navigation } from '../../../components/Navigation'
-import { IndexMain } from '../../../styles'
+import CardTimeLine from "../../../components/CardTimeline";
+import Heading from "../../../components/Heading";
+import Meta from "../../../components/Meta";
+import { Navigation } from "../../../components/Navigation";
+import { IndexMain } from "../../../styles";
 
 const timeline = ({ dbs }: { dbs: any }) => {
-  const { data } = dbs
+  const { data } = dbs;
 
   return (
+    // TODO: Sort out this page
     <>
       <Meta title="Timeline" />
       <Navigation />
@@ -19,9 +20,9 @@ const timeline = ({ dbs }: { dbs: any }) => {
         {data
           .sort((a: any, b: any) => {
             if (a.date > b.date) {
-              return 1
+              return 1;
             } else {
-              return -1
+              return -1;
             }
           })
           .map((item: any) => {
@@ -37,28 +38,28 @@ const timeline = ({ dbs }: { dbs: any }) => {
                 buttonText={item.buttonText}
                 buttonLink={item.buttonLink}
               />
-            )
+            );
           })}
       </IndexMain>
     </>
-  )
-}
+  );
+};
 
-export default timeline
+export default timeline;
 
 export async function getStaticProps(context: any) {
-  const site = process.env.WEB_SITE
+  const site = process.env.WEB_SITE;
 
-  const res = await fetch(`${site}/api/timeline`)
-  const dbs = await res.json()
+  const res = await fetch(`${site}/api/timeline`);
+  const dbs = await res.json();
 
   if (!dbs) {
     return {
       notfound: true,
-    }
+    };
   }
 
   return {
     props: { dbs },
-  }
+  };
 }

@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import Link from "next/link";
 import NavigationMenu from "@/components/global/NavigationMenu";
 
 export default function RootLayout({

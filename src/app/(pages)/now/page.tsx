@@ -19,7 +19,7 @@ const Now = () => {
         desc="hello"
         now={Date.now()}
       />
-      <div className="flex flex-col gap-8 my-8">
+      <div className="my-8 flex flex-col gap-8">
         <GeneralCard heading="Age">
           <Age />
         </GeneralCard>
@@ -35,6 +35,7 @@ const Now = () => {
         </GeneralCard>
         <GeneralCard heading="LiChess Rating">
           <p>Rating</p>
+          {/* TODO: Sort out API */}
           <p>Live from: </p>
         </GeneralCard>
       </div>
