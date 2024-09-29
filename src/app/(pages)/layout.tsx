@@ -1,5 +1,4 @@
 import "@/app/globals.css";
-import Link from "next/link";
 import NavigationMenu from "@/components/global/NavigationMenu";
 
 export default function RootLayout({
@@ -10,9 +9,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head></head>
-      <body>
-        <main className="relative h-screen w-full">
-          <NavigationMenu />
+      <body className="relative">
+        <NavigationMenu />
+        <main>
           <div className="mx-auto max-w-screen-lg py-80">{children}</div>
         </main>
       </body>
