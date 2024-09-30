@@ -36,6 +36,7 @@ export default async function Page() {
         desc="hello"
         now={Date.now()}
       />
+      {/* TODO: PRIO 3 Fade in content a little later to cater to information jumping */}
       <div className="my-8 flex flex-col gap-8">
         <GeneralCard heading="Age">
           <Age />
