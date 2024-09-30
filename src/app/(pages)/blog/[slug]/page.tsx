@@ -38,6 +38,7 @@ export default function Page({ params }: any) {
         &#60; Back to Blog
       </a>
       <h1 className="font-bold">{props.fontMatter.title}</h1>
+      {/* TODO: PRIO 2: Go through DesignerStories and see how the issue is solved */}
       <MDXRemote source={props.content}></MDXRemote>
     </article>
   );

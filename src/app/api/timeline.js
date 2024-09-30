@@ -1,4 +1,4 @@
-import clientPromise from "../../utils/dbConnect";
+import clientPromise from "../utils/dbConnect";
 
 export default async function handler(req, res) {
   const client = await clientPromise;
@@ -11,11 +11,7 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
-        const data = await db1
-          .collection("nowAudiobook")
-          .find()
-          .sort({ date: -1 })
-          .toArray();
+        const data = await db1.collection("timeline").find().toArray();
 
         res.status(200).json({ success: true, data: data });
       } catch (error) {

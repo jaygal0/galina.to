@@ -40,7 +40,7 @@ export default function NavigationMenu() {
   console.log(isMenuOpen);
 
   return (
-    //TODO: PRIO LOW - Fix breadcrumbs
+    //TODO: PRIO 3 - Fix breadcrumbs
     <>
       <Link href="/" className="fixed left-5 top-5 z-10">
         Logo
