@@ -1,13 +1,13 @@
-import React from 'react'
+import HeroText from "@/components/global/HeroText";
+import React from "react";
 
-const contact = () => {
+export default function Page() {
   return (
     <>
-      <div className="blog">
-        where business meets design
-      </div>
+      <HeroText
+        heading="Contact"
+        desc="Whether you have a business inquiry or just a random question, I regularly check my emails and try to reply at a resonable time. You can get in touch at joshua[at]galina.to"
+      />
     </>
-  )
+  );
 }
-
-export default contact

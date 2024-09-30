@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 function getPost({ slug }: { slug: string }) {
   const markdownFile = fs.readFileSync(
     path.join("projects", slug + ".mdx"),
-    "utf-8"
+    "utf-8",
   );
 
   const { data: fontMatter, content } = matter(markdownFile);
@@ -36,8 +36,11 @@ export default function Page({ params }: any) {
 
   return (
     <article className="prose-slate mb-20 lg:prose-xl prose-pre:bg-slate-700">
+      <a href="/projects" className="text-md font-thin underline">
+        &#60; Back to Projects
+      </a>
       <h1 className="font-bold">{props.fontMatter.heading}</h1>
-      <div className="relative w-full aspect-video mb-18 rounded-3xl border">
+      <div className="mb-18 relative aspect-video w-full rounded-3xl border">
         <Image src={Placeholder} alt="" objectFit="cover" />
       </div>
       <MDXRemote source={props.content}></MDXRemote>

@@ -8,6 +8,12 @@ import Link from "next/link";
 export default function NavigationMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [isProjects, setIsProjects] = useState<boolean>(false);
+
+  const now = "now";
+  const timeline = "timeline";
+  const projects = "projects";
+  const contact = "contact";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -34,11 +40,12 @@ export default function NavigationMenu() {
   console.log(isMenuOpen);
 
   return (
-    //TODO: Fix breadcrumb issue
+    //TODO: PRIO LOW - Fix breadcrumbs
     <>
       <Link href="/" className="fixed left-5 top-5 z-10">
         Logo
       </Link>
+
       <button className="fixed right-4 top-5 z-10" onClick={toggleMenu}>
         Menu
       </button>
