@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import CardBlog from "../../../components/CardBlog";
+import FadeInComponent from "@/components/global/FadeIn";
 
 export default async function Page({ posts }: any) {
   const blogDir = "blogs";
@@ -19,7 +20,7 @@ export default async function Page({ posts }: any) {
     };
   });
   return (
-    <div>
+    <FadeInComponent>
       <HeroText
         heading="Blog"
         desc="This is a description to let you know that I'm adding a projects page."
@@ -44,6 +45,6 @@ export default async function Page({ posts }: any) {
             return a.props.posted < b.props.posted ? 1 : -1;
           })}
       </div>
-    </div>
+    </FadeInComponent>
   );
 }

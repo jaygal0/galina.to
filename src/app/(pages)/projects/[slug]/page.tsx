@@ -5,6 +5,7 @@ import Placeholder from "@/app/public/cpb-sketches.jpg";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import FadeInComponent from "@/components/global/FadeIn";
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("projects"));
@@ -36,14 +37,16 @@ export default function Page({ params }: any) {
 
   return (
     <article className="prose-slate mb-20 lg:prose-xl prose-pre:bg-slate-700">
-      <a href="/projects" className="text-md font-thin underline">
-        &#60; Back to Projects
-      </a>
-      <h1 className="font-bold">{props.fontMatter.heading}</h1>
-      <div className="mb-18 relative aspect-video w-full rounded-3xl border">
-        <Image src={Placeholder} alt="" objectFit="cover" />
-      </div>
-      <MDXRemote source={props.content}></MDXRemote>
+      <FadeInComponent>
+        <a href="/projects" className="text-md font-thin underline">
+          &#60; Back to Projects
+        </a>
+        <h1 className="font-bold">{props.fontMatter.heading}</h1>
+        <div className="mb-18 relative aspect-video w-full rounded-3xl border">
+          <Image src={Placeholder} alt="" objectFit="cover" />
+        </div>
+        <MDXRemote source={props.content}></MDXRemote>
+      </FadeInComponent>
     </article>
   );
 }

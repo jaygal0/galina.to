@@ -9,6 +9,7 @@ import Meta from "../../../components/Meta";
 import LocationPrevious from "../../../components/LocationPrevious";
 import ProfessionPrevious from "../../../components/ProfessionPrevious";
 import GeneralCard from "../../../components/now/GeneralCard";
+import FadeInComponent from "@/components/global/FadeIn";
 
 async function getData() {
   const res = await fetch("https://lichess.org/api/account", {
@@ -28,7 +29,7 @@ export default async function Page() {
   const lichess = await getData();
 
   return (
-    <>
+    <FadeInComponent>
       <HeroText
         key="0"
         heading="What I'm up to now"
@@ -60,6 +61,6 @@ export default async function Page() {
           </p>
         </GeneralCard>
       </div>
-    </>
+    </FadeInComponent>
   );
 }

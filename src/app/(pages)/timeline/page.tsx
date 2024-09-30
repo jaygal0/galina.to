@@ -1,5 +1,6 @@
 import HeroText from "@/components/global/HeroText";
 import CardTimeLine from "../../../components/CardTimeline";
+import FadeInComponent from "@/components/global/FadeIn";
 
 async function getData() {
   const res = await fetch(`${process.env.WEB_SITE}/api/timeline`, {
@@ -15,8 +16,7 @@ async function getData() {
 export default async function Page() {
   const data = await getData();
   return (
-    // TODO: Sort out this page
-    <>
+    <FadeInComponent>
       <HeroText
         heading="timeline"
         desc="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
@@ -44,6 +44,6 @@ export default async function Page() {
             />
           );
         })}
-    </>
+    </FadeInComponent>
   );
 }

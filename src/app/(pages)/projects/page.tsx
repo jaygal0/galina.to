@@ -4,6 +4,7 @@ import Role from "../../../components/projects/Role";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import FadeInComponent from "@/components/global/FadeIn";
 
 export default function Page() {
   const projectsDir = "projects";
@@ -13,7 +14,7 @@ export default function Page() {
   const projects = files.map((filename) => {
     const fileContent = fs.readFileSync(
       path.join(projectsDir, filename),
-      "utf-8"
+      "utf-8",
     );
 
     const { data: frontMatter } = matter(fileContent);
@@ -23,7 +24,7 @@ export default function Page() {
     };
   });
   return (
-    <div>
+    <FadeInComponent>
       <HeroText
         heading="Projects"
         desc="This is a description to let you know that I'm adding a projects page."
@@ -38,10 +39,10 @@ export default function Page() {
                 className="flex flex-col gap-2"
                 datatype={project.meta.posted}
               >
-                <div className="aspect-video w-full bg-slate-400 rounded-3xl hover:scale-105 transition-all flex justify-center items-center">
+                <div className="flex aspect-video w-full items-center justify-center rounded-3xl bg-slate-400 transition-all hover:scale-105">
                   {project.meta.heading}
                 </div>
-                <div className="flex w-full justify-between px-4 items-center">
+                <div className="flex w-full items-center justify-between px-4">
                   <div className="text-lg">{project.meta.heading}</div>
                   <Role label={project.meta.role} />
                 </div>
@@ -52,6 +53,6 @@ export default function Page() {
             return a.props.datatype < b.props.datatype ? 1 : -1;
           })}
       </div>
-    </div>
+    </FadeInComponent>
   );
 }
