@@ -19,6 +19,7 @@ export default async function Page({ posts }: any) {
       slug: filename.replace(".mdx", ""),
     };
   });
+  // TODO 2: Style page
   return (
     <FadeInComponent>
       <HeroText

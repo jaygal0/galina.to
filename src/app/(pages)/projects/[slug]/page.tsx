@@ -38,7 +38,8 @@ export default function Page({ params }: any) {
   return (
     <article className="prose-slate mb-20 lg:prose-xl prose-pre:bg-slate-700">
       <FadeInComponent>
-        <a href="/projects" className="text-md font-thin underline">
+        {/* TODO 2: Figure out why mb-10 doesn't work */}
+        <a href="/projects" className="text-md mb-10 font-thin underline">
           &#60; Back to Projects
         </a>
         <h1 className="font-bold">{props.fontMatter.heading}</h1>

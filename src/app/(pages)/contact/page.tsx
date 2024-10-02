@@ -3,6 +3,7 @@ import HeroText from "@/components/global/HeroText";
 import React from "react";
 
 export default function Page() {
+  // TODO 2: Style page
   return (
     <FadeInComponent>
       <HeroText

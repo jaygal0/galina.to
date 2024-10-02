@@ -27,8 +27,10 @@ async function getData() {
 
 export default async function Page() {
   const lichess = await getData();
+  console.log(lichess);
 
   return (
+    // TODO 1: Style now page
     <FadeInComponent>
       <HeroText
         key="0"
@@ -36,7 +38,7 @@ export default async function Page() {
         desc="hello"
         now={Date.now()}
       />
-      {/* TODO: PRIO 3 Fade in content a little later to cater to information jumping */}
+      {/* TODO 3: Fade in content a little later to cater to information jumping */}
       <div className="my-8 flex flex-col gap-8">
         <GeneralCard heading="Age">
           <Age />
@@ -52,6 +54,7 @@ export default async function Page() {
           <p>By Author</p>
         </GeneralCard>
         <GeneralCard heading="LiChess Rating">
+          {/* BUG Figure out why rating doesn't update */}
           <p>Rating</p>
           <p>{lichess.perfs.rapid.rating}</p>
           <p>
