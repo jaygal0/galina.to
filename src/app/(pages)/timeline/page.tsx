@@ -15,7 +15,7 @@ async function getData() {
 
 export default async function Page() {
   const data = await getData();
-  // TODO 2: Style page
+  // TODO 2: Style timeline page
   return (
     <FadeInComponent>
       <HeroText

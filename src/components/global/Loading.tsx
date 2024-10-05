@@ -1,5 +1,5 @@
 export default function LoadingSpinner() {
-  // TODO 3: Style page
+  // TODO 3: Style loading page
   return (
     <div role="status">
       <svg

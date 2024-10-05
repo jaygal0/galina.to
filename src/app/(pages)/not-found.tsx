@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function NotFound() {
-  // TODO 3: Figure out what's going on here
+  // TODO 3: Figure out why Not Found component isn't working
   return (
     <div className="flex flex-col">
       <h1 className="mb-20 mt-40 text-5xl font-bold">Uh oh!</h1>
