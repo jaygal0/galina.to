@@ -13,7 +13,7 @@ export default function RootLayout({
       <body className="relative">
         <NavigationMenu />
         <main>
-          <div className="mx-auto max-w-screen-lg py-80">{children}</div>
+          <div className="mx-auto max-w-screen-lg">{children}</div>
         </main>
       </body>
     </html>

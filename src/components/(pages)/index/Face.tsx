@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-const Face = () => {
+export default function Face() {
   const [background, setBackground] = useState(false);
   const [skin, setSkin] = useState(false);
   const [facialFeatures, setFacialFeatures] = useState(false);
@@ -65,7 +65,7 @@ const Face = () => {
     <svg
       xmlns="http://www.w4.org/2000/svg"
       viewBox="0 0 265.06 279.34"
-      className="w-1/3 overflow-visible"
+      className="w-2/4 overflow-visible"
     >
       <style jsx>
         {`
@@ -115,7 +115,7 @@ const Face = () => {
       {/* Background */}
       <g
         id="background"
-        className={`origin-center transform ${background ? "animate-bounceScaleLg" : "scale-0 "}`}
+        className={`origin-center transform ${background ? "animate-bounceScaleMd" : "scale-0 "}`}
       >
         <g>
           <circle
@@ -334,6 +334,4 @@ const Face = () => {
       </g>
     </svg>
   );
-};
-
-export default Face;
+}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import HeroText from "../../../components/global/HeroText";
-import Role from "../../../components/projects/Role";
+import Role from "@/components/(pages)/projects/Role";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
