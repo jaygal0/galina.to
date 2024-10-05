@@ -8,7 +8,7 @@ import { ExternalLink, IndexMain } from "../../../../styles";
 import Meta from "../../../components/Meta";
 import LocationPrevious from "../../../components/LocationPrevious";
 import ProfessionPrevious from "../../../components/ProfessionPrevious";
-import GeneralCard from "../../../components/now/GeneralCard";
+import GeneralCard from "../../../components/(pages)/now/GeneralCard";
 import FadeInComponent from "@/components/global/FadeIn";
 
 async function getData() {

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from 'react'
-import styled from 'styled-components'
-import Face from './Face'
-import Hero from './Hero'
+import React from "react";
+import styled from "styled-components";
+import Face from "./(pages)/index/Face";
+import Hero from "./Hero";
 
 const Container = styled.div`
   display: flex;
@@ -16,8 +16,7 @@ const Container = styled.div`
   @media screen and (max-width: 1280px) {
     padding-left: 15rem;
   }
-
-`
+`;
 
 const FaceWrapper = styled.div`
   width: 100%;
@@ -34,8 +33,7 @@ const FaceWrapper = styled.div`
     transform: translate(-25rem, 5%);
     width: 30%;
   }
-
-`
+`;
 
 const IndexHero = () => {
   return (
@@ -45,7 +43,7 @@ const IndexHero = () => {
         <Face />
       </FaceWrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default IndexHero
+export default IndexHero;

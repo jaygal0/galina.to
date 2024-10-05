@@ -24,13 +24,13 @@
     }
   },
   "include": [
-    "src/components/Face.js",
+    "src/components/(pages)/index/Face.tsx",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.mdx",
     "src/api/now.js",
-    "src/components/Face.js",
+    "src/components/(pages)/index/Face.tsx",
     "src/components/CardTimeline.tsx",
     "src/blog/[slug].tsx",
     ".next/types/**/*.ts"

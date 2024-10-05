@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import Number from "./now/Number";
+import Number from "./(pages)/now/Number";
 
 const Age = () => {
   let a = moment(new Date());
