@@ -15,7 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"], // Add DM Sans as a sans font
-        serif: ["var(--font-cormorant)"],
+        krona: ["Krona One", "sans-serif"],
       },
     },
     keyframes: {

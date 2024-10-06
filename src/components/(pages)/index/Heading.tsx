@@ -1,22 +1,22 @@
 import Link from "next/link";
+import HeadingUnderlined from "./HeadingUnderlined";
 
 export default function Page() {
   return (
     <div>
       {/* TODO 1: Add fonts and style home page */}
-      <h1 className="-mb-3">Hi, I'm Joshua Galinato</h1>
-      <h2 className="flex flex-col text-8xl">
+      <h1 className="-mb-3 font-sans text-2xl font-bold">
+        Hi, I'm Joshua Galinato
+      </h1>
+      <h2 className="flex flex-col text-8xl font-bold">
         <span>
-          I{" "}
-          <Link href="projects" className="hover:underline">
-            Design
-          </Link>
-          ,
+          I <HeadingUnderlined label="Design" />,
         </span>{" "}
-        <Link href="/projects" className="hover:underline">
-          Develop
-        </Link>{" "}
-        <span>&amp; Solve</span> <span>Problems</span>
+        <HeadingUnderlined label="Develop" />
+        <span>
+          &amp; <span className="hover:">Solve</span>
+        </span>
+        <HeadingUnderlined label="Problems" noTrack />
       </h2>
     </div>
   );
