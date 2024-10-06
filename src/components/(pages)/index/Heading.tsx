@@ -16,7 +16,7 @@ export default function Page() {
         <Link href="/projects" className="hover:underline">
           Develop
         </Link>{" "}
-        <span>& Solve</span> <span>Problems</span>
+        <span>&amp; Solve</span> <span>Problems</span>
       </h2>
     </div>
   );

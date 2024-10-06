@@ -14,7 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ["var(--font-cabin)"],
+        sans: ["DM Sans", "sans-serif"], // Add DM Sans as a sans font
         serif: ["var(--font-cormorant)"],
       },
     },

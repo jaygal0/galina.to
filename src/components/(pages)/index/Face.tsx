@@ -11,8 +11,8 @@ export default function Face() {
   const [nose, setNose] = useState(false);
   const [eyes, setEyes] = useState(false);
   const [smile, setSmile] = useState(false);
-  const [beard, setBeard] = useState(false);
   const [mustache, setMustache] = useState(false);
+  const [beard, setBeard] = useState(false);
 
   useEffect(() => {
     const backgroundTimer = setTimeout(() => {
@@ -20,31 +20,31 @@ export default function Face() {
     }, 300);
     const skinTimer = setTimeout(() => {
       setSkin(true);
-    }, 1500);
+    }, 700);
     const noseTimer = setTimeout(() => {
       setNose(true);
-    }, 1800);
+    }, 1000);
     const tshirtTimer = setTimeout(() => {
       setTshirt(true);
-    }, 2000);
+    }, 1200);
     const facialFeaturesTimer = setTimeout(() => {
       setFacialFeatures(true);
-    }, 2400);
+    }, 1800);
     const eyesTimer = setTimeout(() => {
       setEyes(true);
-    }, 2600);
+    }, 1900);
     const smileTimer = setTimeout(() => {
       setSmile(true);
-    }, 2700);
+    }, 2000);
     const hairTimer = setTimeout(() => {
       setHair(true);
-    }, 2800);
-    const beardTimer = setTimeout(() => {
-      setBeard(true);
-    }, 2900);
+    }, 2400);
     const mustacheTimer = setTimeout(() => {
       setMustache(true);
-    }, 2900);
+    }, 2500);
+    const beardTimer = setTimeout(() => {
+      setBeard(true);
+    }, 2700);
 
     // Cleanup function to clear the timeouts when the component unmounts
     return () => {
@@ -325,7 +325,7 @@ export default function Face() {
       {/* Beard */}
       <g
         id="beard"
-        className={`origin-center transform ${beard ? "animate-bounceScaleLg" : "scale-0"}`}
+        className={`origin-center transform ${beard ? "animate-bounceScaleMd" : "scale-0"}`}
       >
         <path
           d="M157.1,172.33c0-3.41-5.85-6.16-13.09-6.16s-13.09,2.75-13.09,6.16v.47c0,6.25,5.85,11.32,13.09,11.32s13.09-5.07,13.09-11.32v-.31A.86.86,0,0,1,157.1,172.33Z"
