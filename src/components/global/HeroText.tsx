@@ -4,9 +4,9 @@ import { textComponents } from "../../types";
 
 export default function HeroText({ heading, desc, now }: textComponents) {
   return (
-    <div className="w-full px-40 pb-10">
-      <h1 className="font-bold text-3xl">{heading}</h1>
-      <div className="text-base pb-10">{desc}</div>
+    <div className="w-full px-40 py-72 pb-10 font-sans">
+      <h1 className="text-5xl font-bold capitalize">{heading}</h1>
+      <div className="mb-8 pb-10 text-2xl leading-relaxed">{desc}</div>
       {now && (
         <div className="text-sm text-stone-700">
           Last Updated: {moment(now).format("MMMM Do YYYY")}. Inspired by{" "}

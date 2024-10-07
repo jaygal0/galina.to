@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         sans: ["DM Sans", "sans-serif"], // Add DM Sans as a sans font
         krona: ["Krona One", "sans-serif"],
+        mono: ["Share Tech Monospace", "monospace"],
       },
     },
     keyframes: {

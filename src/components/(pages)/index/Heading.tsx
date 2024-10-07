@@ -4,7 +4,6 @@ import HeadingUnderlined from "./HeadingUnderlined";
 export default function Page() {
   return (
     <div>
-      {/* TODO 1: Add fonts and style home page */}
       <h1 className="-mb-3 font-sans text-2xl font-bold">
         Hi, I'm Joshua Galinato
       </h1>

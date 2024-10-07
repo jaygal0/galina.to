@@ -29,7 +29,7 @@ function getPost({ slug }: { slug: string }) {
   };
 }
 
-export default function Page({ params }: any) {
+export default async function Page({ params }: any) {
   const props = getPost(params);
 
   return (
@@ -39,8 +39,7 @@ export default function Page({ params }: any) {
           &#60; Back to Blog
         </a>
         <h1 className="font-bold">{props.fontMatter.title}</h1>
-        {/* TODO 2: Go through DesignerStories and see how the issue is solved */}
-        <MDXRemote source={props.content}></MDXRemote>
+        {await (<MDXRemote source={props.content} />)}
       </FadeInComponent>
     </article>
   );

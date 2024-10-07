@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Age from "../../../components/Age";
 import HeroText from "@/components/global/HeroText";
-import LocationNow from "../../../components/LocationNow";
-import NowText from "../../../components/NowText";
-import ProfessionNow from "../../../components/ProfessionNow";
-import { ExternalLink, IndexMain } from "../../../../styles";
-import Meta from "../../../components/Meta";
-import LocationPrevious from "../../../components/LocationPrevious";
-import ProfessionPrevious from "../../../components/ProfessionPrevious";
 import GeneralCard from "../../../components/(pages)/now/GeneralCard";
 import FadeInComponent from "@/components/global/FadeIn";
+import CardData from "@/components/(pages)/now/CardData";
 
 async function getData() {
   const res = await fetch("https://lichess.org/api/account", {
     headers: {
       Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
     },
+    cache: "no-store",
   });
 
   const data = await res.json();
@@ -27,39 +22,34 @@ async function getData() {
 
 export default async function Page() {
   const lichess = await getData();
-  console.log(lichess);
 
   return (
-    // TODO 1: Style now page
     <FadeInComponent>
       <HeroText
         key="0"
-        heading="What I'm up to now"
-        desc="hello"
+        heading="What I'm up to Now"
+        desc="After a month full of activities and fun, it's time for me to get back to my usual routines and do a little spring cleaning."
         now={Date.now()}
       />
       {/* TODO 3: Fade in content a little later to cater to information jumping */}
-      <div className="my-8 flex flex-col gap-8">
+      <div className="my-12 mb-32 flex flex-col gap-8 font-sans">
         <GeneralCard heading="Age">
           <Age />
         </GeneralCard>
         <GeneralCard heading="Location">
-          <p>Gothenburg, Sweden</p>
+          <CardData nowData="Göteborg, Sweden" />
         </GeneralCard>
         <GeneralCard heading="Career">
-          <p>Lead UX Designer at Orbi</p>
+          <CardData nowData="Lead UX Designer at Orbi" />
         </GeneralCard>
         <GeneralCard heading="Reading">
-          <p>Book</p>
-          <p>By Author</p>
+          <CardData nowData="{ book } by { author }" />
         </GeneralCard>
         <GeneralCard heading="LiChess Rating">
-          {/* BUG Figure out why rating doesn't update */}
-          <p>Rating</p>
-          <p>{lichess.perfs.rapid.rating}</p>
-          <p>
+          <CardData nowData={`Rapid: ${lichess.perfs.rapid.rating}`} />
+          <p className="mt-6">
             Live from{" "}
-            <a href={lichess.url} target="_blank">
+            <a href={lichess.url} className="underline" target="_blank">
               LiChess
             </a>{" "}
           </p>

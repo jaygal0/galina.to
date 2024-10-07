@@ -6,8 +6,8 @@ export default function GeneralCard({
   children: any;
 }) {
   return (
-    <div className="flex flex-col p-20 border rounded-3xl w-full">
-      <h2 className="font-bold text-xl">{heading}</h2>
+    <div className="flex w-full flex-col rounded-3xl border-[2px] border-black p-20">
+      <h2 className="font-sans text-2xl">{heading}</h2>
       {children}
     </div>
   );

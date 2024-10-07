@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment";
 import Number from "./(pages)/now/Number";
 
-const Age = () => {
+export default function Age() {
   let a = moment(new Date());
   let b = new Date(1989, 6, 30, 15, 15, 0, 0);
 
@@ -34,33 +34,31 @@ const Age = () => {
   }
 
   return (
-    <div className="flex w-full justify-between">
+    <div className="flex w-full justify-between font-mono">
       <div>
         <Number interval={addLeadingZeros(years, 2)} />
-        <p>years</p>
+        <p className="capitalize">years</p>
       </div>
       <div>
         <Number interval={addLeadingZeros(months, 2)} />
-        <p>months</p>
+        <p className="capitalize">months</p>
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(days, 2)} />
-        <p>days</p>
+        <p className="capitalize">days</p>
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(hours, 2)} />
-        <p>hours</p>
+        <p className="capitalize">hours</p>
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(minutes, 2)} />
-        <p>minutes</p>
+        <p className="capitalize">minutes</p>
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(seconds, 2)} />
-        <p>seconds</p>
+        <p className="capitalize">seconds</p>
       </div>
     </div>
   );
-};
-
-export default Age;
+}
