@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
+
 export default function GeneralCard({
   heading,
   children,
 }: {
   heading: string;
-  children: any;
+  children: ReactNode;
 }) {
   return (
     <div className="flex w-full flex-col rounded-3xl border-[2px] border-black p-20">

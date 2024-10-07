@@ -4,6 +4,7 @@ import HeroText from "@/components/global/HeroText";
 import GeneralCard from "../../../components/(pages)/now/GeneralCard";
 import FadeInComponent from "@/components/global/FadeIn";
 import CardData from "@/components/(pages)/now/CardData";
+import ContentDiv from "@/components/global/ContentDiv";
 
 async function getData() {
   const res = await fetch("https://lichess.org/api/account", {
@@ -32,7 +33,7 @@ export default async function Page() {
         now={Date.now()}
       />
       {/* TODO 3: Fade in content a little later to cater to information jumping */}
-      <div className="my-12 mb-32 flex flex-col gap-8 font-sans">
+      <ContentDiv>
         <GeneralCard heading="Age">
           <Age />
         </GeneralCard>
@@ -54,7 +55,7 @@ export default async function Page() {
             </a>{" "}
           </p>
         </GeneralCard>
-      </div>
+      </ContentDiv>
     </FadeInComponent>
   );
 }

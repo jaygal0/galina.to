@@ -4,6 +4,8 @@ import path from "path";
 import matter from "gray-matter";
 import CardBlog from "../../../components/CardBlog";
 import FadeInComponent from "@/components/global/FadeIn";
+import ContentDiv from "@/components/global/ContentDiv";
+import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
 
 export default async function Page({ posts }: any) {
   const blogDir = "blogs";
@@ -26,11 +28,11 @@ export default async function Page({ posts }: any) {
         heading="Blog"
         desc="This is a description to let you know that I'm adding a projects page."
       />
-      <div className="flex flex-col gap-8">
+      <ContentDiv>
         {blogs
           .map((blog: any, index: any) => {
             return (
-              <CardBlog
+              <GeneralCardBlog
                 key={index}
                 link={blog.slug}
                 title={blog.meta.title}
@@ -45,7 +47,7 @@ export default async function Page({ posts }: any) {
           .sort((a: any, b: any) => {
             return a.props.posted < b.props.posted ? 1 : -1;
           })}
-      </div>
+      </ContentDiv>
     </FadeInComponent>
   );
 }
