@@ -39,7 +39,8 @@ export default async function Page({ params }: any) {
           &#60; Back to Blog
         </a>
         <h1 className="font-bold">{props.fontMatter.title}</h1>
-        {await (<MDXRemote source={props.content} />)}
+        {/* @ts-expect-error Server Component */}
+        <MDXRemote source={props.content} />
       </FadeInComponent>
     </article>
   );

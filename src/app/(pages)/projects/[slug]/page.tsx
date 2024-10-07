@@ -46,6 +46,7 @@ export default function Page({ params }: any) {
         <div className="mb-18 relative aspect-video w-full rounded-3xl border">
           <Image src={Placeholder} alt="" objectFit="cover" />
         </div>
+        {/* @ts-expect-error Server Component */}
         <MDXRemote source={props.content}></MDXRemote>
       </FadeInComponent>
     </article>
