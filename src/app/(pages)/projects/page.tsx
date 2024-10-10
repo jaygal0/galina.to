@@ -1,10 +1,9 @@
-import Link from "next/link";
 import HeroText from "../../../components/global/HeroText";
-import Role from "@/components/(pages)/projects/Role";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import FadeInComponent from "@/components/global/FadeIn";
+import Project from "@/components/(pages)/projects/Project";
 
 export default function Page() {
   const projectsDir = "projects";
@@ -23,7 +22,9 @@ export default function Page() {
       slug: filename.replace(".mdx", ""),
     };
   });
+
   return (
+    // TODO 1: Sort out projects - Content, styling and logic across all detail pages
     <FadeInComponent>
       <HeroText
         heading="Projects"
@@ -33,22 +34,16 @@ export default function Page() {
         {projects
           .map((project, index) => {
             return (
-              <Link
-                href={`/projects/${project.slug}`}
+              <Project
                 key={index}
-                className="flex flex-col gap-2"
-                datatype={project.meta.posted}
-              >
-                <div className="flex aspect-video w-full items-center justify-center rounded-3xl bg-slate-400 transition-all hover:scale-105">
-                  {project.meta.heading}
-                </div>
-                <div className="flex w-full items-center justify-between px-4">
-                  <div className="text-lg">{project.meta.heading}</div>
-                  <Role label={project.meta.role} />
-                </div>
-              </Link>
+                slug={project.slug}
+                posted={project.meta.posted}
+                heading={project.meta.heading}
+                role={project.meta.role}
+              />
             );
           })
+          // BUG: Fix sorting issue
           .sort((a: any, b: any) => {
             return a.props.datatype < b.props.datatype ? 1 : -1;
           })}

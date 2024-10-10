@@ -1,37 +1,35 @@
-import { textComponents } from "../../types";
-
-type Role = {
+interface Role {
   label?: string;
-};
+}
 
 export default function Role({ label }: Role) {
   return (
-    <>
+    <div className="font-sans text-sm">
       {label == "Founder" ? (
-        <div className="px-3 py-1 border bg-slate-400 text-sm rounded-md">
+        <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
           Founder
         </div>
       ) : label == "Creative Director" ? (
-        <div className="px-3 py-1 border bg-slate-400 text-sm rounded-md">
+        <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
           Creative Director
         </div>
       ) : label == "UX Designer" ? (
-        <div className="px-3 py-1 border bg-slate-400 text-sm rounded-md">
+        <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
           UX Designer
         </div>
       ) : label == "Lead UX Designer" ? (
-        <div className="px-3 py-1 border bg-slate-400 text-sm rounded-md">
+        <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
           Lead UX Designer
         </div>
       ) : label == "Intern" ? (
-        <div className="px-3 py-1 border bg-slate-400 text-sm rounded-md">
+        <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
           Intern
         </div>
       ) : (
-        <div className="px-3 py-1 border bg-slate-400 text-sm rounded-md">
-          Personal Project
+        <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
+          Project
         </div>
       )}
-    </>
+    </div>
   );
 }
