@@ -30,7 +30,7 @@ export default function Page() {
         heading="Projects"
         desc="This is a description to let you know that I'm adding a projects page."
       />
-      <div className="grid grid-cols-3 gap-x-4 gap-y-8">
+      <div className="grid grid-cols-3 gap-x-4 gap-y-8 pb-72">
         {projects
           .map((project, index) => {
             return (
@@ -43,9 +43,8 @@ export default function Page() {
               />
             );
           })
-          // BUG: Fix sorting issue
           .sort((a: any, b: any) => {
-            return a.props.datatype < b.props.datatype ? 1 : -1;
+            return a.props.posted < b.props.posted ? 1 : -1;
           })}
       </div>
     </FadeInComponent>

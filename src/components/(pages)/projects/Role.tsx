@@ -4,7 +4,7 @@ interface Role {
 
 export default function Role({ label }: Role) {
   return (
-    <div className="font-sans text-sm">
+    <div className="inline-block whitespace-nowrap font-sans text-sm">
       {label == "Founder" ? (
         <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
           Founder

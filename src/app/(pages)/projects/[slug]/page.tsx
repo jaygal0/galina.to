@@ -6,6 +6,7 @@ import Placeholder from "@/app/public/cpb-sketches.jpg";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import FadeInComponent from "@/components/global/FadeIn";
+import Role from "@/components/(pages)/projects/Role";
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("projects"));
@@ -36,18 +37,36 @@ export default function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <article className="prose-slate mb-20 lg:prose-xl prose-pre:bg-slate-700">
+    <article className="prose py-72">
       <FadeInComponent>
-        {/* TODO 2: Figure out why mb-10 doesn't work */}
-        <a href="/projects" className="text-md mb-10 font-thin underline">
-          &#60; Back to Projects
+        <a
+          href="/projects"
+          className="text-md font-sans font-thin no-underline hover:underline"
+        >
+          &#60; Projects
         </a>
-        <h1 className="font-bold">{props.fontMatter.heading}</h1>
-        <div className="mb-18 relative aspect-video w-full rounded-3xl border">
-          <Image src={Placeholder} alt="" objectFit="cover" />
+        <div className="mb-16">
+          <h1 className="mb-2 mt-20 font-sans text-5xl font-bold">
+            {props.fontMatter.heading}
+          </h1>
+          <Role label={props.fontMatter.role} />
         </div>
-        {/* @ts-expect-error Server Component */}
-        <MDXRemote source={props.content}></MDXRemote>
+        <div>
+          <h2 className="mb-0 font-sans">Apps used</h2>
+          {props.fontMatter.apps.map((e: any) => {
+            return e == "figma" ? <div>figma</div> : "";
+          })}
+        </div>
+        <Image
+          src={Placeholder}
+          alt=""
+          objectFit="cover"
+          className="mb-20 aspect-video w-full rounded-3xl border"
+        />
+        <div className="font-sans">
+          {/* @ts-expect-error Server Component */}
+          <MDXRemote source={props.content} />
+        </div>
       </FadeInComponent>
     </article>
   );
