@@ -40,7 +40,7 @@ export default function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <article className="prose py-72 font-sans">
+    <article className="prose-slate py-72 font-sans">
       <FadeInComponent>
         <a
           href="/projects"
@@ -48,23 +48,25 @@ export default function Page({ params }: any) {
         >
           &#60; Projects
         </a>
-        <div className="mb-16">
+        <div className="mb-10">
           <h1 className="mb-0 pt-8 text-5xl font-bold">
             {props.fontMatter.heading}
           </h1>
-          <p>{props.fontMatter.desc}</p>
+          <p className="mb-4 text-2xl leading-normal">
+            {props.fontMatter.desc}
+          </p>
           <Role label={props.fontMatter.role} />
         </div>
-        <div>
-          <h2 className="mb-0 text-xl">Apps used</h2>
-          <AppUsed fontMatter={props.fontMatter.apps} />
+        <AppUsed fontMatter={props.fontMatter.apps} />
+        <div className="relative mb-20 aspect-video w-full">
+          <Image
+            src={`/cover-${props.fontMatter.heading}.jpg`}
+            alt={`${props.fontMatter.heading}`}
+            fill
+            style={{ objectFit: "cover" }}
+            className="mb-20 aspect-video rounded-3xl border"
+          />
         </div>
-        <Image
-          src=""
-          alt=""
-          objectFit="cover"
-          className="mb-20 aspect-video w-full rounded-3xl border"
-        />
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />

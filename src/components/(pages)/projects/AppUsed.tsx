@@ -1,45 +1,55 @@
 import Image from "next/image";
 
 interface FontMatter {
-  map(arg0: (app: any) => JSX.Element | null): import("react").ReactNode;
-  apps: string[]; // Assuming apps is an array of strings
+  [x: string]: any;
+  apps: string[]; // Array of app names as strings
 }
 
 interface Props {
-  fontMatter: FontMatter;
+  fontMatter: FontMatter; // Props expects fontMatter with apps array
 }
 
+// Mapping the app keys to their human-readable names
 const appsMap: Record<string, string> = {
-  analytics: "Google Analytics",
+  analytics: "Analytics",
   figma: "Figma",
-  illustrator: "Adobe Illustrator",
+  illustrator: "Illustrator",
+  aftereffects: "AfterEffects",
   maze: "Maze",
   notion: "Notion",
-  photoshop: "Adobe Photoshop",
-  premiere: "Adobe Premiere",
+  photoshop: "Photoshop",
+  premiere: "Premiere",
   sentry: "Sentry",
-  nextjs: "NextJS",
+  nextjs: "Next.js",
   typescript: "TypeScript",
 };
 
 export default function AppUsed({ fontMatter }: Props) {
   return (
-    <div className="flex gap-8">
-      {fontMatter.map((app) => {
-        return appsMap[app] ? (
-          <div key={app} className="flex flex-col items-center gap-0">
-            <Image
-              src={`/app-${app}.jpg`}
-              alt={app}
-              width={80}
-              height={80}
-              className="my-2 rounded-3xl"
-              quality={100}
-            />
-            <p className="my-0 text-center text-sm capitalize">{app}</p>
-          </div>
-        ) : null;
-      })}
+    <div className="mb-10 rounded-3xl bg-slate-200 p-6">
+      <h2>Apps used</h2>
+      <div className="flex flex-wrap gap-10">
+        {/* Sort the apps array alphabetically */}
+        {fontMatter
+          .sort((a: string, b: string) => a.localeCompare(b))
+          .map((app: string) => {
+            return appsMap[app] ? (
+              <div key={app} className="flex flex-col items-center gap-0">
+                <Image
+                  src={`/app-${app}.jpg`}
+                  alt={appsMap[app]} // Use the human-readable name from appsMap for alt text
+                  width={80}
+                  height={80}
+                  className="my-2 rounded-xl"
+                  quality={100}
+                />
+                <p className="my-0 text-center text-sm capitalize">
+                  {appsMap[app]} {/* Display the human-readable name */}
+                </p>
+              </div>
+            ) : null;
+          })}
+      </div>
     </div>
   );
 }
