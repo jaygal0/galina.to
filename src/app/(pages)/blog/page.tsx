@@ -8,19 +8,23 @@ import ContentDiv from "@/components/global/ContentDiv";
 import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
 
 export default async function Page({ posts }: any) {
-  const blogDir = "blogs";
+  const blogDir = path.join("data", "blogs");
 
-  const files = fs.readdirSync(path.join(blogDir));
+  // Read the files from the `data/blogs` directory
+  const files = fs.readdirSync(blogDir);
 
   const blogs = files.map((filename) => {
+    // Read each markdown file content
     const fileContent = fs.readFileSync(path.join(blogDir, filename), "utf-8");
 
+    // Extract front matter and slug from the filename and content
     const { data: frontMatter } = matter(fileContent);
     return {
       meta: frontMatter,
-      slug: filename.replace(".mdx", ""),
+      slug: filename.replace(".mdx", ""), // Create slug from the filename
     };
   });
+
   // TODO 2: Style blog page
   return (
     <FadeInComponent>

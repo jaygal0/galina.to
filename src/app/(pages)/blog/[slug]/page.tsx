@@ -5,8 +5,10 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import FadeInComponent from "@/components/global/FadeIn";
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("blogs"));
+  // Update the path to read from "data/blogs"
+  const files = fs.readdirSync(path.join("data", "blogs"));
 
+  // Generate slugs based on the file names
   const paths = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
   }));
@@ -15,11 +17,13 @@ export async function generateStaticParams() {
 }
 
 function getPost({ slug }: { slug: string }) {
+  // Read the markdown file from "data/blogs" directory
   const markdownFile = fs.readFileSync(
-    path.join("blogs", slug + ".mdx"),
+    path.join("data", "blogs", slug + ".mdx"),
     "utf-8",
   );
 
+  // Use gray-matter to parse the markdown file and extract the front matter and content
   const { data: fontMatter, content } = matter(markdownFile);
 
   return {

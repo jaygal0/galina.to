@@ -6,10 +6,13 @@ import FadeInComponent from "@/components/global/FadeIn";
 import Project from "@/components/(pages)/projects/Project";
 
 export default function Page() {
-  const projectsDir = "projects";
+  // Update the directory path to "data/projects"
+  const projectsDir = path.join("data", "projects");
 
-  const files = fs.readdirSync(path.join(projectsDir));
+  // Read all files from the "data/projects" directory
+  const files = fs.readdirSync(projectsDir);
 
+  // Map over the files and extract front matter and slug
   const projects = files.map((filename) => {
     const fileContent = fs.readFileSync(
       path.join(projectsDir, filename),
@@ -17,9 +20,10 @@ export default function Page() {
     );
 
     const { data: frontMatter } = matter(fileContent);
+
     return {
-      meta: frontMatter,
-      slug: filename.replace(".mdx", ""),
+      meta: frontMatter, // Extracted front matter metadata
+      slug: filename.replace(".mdx", ""), // Create slug from filename
     };
   });
 
