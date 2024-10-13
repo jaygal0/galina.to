@@ -7,6 +7,7 @@ import Image from "next/image";
 import FadeInComponent from "@/components/global/FadeIn";
 import Role from "@/components/(pages)/projects/Role";
 import AppUsed from "@/components/(pages)/projects/AppUsed";
+import CreatedAt from "@/components/global/CreatedAt";
 
 // Update the path to point to `/data/projects`
 export async function generateStaticParams() {
@@ -40,7 +41,7 @@ export default function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <article className="prose-slate py-72 font-sans">
+    <div className="prose-slate py-72 font-sans">
       <FadeInComponent>
         <a
           href="/projects"
@@ -49,15 +50,53 @@ export default function Page({ params }: any) {
           &#60; Projects
         </a>
         <div className="mb-10">
-          <h1 className="mb-0 pt-8 text-5xl font-bold">
-            {props.fontMatter.heading}
-          </h1>
+          <div className="flex items-center justify-between">
+            {/* Heading */}
+            <h1 className="mb-0 mt-8 text-5xl font-bold">
+              {props.fontMatter?.heading || "Project Title"}
+            </h1>
+
+            {/* Conditionally render the "View website" link if `website` is available */}
+            {props.fontMatter?.website && (
+              <a
+                href={props.fontMatter.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-4 flex items-center gap-2 rounded-md border border-blue-500 px-4 py-2 text-lg text-blue-500 transition-all duration-200 hover:bg-blue-500 hover:text-white"
+              >
+                View website
+                <span className="inline-block h-5 w-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="h-full w-full"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 3h8m0 0v8m0-8L10 14m-7 7h18"
+                    />
+                  </svg>
+                </span>
+              </a>
+            )}
+          </div>
+          {/* Date and Time Display */}
+
           <p className="mb-4 text-2xl leading-normal">
             {props.fontMatter.desc}
           </p>
           <Role label={props.fontMatter.role} />
+          <CreatedAt
+            created={props.fontMatter.created}
+            updated={props.fontMatter.updated}
+          />
         </div>
         <AppUsed fontMatter={props.fontMatter.apps} />
+        <div className="mt-4 text-sm text-gray-600"></div>
         <div className="relative mb-20 aspect-video w-full">
           <Image
             src={`/cover-${props.fontMatter.heading}.jpg`}
@@ -72,6 +111,6 @@ export default function Page({ params }: any) {
           <MDXRemote source={props.content} />
         </div>
       </FadeInComponent>
-    </article>
+    </div>
   );
 }
