@@ -32,7 +32,7 @@ export default function Page() {
     <FadeInComponent>
       <HeroText
         heading="Projects"
-        desc="This is a description to let you know that I'm adding a projects page."
+        desc="I consider everything I work on, from full-time roles to personal endeavors, as individual projects. Feel free to explore some of the work I’ve created in the past."
       />
       <div className="grid grid-cols-3 gap-x-4 gap-y-8 pb-72">
         {projects
