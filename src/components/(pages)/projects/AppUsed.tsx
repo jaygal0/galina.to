@@ -11,23 +11,27 @@ interface Props {
 
 // Mapping the app keys to their human-readable names
 const appsMap: Record<string, string> = {
+  aftereffects: "AfterEffects",
   analytics: "Analytics",
   figma: "Figma",
   illustrator: "Illustrator",
-  aftereffects: "AfterEffects",
   maze: "Maze",
+  nextjs: "NextJS",
   notion: "Notion",
+  orbi: "Orbi",
   photoshop: "Photoshop",
+  pitch: "Pitch",
   premiere: "Premiere",
+  prisma: "Prisma",
   sentry: "Sentry",
-  nextjs: "Next.js",
+  tableplus: "Table Plus",
   typescript: "TypeScript",
 };
 
 export default function AppUsed({ fontMatter }: Props) {
   return (
     <div className="mb-10 rounded-3xl bg-slate-200 p-6">
-      <h2>Apps used</h2>
+      <h2 className="my-0">Apps used</h2>
       <div className="flex flex-wrap gap-10">
         {/* Sort the apps array alphabetically */}
         {fontMatter
@@ -38,8 +42,8 @@ export default function AppUsed({ fontMatter }: Props) {
                 <Image
                   src={`/app-${app}.jpg`}
                   alt={appsMap[app]} // Use the human-readable name from appsMap for alt text
-                  width={80}
-                  height={80}
+                  width={60}
+                  height={60}
                   className="my-2 rounded-xl"
                   quality={100}
                 />

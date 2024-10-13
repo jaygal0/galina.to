@@ -41,7 +41,7 @@ export default function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <div className="prose-slate py-72 font-sans">
+    <div className="prose w-full py-72 font-sans">
       <FadeInComponent>
         <a
           href="/projects"
@@ -84,22 +84,20 @@ export default function Page({ params }: any) {
               </a>
             )}
           </div>
-          {/* Date and Time Display */}
-
-          <p className="mb-4 text-2xl leading-normal">
-            {props.fontMatter.desc}
-          </p>
+          <p className="mb-4 text-xl leading-normal">{props.fontMatter.desc}</p>
           <Role label={props.fontMatter.role} />
           <CreatedAt
             created={props.fontMatter.created}
             updated={props.fontMatter.updated}
           />
         </div>
-        <AppUsed fontMatter={props.fontMatter.apps} />
+        {props.fontMatter.apps && (
+          <AppUsed fontMatter={props.fontMatter.apps} />
+        )}
         <div className="mt-4 text-sm text-gray-600"></div>
         <div className="relative mb-20 aspect-video w-full">
           <Image
-            src={`/cover-${props.fontMatter.heading}.jpg`}
+            src={`/cover-${props.fontMatter.heading.toLowerCase()}.jpg`}
             alt={`${props.fontMatter.heading}`}
             fill
             style={{ objectFit: "cover" }}

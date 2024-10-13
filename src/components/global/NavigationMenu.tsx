@@ -37,8 +37,6 @@ export default function NavigationMenu() {
     };
   }, [showMobileMenu]);
 
-  console.log(isMenuOpen);
-
   return (
     //TODO 3: Fix breadcrumbs
     <>

@@ -8,7 +8,7 @@ const roleStyles: Record<string, string> = {
   "Creative Director": "Creative Director",
   "UX Designer": "UX Designer",
   "Lead UX Designer": "Lead UX Designer",
-  Intern: "Intern",
+  "Graphic Designer": "Graphic Designer",
 };
 
 export default function Role({ label }: Role) {
@@ -16,7 +16,7 @@ export default function Role({ label }: Role) {
 
   return (
     <div className="inline-block whitespace-nowrap font-sans text-sm">
-      <div className="rounded-md border bg-slate-400 px-3 py-1 text-sm">
+      <div className="rounded-md border bg-slate-400 px-2 py-1 text-sm">
         {displayLabel}
       </div>
     </div>
