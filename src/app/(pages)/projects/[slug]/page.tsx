@@ -8,6 +8,7 @@ import FadeInComponent from "@/components/global/FadeIn";
 import Role from "@/components/(pages)/projects/Role";
 import AppUsed from "@/components/(pages)/projects/AppUsed";
 import CreatedAt from "@/components/global/CreatedAt";
+import Link from "next/link";
 
 // Update the path to point to `/data/projects`
 export async function generateStaticParams() {
@@ -43,12 +44,12 @@ export default function Page({ params }: any) {
   return (
     <div className="prose w-full py-72 font-sans">
       <FadeInComponent>
-        <a
+        <Link
           href="/projects"
           className="text-md font-sans font-thin no-underline hover:underline"
         >
           &#60; Projects
-        </a>
+        </Link>
         <div className="mb-10">
           <div className="flex items-center justify-between">
             {/* Heading */}

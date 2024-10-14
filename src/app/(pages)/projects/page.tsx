@@ -41,14 +41,14 @@ export default function Page() {
               <Project
                 key={index}
                 slug={project.slug}
-                posted={project.meta.posted}
+                created={project.meta.created}
                 heading={project.meta.heading}
                 role={project.meta.role}
               />
             );
           })
           .sort((a: any, b: any) => {
-            return a.props.posted < b.props.posted ? 1 : -1;
+            return a.props.created < b.props.created ? 1 : -1;
           })}
       </div>
     </FadeInComponent>
