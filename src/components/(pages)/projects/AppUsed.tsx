@@ -34,7 +34,7 @@ const appsMap: Record<string, string> = {
 
 export default function AppUsed({ fontMatter }: Props) {
   return (
-    <div className="mb-10 rounded-3xl bg-slate-200 p-6">
+    <div className="mb-6 rounded-3xl bg-slate-200 p-6">
       <h2 className="my-0">Apps used</h2>
       <div className="flex flex-wrap gap-10 gap-y-4">
         {/* Sort the apps array alphabetically */}

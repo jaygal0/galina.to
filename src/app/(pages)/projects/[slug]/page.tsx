@@ -9,6 +9,7 @@ import Role from "@/components/(pages)/projects/Role";
 import AppUsed from "@/components/(pages)/projects/AppUsed";
 import CreatedAt from "@/components/global/CreatedAt";
 import Link from "next/link";
+import Duration from "@/components/(pages)/projects/Duration";
 
 // Update the path to point to `/data/projects`
 export async function generateStaticParams() {
@@ -85,17 +86,24 @@ export default function Page({ params }: any) {
               </a>
             )}
           </div>
-          <p className="mb-4 text-xl leading-normal">{props.fontMatter.desc}</p>
-          <Role label={props.fontMatter.role} />
-          <CreatedAt
-            created={props.fontMatter.created}
-            updated={props.fontMatter.updated}
-          />
+          <p className="mb-4 text-2xl leading-normal">
+            {props.fontMatter.desc}
+          </p>
+          <div className="flex items-center gap-2">
+            <Role label={props.fontMatter.role} />
+            <Duration
+              startDate={props.fontMatter.startDate}
+              endDate={props.fontMatter.endDate}
+            />
+          </div>
         </div>
         {props.fontMatter.apps && (
           <AppUsed fontMatter={props.fontMatter.apps} />
         )}
-        <div className="mt-4 text-sm text-gray-600"></div>
+        <CreatedAt
+          created={props.fontMatter.created}
+          updated={props.fontMatter.updated}
+        />
         <div className="relative mb-20 aspect-video w-full">
           <Image
             src={`/${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "")}-hero.jpg`}
