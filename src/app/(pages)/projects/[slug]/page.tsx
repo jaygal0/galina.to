@@ -86,6 +86,10 @@ export default function Page({ params }: any) {
               </a>
             )}
           </div>
+          <CreatedAt
+            created={props.fontMatter.created}
+            updated={props.fontMatter.updated}
+          />
           <p className="mb-4 text-2xl leading-normal">
             {props.fontMatter.desc}
           </p>
@@ -97,13 +101,6 @@ export default function Page({ params }: any) {
             />
           </div>
         </div>
-        {props.fontMatter.apps && (
-          <AppUsed fontMatter={props.fontMatter.apps} />
-        )}
-        <CreatedAt
-          created={props.fontMatter.created}
-          updated={props.fontMatter.updated}
-        />
         <div className="relative mb-20 aspect-video w-full">
           <Image
             src={`/${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "")}-hero.jpg`}
@@ -113,6 +110,9 @@ export default function Page({ params }: any) {
             className="mb-20 aspect-video rounded-3xl border"
           />
         </div>
+        {props.fontMatter.apps && (
+          <AppUsed fontMatter={props.fontMatter.apps} />
+        )}
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />

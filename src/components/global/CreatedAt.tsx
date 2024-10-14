@@ -22,7 +22,7 @@ export default function CreatedAt({ created, updated }: Dates) {
 
   return (
     <p className="my-0 text-gray-500">
-      {updated ? `Updated at: ${dateString}` : `Created at: ${dateString}`}
+      {updated ? `Updated at: ${dateString}` : `Posted on: ${dateString}`}
     </p>
   );
 }
