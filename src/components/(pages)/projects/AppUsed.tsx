@@ -13,7 +13,6 @@ interface Props {
 const appsMap: Record<string, string> = {
   aftereffects: "AfterEffects",
   analytics: "Analytics",
-  // TODO 2: Add VSCode
   figma: "Figma",
   illustrator: "Illustrator",
   indesign: "Indesign",
@@ -30,6 +29,7 @@ const appsMap: Record<string, string> = {
   sentry: "Sentry",
   tableplus: "Table Plus",
   typescript: "TypeScript",
+  vscode: "VS Code",
   youtube: "youtube",
 };
 
