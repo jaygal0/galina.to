@@ -4,17 +4,17 @@ import Image from "next/image";
 
 interface T {
   slug: string;
-  created: string;
+  startDate: string;
   heading: string;
   role: string;
 }
 
-export default function Project({ slug, created, heading, role }: T) {
+export default function Project({ slug, startDate, heading, role }: T) {
   return (
     <Link
       href={`/projects/${slug}`}
       className="flex flex-col gap-2"
-      datatype={created}
+      datatype={startDate}
     >
       <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl bg-slate-100 font-sans transition-all hover:scale-105">
         <Image
