@@ -28,7 +28,6 @@ export default function Page() {
   });
 
   return (
-    // TODO 1: Sort out projects - Content, styling and logic across all detail pages
     <FadeInComponent>
       <HeroText
         heading="Projects"

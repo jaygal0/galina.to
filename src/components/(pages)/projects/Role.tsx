@@ -19,6 +19,7 @@ export default function Role({ label }: Role) {
 
   return (
     <div className="inline-block whitespace-nowrap font-sans text-sm">
+      {/* TODO 2: Figure out the styling for each of the background colors for each role */}
       <div className={`rounded-md border px-2 py-1 text-sm ${role.bgColor}`}>
         {role.label}
       </div>

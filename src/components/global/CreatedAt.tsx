@@ -14,8 +14,8 @@ export default function CreatedAt({ created, updated }: Dates) {
   useEffect(() => {
     // Format date after the component has mounted on the client
     const formattedDate = updated
-      ? moment(new Date(updated)).format("MMMM Do YYYY, h:mm A")
-      : moment(new Date(created)).format("MMMM Do YYYY, h:mm A");
+      ? moment(new Date(updated)).format("MMM Do YYYY")
+      : moment(new Date(created)).format("MMM Do YYYY");
 
     setDateString(formattedDate);
   }, [created, updated]);

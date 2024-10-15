@@ -10,6 +10,7 @@ import AppUsed from "@/components/(pages)/projects/AppUsed";
 import CreatedAt from "@/components/global/CreatedAt";
 import Link from "next/link";
 import Duration from "@/components/(pages)/projects/Duration";
+import ViewWebsite from "@/components/(pages)/projects/ViewWebsite";
 
 // Update the path to point to `/data/projects`
 export async function generateStaticParams() {
@@ -42,6 +43,8 @@ function getPost({ slug }: { slug: string }) {
 export default function Page({ params }: any) {
   const props = getPost(params);
 
+  console.log(typeof props.fontMatter.website);
+
   return (
     <div className="prose w-full py-72 font-sans">
       <FadeInComponent>
@@ -53,37 +56,11 @@ export default function Page({ params }: any) {
         </Link>
         <div className="mb-10">
           <div className="flex items-center justify-between">
-            {/* Heading */}
             <h1 className="mb-0 mt-8 text-5xl font-bold">
               {props.fontMatter?.heading || "Project Title"}
             </h1>
-
-            {/* Conditionally render the "View website" link if `website` is available */}
             {props.fontMatter?.website && (
-              <a
-                href={props.fontMatter.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-4 flex items-center gap-2 rounded-md border border-blue-500 px-4 py-2 text-lg text-blue-500 transition-all duration-200 hover:bg-blue-500 hover:text-white"
-              >
-                View website
-                <span className="inline-block h-5 w-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="h-full w-full"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 3h8m0 0v8m0-8L10 14m-7 7h18"
-                    />
-                  </svg>
-                </span>
-              </a>
+              <ViewWebsite website={props.fontMatter.website} />
             )}
           </div>
           <CreatedAt
