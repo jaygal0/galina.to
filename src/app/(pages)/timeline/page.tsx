@@ -39,7 +39,6 @@ export default async function Page() {
                 heading={item.title}
                 desc={item.desc}
                 date={item.date}
-                category={item.category}
                 image={item.image}
                 buttonText={item.buttonText}
                 buttonLink={item.buttonLink}
