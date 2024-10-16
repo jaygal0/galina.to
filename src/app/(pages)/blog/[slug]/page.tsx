@@ -3,6 +3,9 @@ import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import FadeInComponent from "@/components/global/FadeIn";
+import Link from "next/link";
+import CreatedAt from "@/components/global/CreatedAt";
+import Category from "@/components/(pages)/blog/Category";
 
 export async function generateStaticParams() {
   // Update the path to read from "data/blogs"
@@ -37,15 +40,27 @@ export default async function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <article className="prose-slate mb-20 lg:prose-xl prose-pre:bg-slate-700">
+    <div className="prose mb-20 w-full py-72 font-sans">
       <FadeInComponent>
-        <a href="/blog" className="text-md font-thin underline">
-          &#60; Back to Blog
-        </a>
-        <h1 className="font-bold">{props.fontMatter.title}</h1>
-        {/* @ts-expect-error Server Component */}
-        <MDXRemote source={props.content} />
+        <Link
+          href="/blog"
+          className="text-md font-sans font-thin no-underline hover:underline"
+        >
+          &#60; Blog
+        </Link>
+        <div className="mb-10">
+          <h1 className="mb-0 mt-8 text-5xl font-bold">
+            {props.fontMatter.title}
+          </h1>
+          <CreatedAt
+            created={props.fontMatter.posted}
+            updated={props.fontMatter.updated}
+          />
+          <Category label={props.fontMatter.category} />
+          {/* @ts-expect-error Server Component */}
+          <MDXRemote source={props.content} />
+        </div>
       </FadeInComponent>
-    </article>
+    </div>
   );
 }

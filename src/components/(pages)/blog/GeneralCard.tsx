@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import moment from "moment";
+import CreatedAt from "@/components/global/CreatedAt";
+import Category from "./Category";
 
 export default function GeneralCardBlog({
   link,
@@ -21,13 +23,12 @@ export default function GeneralCardBlog({
 }) {
   return (
     <Link href={`/blog/${link}`}>
-      <div className="flex w-full flex-col rounded-3xl border-[2px] border-black p-20">
-        <h2 className="text-4xl">{title}</h2>
-        <div>{subtitle}.</div>
-        <div>Posted on: {moment(posted).format("MMM Do, yyy")}</div>
-        <div className="w-min rounded-md border bg-slate-400 px-3 py-1 text-sm">
-          {category}
-        </div>
+      <div className="group relative flex flex-col rounded-3xl border-black px-20 py-10 transition-all">
+        <div className="absolute inset-0 rounded-3xl border-2 border-black transition-all duration-300 group-hover:inset-[-2px] group-hover:border-4"></div>
+        <h2 className="relative z-10 text-4xl">{title}</h2>
+        <div className="relative z-10 mb-2 text-lg">{subtitle}.</div>
+        <CreatedAt created={posted} updated={updated} />
+        <Category label={category} />
       </div>
     </Link>
   );

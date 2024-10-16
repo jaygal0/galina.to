@@ -43,8 +43,6 @@ function getPost({ slug }: { slug: string }) {
 export default function Page({ params }: any) {
   const props = getPost(params);
 
-  console.log(typeof props.fontMatter.website);
-
   return (
     <div className="prose w-full py-72 font-sans">
       <FadeInComponent>

@@ -2,7 +2,6 @@ import HeroText from "../../../components/global/HeroText";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import CardBlog from "../../../components/CardBlog";
 import FadeInComponent from "@/components/global/FadeIn";
 import ContentDiv from "@/components/global/ContentDiv";
 import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
@@ -25,7 +24,6 @@ export default async function Page({ posts }: any) {
     };
   });
 
-  // TODO 2: Style blog page
   return (
     <FadeInComponent>
       <HeroText
