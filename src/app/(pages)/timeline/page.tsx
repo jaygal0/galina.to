@@ -22,29 +22,31 @@ export default async function Page() {
         heading="timeline"
         desc="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
       />
-      {data
-        .sort((a: any, b: any) => {
-          if (a.date > b.date) {
-            return 1;
-          } else {
-            return -1;
-          }
-        })
-        .map((item: any) => {
-          return (
-            <CardTimeLine
-              key={item._id}
-              start={item.start}
-              heading={item.title}
-              desc={item.desc}
-              date={item.date}
-              category={item.category}
-              image={item.image}
-              buttonText={item.buttonText}
-              buttonLink={item.buttonLink}
-            />
-          );
-        })}
+      <ol className="relative border-s border-gray-200 dark:border-gray-700">
+        {data
+          .sort((a: any, b: any) => {
+            if (a.date > b.date) {
+              return 1;
+            } else {
+              return -1;
+            }
+          })
+          .map((item: any) => {
+            return (
+              <CardTimeLine
+                key={item._id}
+                start={item.start}
+                heading={item.title}
+                desc={item.desc}
+                date={item.date}
+                category={item.category}
+                image={item.image}
+                buttonText={item.buttonText}
+                buttonLink={item.buttonLink}
+              />
+            );
+          })}
+      </ol>
     </FadeInComponent>
   );
 }

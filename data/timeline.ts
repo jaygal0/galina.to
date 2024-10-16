@@ -71,7 +71,7 @@ export default [
     title: "Making senior in 6 months",
     desc: "After going all-in and showing both competence and potential, I was able to land the role of Competence Lead UX/UI designer with SQLI Nordics AB",
     category: "career",
-    date: "2022-06-01",
+    date: "2022-05-01",
     buttonText: "View SQLI Nordics",
     buttonLink: "https://www.sqli.com/se-sv",
   },
