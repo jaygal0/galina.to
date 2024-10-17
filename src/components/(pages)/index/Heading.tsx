@@ -7,7 +7,7 @@ export default function Page() {
       <h1 className="-mb-3 font-sans text-2xl font-bold">
         Hi, I'm Joshua Galinato
       </h1>
-      <h2 className="flex flex-col text-8xl font-bold">
+      <h2 className="flex flex-col font-krona text-8xl font-bold">
         <span>
           I <HeadingUnderlined label="Design" />,
         </span>{" "}

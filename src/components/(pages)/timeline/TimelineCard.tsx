@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import moment from "moment";
 import Image from "next/image";
-import Button from "./Button";
+import Button from "@/components/global/Button";
 
-const Timeline = ({
+export default function TimelineCard({
   start,
   heading,
   desc,
@@ -21,9 +21,9 @@ const Timeline = ({
   image?: string;
   buttonText?: string;
   buttonLink?: string;
-}) => {
+}) {
   return (
-    <li className="mb-10 ms-4 px-16 py-6 font-sans">
+    <div className="mb-10 ms-4 px-16 py-6 font-sans">
       <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
       <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
         {moment(date).format("MMM Do YYYY")}
@@ -42,7 +42,8 @@ const Timeline = ({
       {buttonText && (
         <a
           href={buttonLink}
-          className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+          target="_blank"
+          className="mt-4 inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
         >
           {buttonText}
           <svg
@@ -54,16 +55,14 @@ const Timeline = ({
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
         </a>
       )}
-    </li>
+    </div>
   );
-};
-
-export default Timeline;
+}

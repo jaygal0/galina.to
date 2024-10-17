@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Navigation } from '../../../components/Navigation'
-import { ExternalLink, IndexMain } from '../../../styles'
-import Button from '../../../components/Button'
-import Image from 'next/image'
-import Meta from '../../../components/Meta'
+import React from "react";
+import styled from "styled-components";
+import { Navigation } from "../../../components/Navigation";
+import { ExternalLink, IndexMain } from "../../../styles";
+import Button from "../../../components/global/Button";
+import Image from "next/image";
+import Meta from "../../../components/Meta";
 
 const Container = styled.div`
   display: flex;
@@ -27,11 +27,11 @@ const Container = styled.div`
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     width: 100vw;
   }
-`
+`;
 const Title = styled.h1`
   width: 90%;
   font-size: ${({ theme }) => theme.type.size.title.lg};
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: ${({ theme }) => theme.type.height.md};
   margin-bottom: 0.8rem;
   text-transform: capitalize;
@@ -40,7 +40,7 @@ const Title = styled.h1`
   @media screen and (max-width: ${({ theme }) => theme.breakPoint.desksm}) {
     font-size: ${({ theme }) => theme.type.size.title.sm};
   }
-`
+`;
 const Text = styled.p`
   width: 90%;
   font-size: ${({ theme }) => theme.type.size.title.sm};
@@ -61,11 +61,11 @@ const Text = styled.p`
     font-weight: ${({ theme }) => theme.type.weight.bold};
     margin-bottom: 0.8rem;
   }
-`
+`;
 const ListWrapper = styled.ul`
   width: 85%;
   margin-bottom: 2.4rem;
-`
+`;
 const List = styled.li`
   font-size: ${({ theme }) => theme.type.size.title.sm};
   margin-left: 2.4rem;
@@ -81,12 +81,12 @@ const List = styled.li`
       cursor: pointer;
     }
   }
-`
+`;
 const Secondary = styled.div`
   width: 90%;
   font-size: ${({ theme }) => theme.type.size.body.md};
   margin: 3.2rem 0;
-`
+`;
 
 const unofficeHours = () => {
   return (
@@ -112,7 +112,7 @@ const unofficeHours = () => {
             cta="book a 30 minute call"
           />
           <Secondary>
-            Inspired by{' '}
+            Inspired by{" "}
             <ExternalLink href="https://davesmyth.com/" target="_blank">
               Dave Smyth
             </ExternalLink>
@@ -128,7 +128,7 @@ const unofficeHours = () => {
               target="_blank"
             >
               <List className="link">
-                Previous{' '}
+                Previous{" "}
                 <Image
                   src="/external-link.svg"
                   height={16}
@@ -144,7 +144,7 @@ const unofficeHours = () => {
               target="_blank"
             >
               <List className="link">
-                Next{' '}
+                Next{" "}
                 <Image
                   src="/external-link.svg"
                   height={16}
@@ -159,7 +159,7 @@ const unofficeHours = () => {
               target="_blank"
             >
               <List className="link">
-                Random{' '}
+                Random{" "}
                 <Image
                   src="/external-link.svg"
                   height={16}
@@ -174,7 +174,7 @@ const unofficeHours = () => {
               target="_blank"
             >
               <List className="link">
-                All sites{' '}
+                All sites{" "}
                 <Image
                   src="/external-link.svg"
                   height={16}
@@ -187,7 +187,7 @@ const unofficeHours = () => {
         </Container>
       </IndexMain>
     </>
-  )
-}
+  );
+};
 
-export default unofficeHours
+export default unofficeHours;
