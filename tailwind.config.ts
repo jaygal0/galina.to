@@ -8,13 +8,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        // Custom colors
+        primary: "#699b8f",
+        secondary: "",
+        bg: {
+          menu: "#ffe5d9",
+          home: "#dfe6e5",
+          projects: "#eef1f6",
+          now: "#dfe6e5",
+          timeline: "#dbe7e4",
+          blog: "#eef1f6",
+          contact: "#d6e2e9",
+        },
+        chips: {
+          one: "#ffaf91",
+          two: "#a4bcbc",
+          three: "#b8c9c8",
+          four: "#a1bfb9",
+          five: "#b5c4d2",
+          six: "#ffc8b2",
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"], // Add DM Sans as a sans font
+        sans: ["DM Sans", "sans-serif"],
         krona: ["Krona One", "sans-serif"],
         mono: ["Share Tech Monospace", "monospace"],
       },

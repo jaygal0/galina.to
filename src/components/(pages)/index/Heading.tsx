@@ -1,10 +1,9 @@
-import Link from "next/link";
 import HeadingUnderlined from "./HeadingUnderlined";
 
 export default function Page() {
   return (
     <div>
-      <h1 className="-mb-3 font-sans text-2xl font-bold">
+      <h1 className="text-primary -mb-3 font-sans text-3xl font-bold">
         Hi, I'm Joshua Galinato
       </h1>
       <h2 className="flex flex-col font-krona text-8xl font-bold">

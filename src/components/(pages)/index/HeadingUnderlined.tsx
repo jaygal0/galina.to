@@ -13,7 +13,7 @@ export default function HeadingUnderlined({ label, noTrack }: T) {
       >
         {label}
       </span>
-      <span className="absolute bottom-[-3px] left-0 z-0 h-2 w-full origin-left scale-x-0 bg-green-700 transition-transform duration-1000 ease-in-out group-hover:scale-x-100" />
+      <span className="bg-primary absolute bottom-[-3px] left-0 z-0 h-2 w-full origin-left scale-x-0 transition-transform duration-1000 ease-in-out group-hover:scale-x-100" />
     </Link>
   );
 }
