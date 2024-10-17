@@ -23,13 +23,6 @@ export default async function Page() {
       />
       <div className="relative border-s border-gray-200 dark:border-gray-700">
         {data
-          .sort((a: any, b: any) => {
-            if (a.date > b.date) {
-              return 1;
-            } else {
-              return -1;
-            }
-          })
           .map((item: any) => {
             return (
               <TimelineCard
@@ -43,6 +36,13 @@ export default async function Page() {
                 buttonLink={item.buttonLink}
               />
             );
+          })
+          .sort((a: any, b: any) => {
+            if (a.date > b.date) {
+              return 1;
+            } else {
+              return -1;
+            }
           })}
       </div>
     </FadeInComponent>

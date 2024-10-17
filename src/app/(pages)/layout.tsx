@@ -5,6 +5,8 @@ import NavigationMenu from "@/components/global/NavigationMenu";
 import { DM_Sans, Krona_One, Share_Tech_Mono } from "next/font/google";
 import { usePathname } from "next/navigation"; // Import usePathname
 
+// TODO 2: Figure out why the fonts aren't working. Do I need to have "use client" here?
+
 const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
