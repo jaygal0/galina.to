@@ -9,7 +9,7 @@ export default function HeroText({ heading, desc, now }: textComponents) {
       <div className="mb-8 pb-10 text-2xl leading-relaxed">{desc}</div>
       {now && (
         <div className="text-sm text-stone-700">
-          Last Updated: {moment(now).format("MMMM Do YYYY")}. Inspired by{" "}
+          Last Updated: {moment(now).format("MMM Do YYYY")}. Inspired by{" "}
           <a href="https://sive.rs/nowff" className="underline" target="_blank">
             Derek Sivers
           </a>

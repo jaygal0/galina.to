@@ -1,4 +1,4 @@
-import timelineData from "../../../../data/timeline";
+import timelineData from "../../../../data/timeline/timeline";
 
 export async function GET(req: Request) {
   const data = await timelineData;
