@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { BreakpointIndicator } from "@/components/global/BreakpointIndicator";
 import NavigationMenu from "@/components/global/NavigationMenu";
 import { DM_Sans, Krona_One, Share_Tech_Mono } from "next/font/google";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${kronaOne.className} ${dmSans.className} ${shareTechMono.className} relative`}
       >
+        <BreakpointIndicator />
         <NavigationMenu />
         <main>{children}</main>
       </body>

@@ -23,7 +23,7 @@ export default function TimelineCard({
   buttonLink?: string;
 }) {
   return (
-    <div className="mb-10 ms-4 px-4 py-6 font-sans">
+    <div className="mb-10 ms-4 px-4 font-sans md:py-6">
       <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-primary dark:bg-gray-700" />
       <div className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
         {moment(date).format("MMM Do YYYY")}

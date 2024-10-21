@@ -21,29 +21,31 @@ export default async function Page() {
         heading="timeline"
         desc="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
       />
-      <div className="relative border-s border-gray-200 dark:border-gray-700">
-        {data
-          .map((item: any) => {
-            return (
-              <TimelineCard
-                key={item._id}
-                start={item.start}
-                heading={item.title}
-                desc={item.desc}
-                date={item.date}
-                image={item.image}
-                buttonText={item.buttonText}
-                buttonLink={item.buttonLink}
-              />
-            );
-          })
-          .sort((a: any, b: any) => {
-            if (a.date > b.date) {
-              return -1;
-            } else {
-              return 1;
-            }
-          })}
+      <div className="px-8 pb-12">
+        <div className="relative border-s border-gray-300 dark:border-gray-700">
+          {data
+            .map((item: any) => {
+              return (
+                <TimelineCard
+                  key={item._id}
+                  start={item.start}
+                  heading={item.title}
+                  desc={item.desc}
+                  date={item.date}
+                  image={item.image}
+                  buttonText={item.buttonText}
+                  buttonLink={item.buttonLink}
+                />
+              );
+            })
+            .sort((a: any, b: any) => {
+              if (a.date > b.date) {
+                return -1;
+              } else {
+                return 1;
+              }
+            })}
+        </div>
       </div>
     </FadeInComponent>
   );

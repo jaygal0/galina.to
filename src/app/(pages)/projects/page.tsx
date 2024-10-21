@@ -33,7 +33,7 @@ export default function Page() {
         heading="Projects"
         desc="I consider everything I work on, from full-time roles to personal endeavors, as individual projects. Feel free to explore some of the work I’ve created in the past."
       />
-      <div className="grid grid-cols-3 gap-x-4 gap-y-8 pb-72">
+      <div className="grid gap-x-4 gap-y-8 px-6 pb-72 md:grid-cols-2 lg:grid-cols-3">
         {projects
           .map((project, index) => {
             return (

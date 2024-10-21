@@ -18,9 +18,9 @@ export default function Category({ label }: Category) {
   }; // Fallback to 'Project' if label is not found
 
   return (
-    <div className="mt-2 inline-block w-min whitespace-nowrap font-sans text-sm">
+    <div className="mt-2 inline-block w-min whitespace-nowrap font-sans">
       <div
-        className={`rounded-md border px-2 py-1 text-sm ${category.bgColor}`}
+        className={`rounded-md border px-2 py-1 text-xs md:text-sm ${category.bgColor}`}
       >
         {category.label}
       </div>

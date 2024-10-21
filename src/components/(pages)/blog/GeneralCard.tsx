@@ -23,10 +23,12 @@ export default function GeneralCardBlog({
 }) {
   return (
     <Link href={`/blog/${link}`}>
-      <div className="group relative flex flex-col rounded-3xl border-black px-20 py-10 transition-all">
+      <div className="group relative flex flex-col rounded-3xl border-black p-4 transition-all md:px-20 md:py-10">
         <div className="absolute inset-0 rounded-3xl border-2 border-black transition-all duration-300 group-hover:inset-[-2px] group-hover:border-4"></div>
-        <h2 className="relative z-10 text-4xl">{title}</h2>
-        <div className="relative z-10 mb-2 text-lg">{subtitle}.</div>
+        <h2 className="relative z-10 text-lg font-bold md:text-4xl">{title}</h2>
+        <div className="relative z-10 mb-2 text-base md:text-lg">
+          {subtitle}.
+        </div>
         <CreatedAt created={posted} updated={updated} />
         <Category label={category} />
       </div>

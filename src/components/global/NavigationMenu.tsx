@@ -73,7 +73,7 @@ export default function NavigationMenu() {
               <Link
                 key={index}
                 href={menu.href}
-                className="text-5xl font-bold"
+                className="text-4xl font-bold md:text-5xl"
                 onClick={toggleMenu}
               >
                 {menu.title}

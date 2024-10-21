@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import Number from "./(pages)/now/Number";
+import Time from "./(pages)/now/Time";
 
 export default function Age() {
   let a = moment(new Date());
@@ -37,27 +38,27 @@ export default function Age() {
     <div className="flex w-full justify-between font-mono">
       <div>
         <Number interval={addLeadingZeros(years, 2)} />
-        <p className="capitalize">years</p>
+        <Time time="years" />
       </div>
       <div>
         <Number interval={addLeadingZeros(months, 2)} />
-        <p className="capitalize">months</p>
+        <Time time="months" />
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(days, 2)} />
-        <p className="capitalize">days</p>
+        <Time time="days" />
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(hours, 2)} />
-        <p className="capitalize">hours</p>
+        <Time time="hours" />
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(minutes, 2)} />
-        <p className="capitalize">minutes</p>
+        <Time time="minutes" />
       </div>{" "}
       <div>
         <Number interval={addLeadingZeros(seconds, 2)} />
-        <p className="capitalize">seconds</p>
+        <Time time="seconds" />
       </div>
     </div>
   );
