@@ -58,7 +58,7 @@ export default function NavigationMenu() {
         Projects
       </Link>
       <div
-        className={`bg-bg-menu fixed right-0 top-0 z-50 flex h-full w-full transform items-center justify-center transition-transform duration-700 ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-full transform items-center justify-center bg-bg-menu transition-transform duration-700 ${
           isMenuOpen
             ? "pointer-events-auto translate-y-0"
             : "pointer-events-none -translate-y-full"
