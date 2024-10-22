@@ -44,7 +44,7 @@ export default function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <div className="prose w-full py-72 font-sans">
+    <div className="prose w-full px-6 py-72 font-sans md:px-0">
       <FadeInComponent>
         <Link
           href="/projects"
