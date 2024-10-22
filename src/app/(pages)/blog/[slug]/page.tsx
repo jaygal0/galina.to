@@ -6,6 +6,7 @@ import FadeInComponent from "@/components/global/FadeIn";
 import Link from "next/link";
 import CreatedAt from "@/components/global/CreatedAt";
 import Category from "@/components/(pages)/blog/Category";
+import Birthday from "@/components/(pages)/blog/Birthday";
 
 export async function generateStaticParams() {
   // Update the path to read from "data/blogs"
@@ -49,7 +50,7 @@ export default async function Page({ params }: any) {
           &#60; Blog
         </Link>
         <div className="mb-10">
-          <h1 className="mb-0 mt-8 text-5xl font-bold">
+          <h1 className="mb-3 mt-8 text-5xl font-bold">
             {props.fontMatter.title}
           </h1>
           <CreatedAt
@@ -59,6 +60,7 @@ export default async function Page({ params }: any) {
           <Category label={props.fontMatter.category} />
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />
+          {props.fontMatter.category == "birthday" && <Birthday />}
         </div>
       </FadeInComponent>
     </div>
