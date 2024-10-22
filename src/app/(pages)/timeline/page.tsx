@@ -22,6 +22,10 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const data = await getData();
+
+  // Sort data first by date (if date is a string, you may need to convert it to Date object)
+  const sortedData = data.sort((a: any, b: any) => (a.date > b.date ? 1 : -1));
+
   return (
     <FadeInComponent>
       <HeroText
@@ -30,27 +34,17 @@ export default async function Page() {
       />
       <div className="pb-12">
         <div className="relative w-screen border-s border-gray-300 sm:w-full dark:border-gray-700">
-          {data
-            .map((item: any) => {
-              return (
-                <TimelineCard
-                  key={item._id}
-                  heading={item.title}
-                  desc={item.desc}
-                  date={item.date}
-                  image={item.image}
-                  buttonText={item.buttonText}
-                  buttonLink={item.buttonLink}
-                />
-              );
-            })
-            .sort((a: any, b: any) => {
-              if (a.date > b.date) {
-                return -1;
-              } else {
-                return 1;
-              }
-            })}
+          {sortedData.map((item: any) => (
+            <TimelineCard
+              key={item._id} // Ensure a unique key
+              heading={item.title}
+              desc={item.desc}
+              date={item.date}
+              image={item.image}
+              buttonText={item.buttonText}
+              buttonLink={item.buttonLink}
+            />
+          ))}
         </div>
       </div>
     </FadeInComponent>
