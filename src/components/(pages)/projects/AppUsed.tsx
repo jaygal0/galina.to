@@ -31,6 +31,7 @@ const appsMap: Record<string, string> = {
   typescript: "TypeScript",
   vscode: "VS Code",
   youtube: "youtube",
+  github: "Github",
 };
 
 export default function AppUsed({ fontMatter }: Props) {
