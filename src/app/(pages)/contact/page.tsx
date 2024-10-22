@@ -1,6 +1,12 @@
 import FadeInComponent from "@/components/global/FadeIn";
 import HeroText from "@/components/global/HeroText";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Galina.to | Contact",
+  description: "Get in touch with me.",
+};
 
 export default function Page() {
   return (

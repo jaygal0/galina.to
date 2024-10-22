@@ -1,6 +1,7 @@
 import HeroText from "@/components/global/HeroText";
 import TimelineCard from "@/components/(pages)/timeline/TimelineCard";
 import FadeInComponent from "@/components/global/FadeIn";
+import { Metadata } from "next";
 
 async function getData() {
   const res = await fetch(`${process.env.WEB_SITE}/api/timeline`, {
@@ -12,6 +13,12 @@ async function getData() {
   }
   return data;
 }
+
+export const metadata: Metadata = {
+  title: "Galina.to | Timeline",
+  description:
+    "Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life.",
+};
 
 export default async function Page() {
   const data = await getData();

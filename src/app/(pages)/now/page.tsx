@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Age from "../../../components/Age";
+import Age from "../../../components/(pages)/now/Age";
 import HeroText from "@/components/global/HeroText";
 import GeneralCard from "../../../components/(pages)/now/GeneralCard";
 import FadeInComponent from "@/components/global/FadeIn";
 import CardData from "@/components/(pages)/now/CardData";
 import ContentDiv from "@/components/global/ContentDiv";
 import moment from "moment";
+import { Metadata } from "next";
 
 async function getChessData() {
   const res = await fetch("https://lichess.org/api/account", {
@@ -64,6 +64,11 @@ async function getNowData() {
   return data;
 }
 
+export const metadata: Metadata = {
+  title: "Galina.to | Now",
+  description: "Understand what's happening /now",
+};
+
 export default async function Page() {
   const lichess = await getChessData();
   const book = await getBookData();
@@ -75,8 +80,8 @@ export default async function Page() {
     <FadeInComponent>
       <HeroText
         heading="What I'm up to Now"
-        desc={now[0].desc}
-        now={now[0].date}
+        desc={now[now.length - 1].desc}
+        now={now[now.length - 1].date}
       />
       {/* TODO 3: Fade in content a little later to cater to information jumping */}
       <ContentDiv>
@@ -84,13 +89,19 @@ export default async function Page() {
           <Age />
         </GeneralCard>
         <GeneralCard heading="Location">
-          <CardData nowData={`${location[0].city}, ${location[0].country}`} />
+          <CardData
+            nowData={`${location[location.length - 1].city}, ${location[location.length - 1].country}`}
+          />
         </GeneralCard>
         <GeneralCard heading="Career">
-          <CardData nowData={`${career[0].role} at ${career[0].company}`} />
+          <CardData
+            nowData={`${career[career.length - 1].role} at ${career[career.length - 1].company}`}
+          />
         </GeneralCard>
         <GeneralCard heading="Reading">
-          <CardData nowData={`${book[0].title} by ${book[0].author}`} />
+          <CardData
+            nowData={`${book[book.length - 1].title} by ${book[book.length - 1].author}`}
+          />
         </GeneralCard>
         <GeneralCard heading="LiChess Rating">
           <CardData nowData={`Rapid: ${lichess.perfs.rapid.rating}`} />

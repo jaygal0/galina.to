@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import Number from "./(pages)/now/Number";
-import Time from "./(pages)/now/Time";
+import Number from "./Number";
+import Time from "./Time";
 
 export default function Age() {
   let a = moment(new Date());

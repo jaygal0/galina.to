@@ -4,6 +4,13 @@ import path from "path";
 import matter from "gray-matter";
 import FadeInComponent from "@/components/global/FadeIn";
 import Project from "@/components/(pages)/projects/Project";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Galina.to | Projects",
+  description:
+    "I consider everything I work on, from full-time roles to personal endeavors, as individual projects. Feel free to explore some of the work I’ve created in the past.",
+};
 
 export default function Page() {
   // Update the directory path to "data/projects"

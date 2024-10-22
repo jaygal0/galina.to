@@ -5,6 +5,13 @@ import matter from "gray-matter";
 import FadeInComponent from "@/components/global/FadeIn";
 import ContentDiv from "@/components/global/ContentDiv";
 import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Galina.to | Blog",
+  description:
+    "A collection of musings, insights, and spontaneous reflections—welcome to the blog where anything goes.",
+};
 
 export default async function Page({ posts }: any) {
   const blogDir = path.join("data", "blogs");
@@ -28,7 +35,7 @@ export default async function Page({ posts }: any) {
     <FadeInComponent>
       <HeroText
         heading="Blog"
-        desc="This is a description to let you know that I'm adding a projects page."
+        desc="A collection of musings, insights, and spontaneous reflections—welcome to the blog where anything goes."
       />
       <ContentDiv>
         {blogs

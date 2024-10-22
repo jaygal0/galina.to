@@ -29,7 +29,7 @@ export default [
   },
   {
     title: "Closing down the business",
-    desc: "After 6 years, 16,000,000+ total views, 85,000+ subscribers, and 700+ videos it was time to shut down the business. Unfortunately, we couldn't keep the business going, but I had learned a tremendous amount from the experience and grateful that I made the decision to start a company in the first place.",
+    desc: "After 6 years, 16 million total views, 85,000+ subscribers, and over 700 videos, it was time to close the business. Unfortunately, we couldn’t keep it running, but I gained invaluable experience and am grateful for the decision to start the company in the first place.",
     date: "2018-06-01",
   },
   {
@@ -76,7 +76,7 @@ export default [
   },
   {
     title: "A new addition to the family",
-    desc: "We decided to give our first dog a little sister to give her company",
+    desc: "We decided to get our first dog a little sister to keep her company.",
     date: "2022-10-10",
     image: "/dogs.jpg",
   },
