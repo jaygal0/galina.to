@@ -6,7 +6,7 @@ import Image from "next/image";
 import Button from "@/components/global/Button";
 
 export default function TimelineCard({
-  start,
+  key,
   heading,
   desc,
   date,
@@ -14,7 +14,7 @@ export default function TimelineCard({
   buttonText,
   buttonLink,
 }: {
-  start?: Boolean;
+  key: string;
   heading: string;
   desc: string;
   date: string;
@@ -23,7 +23,7 @@ export default function TimelineCard({
   buttonLink?: string;
 }) {
   return (
-    <div className="mb-10 ms-4 px-4 font-sans md:py-6">
+    <div key={key} className="mb-10 ms-4 px-4 font-sans md:py-6">
       <div className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border bg-primary dark:bg-gray-700" />
       <div className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
         {moment(date).format("MMM Do YYYY")}

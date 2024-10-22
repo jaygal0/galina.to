@@ -54,7 +54,7 @@ export default function Page({ params }: any) {
         </Link>
         <div className="mb-10">
           <div className="flex items-center justify-between">
-            <h1 className="mb-0 mt-8 text-5xl font-bold">
+            <h1 className="mb-0 mt-8 text-2xl font-bold md:text-5xl">
               {props.fontMatter?.heading || "Project Title"}
             </h1>
             {props.fontMatter?.website && (
@@ -65,7 +65,7 @@ export default function Page({ params }: any) {
             created={props.fontMatter.created}
             updated={props.fontMatter.updated}
           />
-          <p className="mb-4 text-2xl leading-normal">
+          <p className="mb-4 text-lg leading-normal md:text-2xl">
             {props.fontMatter.desc}
           </p>
           <div className="flex items-center gap-2">

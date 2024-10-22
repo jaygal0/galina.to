@@ -21,14 +21,13 @@ export default async function Page() {
         heading="timeline"
         desc="Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life."
       />
-      <div className="px-8 pb-12">
-        <div className="relative border-s border-gray-300 dark:border-gray-700">
+      <div className="pb-12">
+        <div className="relative w-screen border-s border-gray-300 sm:w-full dark:border-gray-700">
           {data
             .map((item: any) => {
               return (
                 <TimelineCard
                   key={item._id}
-                  start={item.start}
                   heading={item.title}
                   desc={item.desc}
                   date={item.date}
