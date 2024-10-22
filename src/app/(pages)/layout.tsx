@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   title: "Galina.to",
   description: "I design, develop and solve problems.",
   keywords: "Next.js, blog, thoughts, ideas, galinato, joshua",
+  icons: {
+    icon: "/favicon.ico",
+  },
   // Add other global metadata properties as needed
 };
 
@@ -37,12 +40,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Joshua Galinato" />
-      </Head>
       <body
         className={`${kronaOne.className} ${dmSans.className} ${shareTechMono.className} relative`}
       >
