@@ -1,6 +1,7 @@
+import { NextResponse } from "next/server";
 import locations from "../../../../data/now/location";
 
-export async function GET(req: Request) {
+export async function GET() {
   const data = await locations;
-  return Response.json(data);
+  return NextResponse.json(data);
 }

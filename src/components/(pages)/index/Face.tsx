@@ -67,7 +67,7 @@ export default function Face() {
       viewBox="0 0 265.06 279.34"
       className="-order-1 w-1/2 overflow-visible md:w-1/3 lg:order-1"
     >
-      <style jsx>
+      <style>
         {`
           .cls-1 {
             fill: #3a897a;

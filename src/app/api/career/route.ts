@@ -1,6 +1,7 @@
+import { NextResponse } from "next/server";
 import careers from "../../../../data/now/career";
 
-export async function GET(req: Request) {
+export async function GET() {
   const data = await careers;
-  return Response.json(data);
+  return NextResponse.json(data);
 }

@@ -12,7 +12,12 @@ const Button = ({
   secondary?: Boolean;
 }) => {
   return (
-    <a href={link} target="_blank" className={flex && "flex-start"}>
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      className={flex && "flex-start"}
+    >
       <div className={secondary && "secondary"}>{cta}</div>
     </a>
   );

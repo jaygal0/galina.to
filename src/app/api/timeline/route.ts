@@ -1,6 +1,7 @@
+import { NextResponse } from "next/server";
 import timelineData from "../../../../data/timeline/timeline";
 
-export async function GET(req: Request) {
+export async function GET() {
   const data = await timelineData;
-  return Response.json(data);
+  return NextResponse.json(data);
 }

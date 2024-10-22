@@ -107,7 +107,12 @@ export default async function Page() {
           <CardData nowData={`Rapid: ${lichess.perfs.rapid.rating}`} />
           <p className="mt-2 md:mt-6">
             Live from{" "}
-            <a href={lichess.url} className="underline" target="_blank">
+            <a
+              href={lichess.url}
+              className="underline"
+              target="_blank"
+              rel="noreferrer"
+            >
               LiChess
             </a>{" "}
           </p>

@@ -14,7 +14,12 @@ export default function HeroText({ heading, desc, now }: textComponents) {
       {now && (
         <div className="text-sm text-stone-700">
           Last Updated: {moment(now).format("MMM Do YYYY")}. Inspired by{" "}
-          <a href="https://sive.rs/nowff" className="underline" target="_blank">
+          <a
+            href="https://sive.rs/nowff"
+            className="underline"
+            target="_blank"
+            rel="noreferrer"
+          >
             Derek Sivers
           </a>
         </div>

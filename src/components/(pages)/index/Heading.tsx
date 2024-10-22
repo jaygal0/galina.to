@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <div>
       <h1 className="text-md mb-1 font-sans font-bold text-primary md:text-xl xl:text-3xl">
-        Hi, I'm Joshua Galinato
+        Hi, I&apos;m Joshua Galinato
       </h1>
       <h2 className="flex flex-col text-5xl font-bold xl:text-7xl 2xl:text-8xl">
         <span>
