@@ -9,4 +9,9 @@ export default [
     author: "Tom Kelley",
     date: "2024-10-22",
   },
+  {
+    title: "How To Get To The Top of Google",
+    author: "Tim Cameron-Kitchen",
+    date: "2024-12-30",
+  },
 ];

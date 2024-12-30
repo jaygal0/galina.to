@@ -11,4 +11,8 @@ export default [
     desc: "It has been a while since I last did a 'Weekly Review', that's when I usually go through my files, clean things up and update my /now page. I need to get into the habit of doing this on a weekly basis.",
     date: "2024-11-24",
   },
+  {
+    desc: "It has been a busy festive period and I'm glad things have tapered down. I'm looking forward to resting for the remainder of this period.",
+    date: "2024-11-24",
+  },
 ];
