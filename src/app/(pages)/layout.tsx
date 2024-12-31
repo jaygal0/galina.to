@@ -3,9 +3,7 @@ import { BreakpointIndicator } from "@/components/global/BreakpointIndicator";
 import NavigationMenu from "@/components/global/NavigationMenu";
 import { DM_Sans, Krona_One, Share_Tech_Mono } from "next/font/google";
 import { Metadata } from "next";
-import Head from "next/head";
-
-// TODO 2: Figure out why the fonts aren't working. Do I need to have "use client" here?
+import PlausibleProvider from "next-plausible";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -41,6 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <PlausibleProvider domain="galina.to" />
+      </head>
       <body
         className={`${kronaOne.className} ${dmSans.className} ${shareTechMono.className} relative`}
       >
