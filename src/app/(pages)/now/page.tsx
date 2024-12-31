@@ -4,8 +4,13 @@ import GeneralCard from "../../../components/(pages)/now/GeneralCard";
 import FadeInComponent from "@/components/global/FadeIn";
 import CardData from "@/components/(pages)/now/CardData";
 import ContentDiv from "@/components/global/ContentDiv";
-import moment from "moment";
 import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Joshua Galinato | Now",
+  description:
+    "Find out what's happening now with Joshua Galinato on his /now page.",
+};
 
 async function getChessData() {
   const res = await fetch("https://lichess.org/api/account", {
@@ -63,11 +68,6 @@ async function getNowData() {
   }
   return data;
 }
-
-export const metadata: Metadata = {
-  title: "Galina.to | Now",
-  description: "Understand what's happening /now",
-};
 
 export default async function Page() {
   const lichess = await getChessData();

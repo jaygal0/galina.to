@@ -24,9 +24,10 @@ const kronaOne = Krona_One({
 });
 
 export const metadata: Metadata = {
-  title: "Galina.to",
-  description: "I design, develop and solve problems.",
-  keywords: "Next.js, blog, thoughts, ideas, galinato, joshua",
+  title: "Joshua Galinato | Creative Designer & Problem-Solving Tinkerer",
+  description:
+    "Discover the inventive world of Joshua Galinato, a creative designer and passionate tinkerer specializing in design and problem-solving. Explore projects, ideas, and more at https://galina.to.",
+  keywords: "blog, thoughts, ideas, galinato, joshua, joshua galinato",
   icons: {
     icon: "/favicon.ico",
   },

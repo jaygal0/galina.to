@@ -15,7 +15,7 @@ async function getData() {
 }
 
 export const metadata: Metadata = {
-  title: "Galina.to | Timeline",
+  title: "Joshua Galinato | Timeline",
   description:
     "Instead of boring you with an 'About' page, here's a timeline of some of the interesting events that have happened in my life.",
 };

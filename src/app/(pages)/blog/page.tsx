@@ -8,7 +8,7 @@ import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Galina.to | Blog",
+  title: "Joshua Galinato | Blog",
   description:
     "A collection of musings, insights, and spontaneous reflections—welcome to the blog where anything goes.",
 };
