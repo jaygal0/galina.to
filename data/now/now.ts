@@ -13,6 +13,10 @@ export default [
   },
   {
     desc: "It has been a busy festive period and I'm glad things have tapered down. I'm looking forward to resting for the remainder of this period.",
-    date: "2024-11-24",
+    date: "2024-12-30",
+  },
+  {
+    desc: "Welcoming the start of the new year with eagerness to accomplish things and move closer to my goals.",
+    date: "2025-01-01",
   },
 ];
