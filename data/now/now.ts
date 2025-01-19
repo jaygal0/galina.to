@@ -19,4 +19,8 @@ export default [
     desc: "Welcoming the start of the new year with eagerness to accomplish things and move closer to my goals.",
     date: "2025-01-01",
   },
+  {
+    desc: "It's already the third week to the new year and I'm a victim of project overload. I need to remind myself to priorities the important projects and be okay with not working on anything else.",
+    date: "2025-01-19",
+  },
 ];
