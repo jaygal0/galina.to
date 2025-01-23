@@ -29,6 +29,22 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  openGraph: {
+    title: "Joshua Galinato | Creative Designer & Problem-Solving Tinkerer",
+    description:
+      "Discover the inventive world of Joshua Galinato, a creative designer and passionate tinkerer specializing in design and problem-solving. Explore projects, ideas, and more at https://galina.to.",
+    url: "https://www.galina.to",
+    siteName: "Galina.to",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Joshua Galinato",
+      },
+    ],
+    locale: "en",
+  },
   // Add other global metadata properties as needed
 };
 
