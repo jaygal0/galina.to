@@ -20,7 +20,11 @@ export default [
     date: "2025-01-01",
   },
   {
-    desc: "It's already the third week to the new year and I'm a victim of project overload. I need to remind myself to priorities the important projects and be okay with not working on anything else.",
+    desc: "It's already the third week to the new year and I'm a victim of project overload. I need to remind myself to prioritise the important projects and be okay with not working on anything else.",
     date: "2025-01-19",
+  },
+  {
+    desc: "Slowly checking things off one task at a time. Just how it should be.",
+    date: "2025-01-26",
   },
 ];
