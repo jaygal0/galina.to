@@ -46,7 +46,7 @@ export default function AppUsed({ fontMatter }: Props) {
             return appsMap[app] ? (
               <div key={app} className="flex flex-col items-center gap-0">
                 <Image
-                  src={`/app-${app}.jpg`}
+                  src={`/app/${app}.jpg`}
                   alt={appsMap[app]} // Use the human-readable name from appsMap for alt text
                   width={60}
                   height={60}

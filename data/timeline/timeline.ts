@@ -18,7 +18,7 @@ export default [
     title: "2,000,000 views and counting",
     desc: "With the YouTube channel views and subscribers steadily rising, new opportunities kept on opening up for the business.",
     date: "2012-07-01",
-    image: "/timeline-reload.jpg",
+    image: "/timeline/reload.jpg",
   },
   {
     title: "Taking the company to America",
@@ -36,7 +36,7 @@ export default [
     title: "Entering a new market",
     desc: "Straight after shutting down the company a new opportunity presented itself to be the Creative Director for a relatively new company in the vegan industry. It was something totally new and I was excited for a new challenge.",
     date: "2018-10-01",
-    image: "/vegansofldn-cover.jpg",
+    image: "/project-vegans-of-ldn/cover.jpg",
   },
   {
     title: "A change of scenary",
@@ -57,7 +57,7 @@ export default [
     title: "A new career path",
     desc: "I managed to land a new role in a new field - UX/UI Designer for a Digital Agency in Sweden. It was something completely different to what I had done in the past, but I had always wanted to work in the field of tech. Again, I embraced a new challenge.",
     date: "2021-04-01",
-    image: "/sqli-cover.jpg",
+    image: "/project-sqli/cover.jpg",
   },
   {
     title: "Making senior in 6 months",
@@ -78,12 +78,12 @@ export default [
     title: "A new addition to the family",
     desc: "We decided to get our first dog a little sister to keep her company.",
     date: "2022-10-10",
-    image: "/dogs.jpg",
+    image: "/timeline/dogs.jpg",
   },
   {
     title: "Tying the knot",
     desc: "After a 10 year relationship, we finally got to tie the knot and celebrate our marriage with family and friends.",
     date: "2023-07-23",
-    image: "/wedding.jpg",
+    image: "/timeline/wedding.jpg",
   },
 ];

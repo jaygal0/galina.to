@@ -8,7 +8,7 @@ export default function ViewWebsite({ website }: ViewWebsiteProps) {
       href={website}
       target="_blank"
       rel="noopener noreferrer"
-      className="ml-4 flex items-center gap-2 rounded-md border border-blue-500 px-4 py-2 text-lg text-blue-500 transition-all duration-200 hover:bg-blue-500 hover:text-white"
+      className="flex w-fit items-center gap-2 rounded-md border border-blue-500 px-4 py-2 text-lg text-blue-500 transition-all duration-200 hover:bg-blue-500 hover:text-white"
     >
       View website
       <span className="inline-block h-5 w-5">

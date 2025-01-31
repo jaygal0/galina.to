@@ -44,7 +44,7 @@ export default function Page({ params }: any) {
   const props = getPost(params);
 
   return (
-    <div className="prose w-full px-6 py-72 font-sans md:px-0">
+    <div className="prose-lg w-full px-6 py-72 font-sans md:px-4">
       <FadeInComponent>
         <Link
           href="/projects"
@@ -53,7 +53,7 @@ export default function Page({ params }: any) {
           &#60; Projects
         </Link>
         <div className="mb-10">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <h1 className="mb-0 mt-8 text-2xl font-bold md:text-5xl">
               {props.fontMatter?.heading || "Project Title"}
             </h1>
@@ -68,7 +68,7 @@ export default function Page({ params }: any) {
           <p className="mb-4 text-lg leading-normal md:text-2xl">
             {props.fontMatter.desc}
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Role label={props.fontMatter.role} />
             <Duration
               startDate={props.fontMatter.startDate}
@@ -78,7 +78,7 @@ export default function Page({ params }: any) {
         </div>
         <div className="relative mb-20 aspect-video w-full">
           <Image
-            src={`/${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "")}-hero.jpg`}
+            src={`/project-${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "-")}/hero.jpg`}
             alt={`${props.fontMatter.heading}`}
             fill
             style={{ objectFit: "cover" }}
