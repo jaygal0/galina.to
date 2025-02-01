@@ -27,4 +27,8 @@ export default [
     desc: "Slowly checking things off one task at a time. Just how it should be.",
     date: "2025-01-26",
   },
+  {
+    desc: "For the next three months I've commited to a new diet and workout plan that's quite strict. I hope I'll be able to stick to it, as well as notice the benefits from the lifestyle change.",
+    date: "2025-02-01",
+  },
 ];

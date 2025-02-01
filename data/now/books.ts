@@ -14,4 +14,9 @@ export default [
     author: "Tim Cameron-Kitchen",
     date: "2024-12-30",
   },
+  {
+    title: "HBR's 10 Must Reads on Mental Toughness",
+    author: "Martin Seligman",
+    date: "2025-02-01",
+  },
 ];
