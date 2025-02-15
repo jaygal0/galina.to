@@ -40,6 +40,13 @@ const config: Config = {
         krona: ["Krona One", "sans-serif"],
         mono: ["Share Tech Monospace", "monospace"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "100%", // Remove the default max-width
+          },
+        },
+      },
     },
     keyframes: {
       bounce: {
@@ -57,4 +64,5 @@ const config: Config = {
   },
   plugins: [require("@tailwindcss/typography")],
 };
+
 export default config;
