@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import FadeInComponent from "@/components/global/FadeIn";
+import HeroText from "@/components/global/HeroText";
+import BackButton from "@/components/global/BackButton";
 
-export default function LoginPage() {
+export default function Page() {
   const [password, setPassword] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -28,14 +31,26 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Enter password"
+    <FadeInComponent>
+      <HeroText
+        heading="Protected Content"
+        desc="The content you are trying to view requires a password in order to gain access."
+        isBackButton
       />
-      <button type="submit">Login</button>
-    </form>
+      <div className="w-full px-6 pb-8 font-sans md:px-40">
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+            className="rounded-md p-2"
+          />
+          <button type="submit" className="rounded-md bg-black p-2 text-white">
+            Submit
+          </button>
+        </form>
+      </div>
+    </FadeInComponent>
   );
 }
