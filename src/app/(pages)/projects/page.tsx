@@ -16,10 +16,11 @@ export default function Page() {
   // Update the directory path to "data/projects"
   const projectsDir = path.join("data", "projects");
 
-  // Read all files from the "data/projects" directory
-  const files = fs.readdirSync(projectsDir);
+  const files = fs.readdirSync(projectsDir).filter((filename) => {
+    const fullPath = path.join(projectsDir, filename);
+    return !fs.statSync(fullPath).isDirectory(); // Only include files, not folders
+  });
 
-  // Map over the files and extract front matter and slug
   const projects = files.map((filename) => {
     const fileContent = fs.readFileSync(
       path.join(projectsDir, filename),
@@ -29,8 +30,8 @@ export default function Page() {
     const { data: frontMatter } = matter(fileContent);
 
     return {
-      meta: frontMatter, // Extracted front matter metadata
-      slug: filename.replace(".mdx", ""), // Create slug from filename
+      meta: frontMatter,
+      slug: filename.replace(".mdx", ""),
     };
   });
 

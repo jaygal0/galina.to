@@ -3,7 +3,7 @@ import { serialize } from "cookie";
 
 export async function POST(req: Request) {
   const { password } = await req.json();
-  const validPassword = process.env.PROTECTED_PASSWORD; // Store in .env file
+  const validPassword = process.env.PROTECTED_PASSWORD;
 
   if (password !== validPassword) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

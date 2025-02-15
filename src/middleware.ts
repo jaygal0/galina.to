@@ -3,11 +3,7 @@ import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
   const protectedRoutes = [
-    "/protected/casestudy1",
-    "/protected/casestudy2",
-    "/protected/casestudy3",
-    "/protected/casestudy4",
-    "/protected/casestudy5",
+    "/projects/case-study/protected/volvo-building-an-ecom-platform",
   ];
 
   const cookieStore = req.cookies; // Use cookies API
@@ -31,5 +27,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/protected/:path*"], // Protect all `/protected/*` routes
+  matcher: ["/projects/case-study/protected/:path*"], // Protect all `/protected/*` routes
 };
