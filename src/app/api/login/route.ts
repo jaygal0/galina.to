@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   }
 
   // Create a session cookie with a 1-hour expiration
-  const expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+  const expires = new Date(Date.now() + 60 * 60 * 1000);
   const cookie = serialize("auth_token", "valid", {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
