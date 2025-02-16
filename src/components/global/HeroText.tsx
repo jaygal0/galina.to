@@ -1,10 +1,17 @@
 "use client";
 import moment from "moment";
 import { textComponents } from "../../types";
+import BackButton from "./BackButton";
 
-export default function HeroText({ heading, desc, now }: textComponents) {
+export default function HeroText({
+  heading,
+  desc,
+  now,
+  isBackButton,
+}: textComponents) {
   return (
     <div className="w-full px-6 pb-8 pt-56 font-sans md:px-40 md:pb-12 md:pt-72">
+      {isBackButton && <BackButton />}
       <h1 className="mb-4 text-3xl font-bold capitalize md:text-5xl">
         {heading}
       </h1>

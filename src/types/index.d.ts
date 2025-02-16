@@ -19,6 +19,7 @@ export type textComponents = {
   desc: string;
   ctas?: boolean;
   now?: any;
+  isBackButton?: boolean;
 };
 
 export type EmailData = {
