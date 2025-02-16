@@ -3,10 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
-import Image from "next/image";
 import FadeInComponent from "@/components/global/FadeIn";
 import Role from "@/components/(pages)/projects/Role";
-import AppUsed from "@/components/(pages)/projects/AppUsed";
 import CreatedAt from "@/components/global/CreatedAt";
 import Duration from "@/components/(pages)/projects/Duration";
 import BackButton from "@/components/global/BackButton";
