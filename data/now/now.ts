@@ -31,4 +31,8 @@ export default [
     desc: "For the next three months I've commited to a new diet and workout plan that's quite strict. I hope I'll be able to stick to it, as well as notice the benefits from the lifestyle change.",
     date: "2025-02-01",
   },
+  {
+    desc: "2 weeks have past with the new diet and workout plan and I can definitely tell the difference when it comes to my energy levels. Will I continue past the 3 months? Probably not, but it has definitely opened my eyes to eating healthier in general.",
+    date: "2025-02-16",
+  },
 ];
