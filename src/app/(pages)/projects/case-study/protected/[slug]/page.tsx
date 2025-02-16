@@ -64,18 +64,6 @@ export default function Page({ params }: any) {
             />
           </div>
         </div>
-        <div className="relative mb-20 aspect-video w-full">
-          <Image
-            src={`/projects/case-study/${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "-")}/hero.jpg`}
-            alt={`${props.fontMatter.heading}`}
-            fill
-            style={{ objectFit: "cover" }}
-            className="mb-20 aspect-video rounded-3xl border"
-          />
-        </div>
-        {props.fontMatter.apps && (
-          <AppUsed fontMatter={props.fontMatter.apps} />
-        )}
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />
