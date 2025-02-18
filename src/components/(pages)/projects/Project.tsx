@@ -18,7 +18,7 @@ export default function Project({ slug, startDate, heading, role }: T) {
     >
       <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl bg-slate-100 font-sans transition-all hover:scale-105">
         <Image
-          src={`/project-${heading.toLowerCase().replace(/\s+/g, "-")}/cover.jpg`}
+          src={`/projects/${heading.toLowerCase().replace(/\s+/g, "-")}/cover.jpg`}
           alt={heading}
           fill
           style={{ objectFit: "cover" }}

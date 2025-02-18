@@ -78,7 +78,7 @@ export default function Page({ params }: any) {
         </div>
         <div className="relative mb-20 aspect-video w-full">
           <Image
-            src={`/project-${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "-")}/hero.jpg`}
+            src={`/projects/${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "-")}/hero.jpg`}
             alt={`${props.fontMatter.heading}`}
             fill
             style={{ objectFit: "cover" }}
