@@ -36,7 +36,7 @@ export default [
     date: "2025-02-16",
   },
   {
-    desc: "It's getting a littler warmer and brigther outside. It seems that winter is almost behind us now.",
+    desc: "It's getting a littler warmer and brighter outside. It seems that winter is almost behind us now.",
     date: "2025-03-09",
   },
 ];
