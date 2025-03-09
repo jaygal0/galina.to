@@ -35,4 +35,8 @@ export default [
     desc: "2 weeks have past with the new diet and workout plan and I can definitely tell the difference when it comes to my energy levels. Will I continue past the 3 months? Probably not, but it has definitely opened my eyes to eating healthier in general.",
     date: "2025-02-16",
   },
+  {
+    desc: "It's getting a littler warmer and brigther outside. It seems that winter is almost behind us now.",
+    date: "2025-03-09",
+  },
 ];
