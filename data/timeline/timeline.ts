@@ -36,7 +36,7 @@ export default [
     title: "Entering a new market",
     desc: "Straight after shutting down the company a new opportunity presented itself to be the Creative Director for a relatively new company in the vegan industry. It was something totally new and I was excited for a new challenge.",
     date: "2018-10-01",
-    image: "/project-vegans-of-ldn/cover.jpg",
+    image: "/projects/vegans-of-ldn/cover.jpg",
   },
   {
     title: "A change of scenary",
@@ -57,7 +57,7 @@ export default [
     title: "A new career path",
     desc: "I managed to land a new role in a new field - UX/UI Designer for a Digital Agency in Sweden. It was something completely different to what I had done in the past, but I had always wanted to work in the field of tech. Again, I embraced a new challenge.",
     date: "2021-04-01",
-    image: "/project-sqli/cover.jpg",
+    image: "/projects/sqli/cover.jpg",
   },
   {
     title: "Making senior in 6 months",
@@ -70,7 +70,7 @@ export default [
     title: "Joining a new small team",
     desc: "A new and exciting opportunity presented itself and I was able to land the UX Lead Designer role with Orbi. Being the 8th hire in the relatively new company, I'm excited to both grow in my role as well as the company itself.",
     date: "2022-06-01",
-    image: "/orbi-cover.jpg",
+    image: "/projects/orbi/cover.jpg",
     buttonText: "View Orbi",
     buttonLink: "https://www.orbiapp.io/",
   },
