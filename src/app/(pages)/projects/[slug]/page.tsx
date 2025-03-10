@@ -11,6 +11,7 @@ import CreatedAt from "@/components/global/CreatedAt";
 import Link from "next/link";
 import Duration from "@/components/(pages)/projects/Duration";
 import ViewWebsite from "@/components/(pages)/projects/ViewWebsite";
+import Skills from "@/components/(pages)/projects/Skills";
 
 // Update the path to point to `/data/projects`
 export async function generateStaticParams() {
@@ -85,8 +86,11 @@ export default function Page({ params }: any) {
             className="mb-20 aspect-video rounded-3xl border"
           />
         </div>
-        {props.fontMatter.apps && (
+        {props.fontMatter.skills && (
           <AppUsed fontMatter={props.fontMatter.apps} />
+        )}
+        {props.fontMatter.skills && (
+          <Skills fontMatter={props.fontMatter.skills} />
         )}
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}
