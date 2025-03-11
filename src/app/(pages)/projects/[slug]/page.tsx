@@ -96,15 +96,15 @@ export default function Page({ params }: any) {
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />
         </div>
-        <div className="mt-12 flex justify-between rounded-md bg-slate-200 p-8 py-4 text-lg">
+        <div className="mt-12 flex justify-between rounded-md bg-slate-200 p-6 py-4 text-sm md:text-lg">
           {props.fontMatter.previous.link !== "" ? (
             <Link href={props.fontMatter.previous.link || ""}>
-              Previous: {props.fontMatter.previous.name}
+              &lsaquo; {props.fontMatter.previous.name}
             </Link>
           ) : null}
           {props.fontMatter.next.link !== "" ? (
             <Link href={props.fontMatter.next.link || ""}>
-              Next: {props.fontMatter.next.name}
+              {props.fontMatter.next.name} &rsaquo;
             </Link>
           ) : null}
         </div>
