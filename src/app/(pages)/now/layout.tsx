@@ -7,7 +7,9 @@ export default function Layout({
 }>) {
   return (
     <div className="bg-bg-now">
-      <div className="mx-auto max-w-screen-lg">{children}</div>;
+      <div className="mx-auto min-h-screen max-w-screen-lg pb-8">
+        {children}
+      </div>
     </div>
   );
 }
