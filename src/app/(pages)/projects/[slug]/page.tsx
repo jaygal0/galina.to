@@ -15,14 +15,16 @@ import Skills from "@/components/(pages)/projects/Skills";
 
 // Update the path to point to `/data/projects`
 export async function generateStaticParams() {
-  // Read the files from the `data/projects` directory
-  const files = fs.readdirSync(path.join("data", "projects"));
+  const dirPath = path.join("data", "projects");
 
-  const paths = files.map((filename) => ({
-    slug: filename.replace(".mdx", ""),
-  }));
+  const files = fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .filter((file) => file.isFile() && file.name.endsWith(".mdx")) // ✅ Only .mdx files
+    .map((file) => ({
+      slug: file.name.replace(".mdx", ""),
+    }));
 
-  return paths;
+  return files;
 }
 
 function getPost({ slug }: { slug: string }) {

@@ -10,15 +10,16 @@ import Duration from "@/components/(pages)/projects/Duration";
 import BackButton from "@/components/global/BackButton";
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(
-    path.join("data", "projects", "case-study", "protected"),
-  );
+  const dirPath = path.join("data", "projects", "case-study", "protected");
 
-  const paths = files.map((filename) => ({
-    slug: filename.replace(".mdx", ""),
-  }));
+  const files = fs
+    .readdirSync(dirPath, { withFileTypes: true })
+    .filter((file) => file.isFile() && file.name.endsWith(".mdx")) // ✅ Only .mdx files
+    .map((file) => ({
+      slug: file.name.replace(".mdx", ""),
+    }));
 
-  return paths;
+  return files;
 }
 
 function getPost({ slug }: { slug: string }) {
