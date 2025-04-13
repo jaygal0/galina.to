@@ -19,4 +19,9 @@ export default [
     author: "Martin Seligman",
     date: "2025-02-01",
   },
+  {
+    title: "Stop Thinking Like a Freelancer",
+    author: "Liam Veitch",
+    date: "2025-04-13",
+  },
 ];

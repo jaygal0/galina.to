@@ -39,4 +39,8 @@ export default [
     desc: "It's getting a littler warmer and brighter outside. It seems that winter is almost behind us now.",
     date: "2025-03-09",
   },
+  {
+    desc: "Taking it easy as it's the weekend. Disconnecting is just as important",
+    date: "2025-04-13",
+  },
 ];
