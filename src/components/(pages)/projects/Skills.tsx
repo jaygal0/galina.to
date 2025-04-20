@@ -52,7 +52,7 @@ export default function Skills({ fontMatter }: Props) {
 
   return (
     <>
-      <div className="my-4 rounded-3xl bg-slate-200 p-6 md:hidden">
+      <div className="my-4 min-w-0 flex-1 rounded-3xl bg-slate-200 p-6 md:hidden">
         <h2 className="mb-2 mt-0">Skills Applied</h2>
         <div className="flex flex-wrap gap-3">
           {visibleSkills.map((skill: string) =>
@@ -79,7 +79,7 @@ export default function Skills({ fontMatter }: Props) {
 
       {/* Show full amount if on a desktop */}
 
-      <div className="my-4 hidden rounded-3xl bg-slate-200 p-6 md:block">
+      <div className="hidden min-w-0 flex-1 rounded-3xl bg-slate-200 p-6 md:block">
         <h2 className="mb-2 mt-0">Skills Applied</h2>
         <div className="flex flex-wrap gap-3">
           {skills.map((skill: string) =>

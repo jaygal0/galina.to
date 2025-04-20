@@ -36,10 +36,9 @@ const appsMap: Record<string, string> = {
 
 export default function AppUsed({ fontMatter }: Props) {
   return (
-    <div className="mb-2 rounded-3xl bg-slate-200 p-6">
+    <div className="min-w-0 flex-1 rounded-3xl bg-slate-200 p-6">
       <h2 className="my-0">Apps used</h2>
       <div className="flex flex-wrap gap-10 gap-y-4">
-        {/* Sort the apps array alphabetically */}
         {fontMatter
           .sort((a: string, b: string) => a.localeCompare(b))
           .map((app: string) => {
@@ -47,14 +46,14 @@ export default function AppUsed({ fontMatter }: Props) {
               <div key={app} className="flex flex-col items-center gap-0">
                 <Image
                   src={`/app/${app}.jpg`}
-                  alt={appsMap[app]} // Use the human-readable name from appsMap for alt text
+                  alt={appsMap[app]}
                   width={60}
                   height={60}
                   className="my-2 rounded-xl"
                   quality={100}
                 />
                 <p className="my-0 text-center text-sm capitalize">
-                  {appsMap[app]} {/* Display the human-readable name */}
+                  {appsMap[app]}
                 </p>
               </div>
             ) : null;

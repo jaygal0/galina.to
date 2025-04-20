@@ -88,12 +88,14 @@ export default function Page({ params }: any) {
             className="mb-20 aspect-video rounded-3xl border"
           />
         </div>
-        {props.fontMatter.skills && (
-          <AppUsed fontMatter={props.fontMatter.apps} />
-        )}
-        {props.fontMatter.skills && (
-          <Skills fontMatter={props.fontMatter.skills} />
-        )}
+        <div className="flex flex-col items-stretch justify-start gap-2 md:flex-row">
+          {props.fontMatter.skills && (
+            <AppUsed fontMatter={props.fontMatter.apps} />
+          )}
+          {props.fontMatter.skills && (
+            <Skills fontMatter={props.fontMatter.skills} />
+          )}
+        </div>
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />
