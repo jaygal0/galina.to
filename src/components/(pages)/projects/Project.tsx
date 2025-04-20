@@ -24,7 +24,7 @@ export default function Project({ slug, startDate, heading, role }: T) {
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="flex w-full items-center justify-between px-4">
+      <div className="flex w-full items-start justify-between px-4">
         <div className="font-sans text-lg font-bold">{heading}</div>
         <Role label={role} />
       </div>
