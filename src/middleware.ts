@@ -4,7 +4,6 @@ import type { NextRequest } from "next/server";
 export function middleware(req: NextRequest) {
   const protectedRoutes = [
     "/projects/case-study/protected/volvo-building-an-ecommerce-platform",
-    "/projects/case-study/protected/gamifying-a-convention",
   ];
 
   const cookieStore = req.cookies; // Use cookies API

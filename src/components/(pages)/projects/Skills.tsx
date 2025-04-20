@@ -80,7 +80,7 @@ export default function Skills({ fontMatter }: Props) {
       {/* Show full amount if on a desktop */}
 
       <div className="hidden min-w-0 flex-1 rounded-3xl bg-slate-200 p-6 md:block">
-        <h2 className="mb-2 mt-0">Skills Applied</h2>
+        <h3 className="mb-2 mt-0">Skills Applied</h3>
         <div className="flex flex-wrap gap-3">
           {skills.map((skill: string) =>
             skillsMap[skill] ? (

@@ -13,6 +13,7 @@ interface Props {
 const appsMap: Record<string, string> = {
   aftereffects: "AfterEffects",
   analytics: "Analytics",
+  chatgpt: "ChatGPT",
   figma: "Figma",
   illustrator: "Illustrator",
   indesign: "Indesign",
@@ -37,7 +38,7 @@ const appsMap: Record<string, string> = {
 export default function AppUsed({ fontMatter }: Props) {
   return (
     <div className="min-w-0 flex-1 rounded-3xl bg-slate-200 p-6">
-      <h2 className="my-0">Apps used</h2>
+      <h3 className="my-0">Apps used</h3>
       <div className="flex flex-wrap gap-10 gap-y-4">
         {fontMatter
           .sort((a: string, b: string) => a.localeCompare(b))
