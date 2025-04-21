@@ -12,6 +12,7 @@ const roleStyles: Record<string, { label: string; bgColor: string }> = {
   "UX Designer": { label: "UX Designer", bgColor: "bg-chips-three" },
   "Lead UX Designer": { label: "Lead UX Designer", bgColor: "bg-chips-four" },
   "Graphic Designer": { label: "Graphic Designer", bgColor: "bg-chips-five" },
+  Developer: { label: "Developer", bgColor: "bg-chips-three" },
 };
 
 export default function Role({ label }: Role) {
