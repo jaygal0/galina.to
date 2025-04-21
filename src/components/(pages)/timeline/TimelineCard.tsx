@@ -27,12 +27,8 @@ export default function TimelineCard({
       <div className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
         {moment(date).format("MMM Do YYYY")}
       </div>
-      <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-        {heading}
-      </h3>
-      <p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
-        {desc}
-      </p>
+      <h3 className="text-2xl font-semibold text-gray-900">{heading}</h3>
+      <p className="mb-4 text-lg font-normal text-gray-500">{desc}</p>
       {image && (
         <div className="relative aspect-video w-80 overflow-hidden rounded-2xl">
           <Image src={image} fill alt={image} style={{ objectFit: "cover" }} />
