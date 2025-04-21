@@ -64,9 +64,9 @@ export default function Page({ params }: any) {
               <ViewWebsite website={props.fontMatter.website} />
             )}
           </div>
-          <div className="text-lg font-light leading-normal md:text-2xl">
+          <h3 className="my-0 text-lg font-light leading-normal md:text-2xl">
             {props.fontMatter.desc}
-          </div>
+          </h3>
           <div className="mb-8 flex flex-wrap items-center gap-2">
             <Role label={props.fontMatter.role} />
             <Duration

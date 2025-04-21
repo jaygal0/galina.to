@@ -21,7 +21,7 @@ export default function CreatedAt({ created, updated }: Dates) {
   }, [created, updated]);
 
   return (
-    <p className="my-0 text-sm text-gray-400 md:text-base">
+    <p className="text-sm text-gray-400 md:text-base">
       {updated ? `Updated at: ${dateString}` : `Posted on: ${dateString}`}
     </p>
   );

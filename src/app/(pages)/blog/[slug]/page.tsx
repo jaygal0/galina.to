@@ -50,14 +50,19 @@ export default async function Page({ params }: any) {
           &#60; Blog
         </Link>
         <div className="mb-10">
-          <h1 className="mb-3 mt-8 text-5xl font-bold">
-            {props.fontMatter.title}
-          </h1>
+          <div className="mb-8 flex flex-col gap-3">
+            <h1 className="mb-0 mt-8 text-4xl font-bold lg:text-5xl ">
+              {props.fontMatter.title}
+            </h1>
+            <h3 className="my-0 text-lg font-light md:text-2xl">
+              {props.fontMatter.subtitle}.
+            </h3>
+            <Category label={props.fontMatter.category} />
+          </div>
           <CreatedAt
             created={props.fontMatter.posted}
             updated={props.fontMatter.updated}
           />
-          <Category label={props.fontMatter.category} />
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />
           {props.fontMatter.category == "birthday" && <Birthday />}

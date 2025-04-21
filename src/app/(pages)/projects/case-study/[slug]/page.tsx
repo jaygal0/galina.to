@@ -48,9 +48,9 @@ export default function Page({ params }: any) {
           <h1 className="mb-0 mt-8 text-2xl font-bold md:text-5xl">
             {props.fontMatter?.heading || "Project Title"}
           </h1>
-          <div className="text-lg font-light leading-normal md:text-2xl">
+          <h3 className="my-0 text-lg font-light leading-normal md:text-2xl">
             {props.fontMatter.desc}
-          </div>
+          </h3>
           <div className="mb-8 flex flex-wrap items-center gap-2">
             <Role label={props.fontMatter.role} />
             <Duration
@@ -58,11 +58,11 @@ export default function Page({ params }: any) {
               endDate={props.fontMatter.endDate}
             />
           </div>
-          <CreatedAt
-            created={props.fontMatter.created}
-            updated={props.fontMatter.updated}
-          />
         </div>
+        <CreatedAt
+          created={props.fontMatter.created}
+          updated={props.fontMatter.updated}
+        />
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}
           <MDXRemote source={props.content} />
