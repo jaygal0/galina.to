@@ -44,24 +44,24 @@ export default function Page({ params }: any) {
     <div className="prose w-full px-6 py-72 font-sans md:px-4">
       <FadeInComponent>
         <BackButton />
-        <div className="mb-10">
+        <div className="mb-10 flex flex-col gap-4">
           <h1 className="mb-0 mt-8 text-2xl font-bold md:text-5xl">
             {props.fontMatter?.heading || "Project Title"}
           </h1>
-          <CreatedAt
-            created={props.fontMatter.created}
-            updated={props.fontMatter.updated}
-          />
-          <p className="mb-4 text-lg leading-normal md:text-2xl">
+          <div className="text-lg font-light leading-normal md:text-2xl">
             {props.fontMatter.desc}
-          </p>
-          <div className="flex flex-wrap items-center gap-2">
+          </div>
+          <div className="mb-8 flex flex-wrap items-center gap-2">
             <Role label={props.fontMatter.role} />
             <Duration
               startDate={props.fontMatter.startDate}
               endDate={props.fontMatter.endDate}
             />
           </div>
+          <CreatedAt
+            created={props.fontMatter.created}
+            updated={props.fontMatter.updated}
+          />
         </div>
         <div className="font-sans">
           {/* @ts-expect-error Server Component */}

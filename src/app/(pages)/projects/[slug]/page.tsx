@@ -55,7 +55,7 @@ export default function Page({ params }: any) {
         >
           &#60; Projects
         </Link>
-        <div className="mb-10">
+        <div className="mb-10 flex flex-col gap-4">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <h1 className="mb-0 mt-8 text-2xl font-bold md:text-5xl">
               {props.fontMatter?.heading || "Project Title"}
@@ -64,14 +64,10 @@ export default function Page({ params }: any) {
               <ViewWebsite website={props.fontMatter.website} />
             )}
           </div>
-          <CreatedAt
-            created={props.fontMatter.created}
-            updated={props.fontMatter.updated}
-          />
-          <p className="mb-4 text-lg leading-normal md:text-2xl">
+          <div className="text-lg font-light leading-normal md:text-2xl">
             {props.fontMatter.desc}
-          </p>
-          <div className="flex flex-wrap items-center gap-2">
+          </div>
+          <div className="mb-8 flex flex-wrap items-center gap-2">
             <Role label={props.fontMatter.role} />
             <Duration
               startDate={props.fontMatter.startDate}
@@ -79,6 +75,10 @@ export default function Page({ params }: any) {
             />
           </div>
         </div>
+        <CreatedAt
+          created={props.fontMatter.created}
+          updated={props.fontMatter.updated}
+        />
         <div className="relative mb-20 aspect-video w-full">
           <Image
             src={`/projects/${props.fontMatter.heading.toLowerCase().replace(/\s+/g, "-")}/hero.jpg`}
