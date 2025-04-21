@@ -76,7 +76,7 @@ export default [
   },
   {
     title: "A new addition to the family",
-    desc: "We decided to get our first dog a little sister to keep her company.",
+    desc: "We decided to give our first dog a little sister to keep her company.",
     date: "2022-10-10",
     image: "/timeline/dogs.jpg",
   },
@@ -85,5 +85,13 @@ export default [
     desc: "After a 10 year relationship, we finally got to tie the knot and celebrate our marriage with family and friends.",
     date: "2023-07-23",
     image: "/timeline/wedding.jpg",
+  },
+  {
+    title: "Released Path to Design",
+    desc: "I designed and built a site dedicated to designers sharing their path to the design industry.",
+    date: "2024-07-01",
+    image: "/projects/path-to-design/cover.jpg",
+    buttonText: "View PathtoDesign.com",
+    buttonLink: "https://www.pathtodesign.com",
   },
 ];
