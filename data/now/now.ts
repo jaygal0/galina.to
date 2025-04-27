@@ -43,4 +43,8 @@ export default [
     desc: "Taking it easy as it's the weekend. Disconnecting is just as important",
     date: "2025-04-13",
   },
+  {
+    desc: "We completed our healthy diet challenge. We've noticed a significant change in our bodies. Which is why we plan to keep it up, but not be as strict as before.",
+    date: "2025-04-27",
+  },
 ];

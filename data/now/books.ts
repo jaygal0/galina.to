@@ -24,4 +24,9 @@ export default [
     author: "Liam Veitch",
     date: "2025-04-13",
   },
+  {
+    title: "Brand Naming",
+    author: "Rob Meyerson",
+    date: "2025-04-27",
+  },
 ];
