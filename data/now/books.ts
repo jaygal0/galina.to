@@ -29,4 +29,9 @@ export default [
     author: "Rob Meyerson",
     date: "2025-04-27",
   },
+  {
+    title: "Made by James",
+    author: " James Martin",
+    date: "2025-05-03",
+  },
 ];

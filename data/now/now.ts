@@ -47,4 +47,8 @@ export default [
     desc: "We completed our healthy diet challenge. We've noticed a significant change in our bodies. Which is why we plan to keep it up, but not be as strict as before.",
     date: "2025-04-27",
   },
+  {
+    desc: "Currently sitting in a coffee shop in the heart of Berlin, Germany. It has been a great few days exploring the city and a nice change change of environment.",
+    date: "2025-05-03",
+  },
 ];
