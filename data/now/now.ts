@@ -51,4 +51,8 @@ export default [
     desc: "Currently sitting in a coffee shop in the heart of Berlin, Germany. It has been a great few days exploring the city and a nice change change of environment.",
     date: "2025-05-03",
   },
+  {
+    desc: "The weather has picked up a little. It's time to take advantage of the summer!",
+    date: "2025-06-22",
+  },
 ];

@@ -9,4 +9,9 @@ export default [
     city: "Berlin",
     date: "2025-05-03",
   },
+  {
+    country: "Sweden",
+    city: "Gothenburg",
+    date: "2025-06-22",
+  },
 ];
