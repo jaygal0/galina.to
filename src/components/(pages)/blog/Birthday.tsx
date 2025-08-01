@@ -12,8 +12,8 @@ export default function Birthday() {
         <Link href="/blog/34">34</Link>
         <div>/</div>
         <Link href="/blog/35">35</Link>
-        {/* <div>/</div> */}
-        {/* <Link href="/blog/36">36 /</Link> */}
+        <div>/</div>
+        <Link href="/blog/36">36 /</Link>
         {/* <div>/</div> */}
         {/* <Link href="/blog/37">37 /</Link> */}
         {/* <div>/</div> */}
