@@ -55,4 +55,8 @@ export default [
     desc: "The weather has picked up a little. It's time to take advantage of the summer!",
     date: "2025-06-22",
   },
+  {
+    desc: "Embracing AI by learning the fundamentals. It'll be a long journey, but I'm excited to see where it takes me.",
+    date: "2025-08-10",
+  },
 ];
