@@ -34,7 +34,8 @@
     "src/components/(pages)/index/Face.tsx",
     "src/components/CardTimeline.tsx",
     "src/blog/[slug].tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "data/projects/case-study/path-to-design-redesignmdx"
   ],
   "exclude": ["node_modules"]
 }
