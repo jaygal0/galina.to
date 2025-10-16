@@ -59,4 +59,8 @@ export default [
     desc: "Embracing AI by learning the fundamentals. It'll be a long journey, but I'm excited to see where it takes me.",
     date: "2025-08-10",
   },
+  {
+    desc: "Settling into my new role as Customer Experience Manager at work. There's a lot to do, but I'm excited for the challenge.",
+    date: "2025-10-16",
+  },
 ];
