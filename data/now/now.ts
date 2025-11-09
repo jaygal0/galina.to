@@ -64,7 +64,7 @@ export default [
     date: "2025-10-16",
   },
   {
-    desc: "Moved out the house in order to cater to the new home renovations. Just another reminder that life never goes as planned.",
+    desc: "Moved out the house in order to cater to a few unplanned home renovations. Just another reminder that life never goes as planned.",
     date: "2025-11-09",
   },
 ];
