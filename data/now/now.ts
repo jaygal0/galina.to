@@ -63,4 +63,8 @@ export default [
     desc: "Settling into my new role as Customer Experience Manager. There's a lot to do, but I'm excited for the challenge.",
     date: "2025-10-16",
   },
+  {
+    desc: "Moved out the house in order to cater to the new home renovations. Just another reminder that life never goes as planned.",
+    date: "2025-11-09",
+  },
 ];
