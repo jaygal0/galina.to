@@ -35,13 +35,11 @@ export default async function Page() {
 
   return (
     <>
-      <Face />
       <div className="space-y-20">
         <Heading heading="Joshua Galinato" oneLiner="This is a test" />
         <Intro />
         <Projects data={projects} />
         <Experience data={experience} />
-        <Footer />
       </div>
     </>
   );

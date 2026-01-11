@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import moment from "moment";
+import dayjs from "dayjs";
 
 interface Dates {
   created: string; // Expecting ISO string format for dates
@@ -14,14 +14,14 @@ export default function CreatedAt({ created, updated }: Dates) {
   useEffect(() => {
     // Format date after the component has mounted on the client
     const formattedDate = updated
-      ? moment(new Date(updated)).format("MMM Do YYYY")
-      : moment(new Date(created)).format("MMM Do YYYY");
+      ? dayjs(updated).format("MMM D YYYY")
+      : dayjs(created).format("MMM D YYYY");
 
     setDateString(formattedDate);
   }, [created, updated]);
 
   return (
-    <p className="text-sm text-gray-400 md:text-base">
+    <p className="text-sm text-muted-foreground">
       {updated ? `Updated at: ${dateString}` : `Posted on: ${dateString}`}
     </p>
   );

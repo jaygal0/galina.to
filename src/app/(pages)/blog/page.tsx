@@ -6,6 +6,7 @@ import FadeInComponent from "@/components/global/FadeIn";
 import ContentDiv from "@/components/global/ContentDiv";
 import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
 import { Metadata } from "next";
+import Face from "@/components/(pages)/index/Face";
 
 export const metadata: Metadata = {
   title: "Joshua Galinato | Blog",
@@ -32,12 +33,8 @@ export default async function Page({ posts }: any) {
   });
 
   return (
-    <FadeInComponent>
-      <HeroText
-        heading="Blog"
-        desc="A collection of musings, insights, and spontaneous reflections—welcome to the blog where anything goes."
-      />
-      <ContentDiv>
+    <>
+      <div className="flex flex-col gap-12">
         {blogs
           .map((blog: any, index: any) => {
             return (
@@ -56,7 +53,7 @@ export default async function Page({ posts }: any) {
           .sort((a: any, b: any) => {
             return a.props.posted < b.props.posted ? 1 : -1;
           })}
-      </ContentDiv>
-    </FadeInComponent>
+      </div>
+    </>
   );
 }

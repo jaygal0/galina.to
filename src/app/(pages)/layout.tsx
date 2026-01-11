@@ -4,6 +4,9 @@ import NavigationMenu from "@/components/global/NavigationMenu";
 import { DM_Sans, Krona_One, Share_Tech_Mono } from "next/font/google";
 import { Metadata } from "next";
 import PlausibleProvider from "next-plausible";
+import Footer from "@/components/global/Footer";
+import { Breadcrumbs } from "@/components/global/Breadcrumbs";
+import Face from "@/components/(pages)/index/Face";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -64,8 +67,11 @@ export default function RootLayout({
       >
         <BreakpointIndicator />
         <main className="max-w-screen-3xl mx-auto p-12 pb-40 text-xl">
+          <Face />
+          <Breadcrumbs />
           <div className="w-5/12">{children}</div>
         </main>
+        <Footer />
       </body>
     </html>
   );

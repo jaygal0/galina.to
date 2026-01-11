@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div>
+    <footer className="max-w-screen-3xl mx-auto p-12 text-xl">
       <p>
         Want to know what I&apos;m currently up to?{" "}
         <span className="block">
@@ -21,6 +21,6 @@ export default function Footer() {
         </a>
         .
       </p>
-    </div>
+    </footer>
   );
 }
