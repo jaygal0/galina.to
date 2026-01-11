@@ -10,7 +10,7 @@ export default function Text({ desc, date }: Props) {
   return (
     <div>
       <div className="mb-3">{desc}</div>
-      <div className="text-sm text-muted-foreground">
+      <div className="text-base text-muted-foreground">
         Last Updated: {dayjs(date).format("MMM D YYYY")}. Inspired by{" "}
         <a
           href="https://sive.rs/nowff"

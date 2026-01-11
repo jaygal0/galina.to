@@ -25,7 +25,7 @@ export default function GeneralCardBlog({
     <Link href={`/blog/${link}`}>
       <div className="space-y-1">
         <h2 className="underline">{title}</h2>
-        <div className="text-muted-foreground">{subtitle}</div>
+        <div className="text-base text-muted-foreground">{subtitle}</div>
         <Badge variant="outline">{dayjs(posted).format("MMM YYYY")}</Badge>
         <Badge variant="outline" className="w-min">
           {category}

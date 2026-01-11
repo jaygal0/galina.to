@@ -1,9 +1,6 @@
 import Age from "../../../components/(pages)/now/Age";
-import HeroText from "@/components/global/HeroText";
 import GeneralCard from "../../../components/(pages)/now/GeneralCard";
-import FadeInComponent from "@/components/global/FadeIn";
 import CardData from "@/components/(pages)/now/CardData";
-import ContentDiv from "@/components/global/ContentDiv";
 import { Metadata } from "next";
 import Text from "@/components/(pages)/now/Text";
 
@@ -79,8 +76,9 @@ export default async function Page() {
 
   return (
     <>
-      <div className="flex flex-col gap-12">
-        <Text desc={now[0].desc} date={now[0].date} />
+      <div className="flex flex-col gap-20">
+        <Text desc={now[now.length - 1].desc} date={now[now.length - 1].date} />
+
         <GeneralCard heading="Age">
           <Age />
         </GeneralCard>

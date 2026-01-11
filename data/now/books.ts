@@ -34,4 +34,9 @@ export default [
     author: " James Martin",
     date: "2025-05-03",
   },
+  {
+    title: "MAKE: Bootstrapper's Handbook",
+    author: "Pieter Levels",
+    date: "2026-01-11",
+  },
 ];

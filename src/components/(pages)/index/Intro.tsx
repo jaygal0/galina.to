@@ -4,9 +4,9 @@ export default function Intro() {
   return (
     <div>
       <p>
-        For the past decade, I have worked in the music, vegan, wedding and now
-        tech industry. I have picked up a unique set of skills from the many
-        roles I have worked on.{" "}
+        For the past decade, I have worked in the music, vegan and now tech
+        industry. I have picked up a unique set of skills from the many roles I
+        have worked on.{" "}
       </p>
       <p>
         I co-founded{" "}
@@ -35,7 +35,7 @@ export default function Intro() {
       </p>
       <p>
         I&apos;ve designed and helped build apps for Volvo, DeLaval, Elite
-        Hotels and a few other recognisable brands.
+        Hotels.
       </p>
       <p>
         Currently, for the past 4 years I&apos;ve been working at{" "}

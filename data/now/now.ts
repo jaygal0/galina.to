@@ -67,4 +67,8 @@ export default [
     desc: "Moved out the house in order to cater to a few unplanned home renovations. Just another reminder that life never goes as planned.",
     date: "2025-11-09",
   },
+  {
+    desc: "Decided to redesign my website and make it super simple. Addition by omission.",
+    date: "2026-01-11",
+  },
 ];
