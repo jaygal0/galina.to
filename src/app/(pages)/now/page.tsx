@@ -77,14 +77,8 @@ export default async function Page() {
   const now = await getNowData();
 
   return (
-    <FadeInComponent>
-      <HeroText
-        heading="What I'm up to Now"
-        desc={now[now.length - 1].desc}
-        now={now[now.length - 1].date}
-      />
-      {/* TODO 3: Fade in content a little later to cater to information jumping */}
-      <ContentDiv>
+    <>
+      <div className="flex flex-col gap-12">
         <GeneralCard heading="Age">
           <Age />
         </GeneralCard>
@@ -105,7 +99,7 @@ export default async function Page() {
         </GeneralCard>
         <GeneralCard heading="LiChess Rating">
           <CardData nowData={`Rapid: ${lichess.perfs.rapid.rating}`} />
-          <p className="mt-2 md:mt-6">
+          <p className="text-sm text-muted-foreground">
             Live from{" "}
             <a
               href={lichess.url}
@@ -117,7 +111,7 @@ export default async function Page() {
             </a>{" "}
           </p>
         </GeneralCard>
-      </ContentDiv>
-    </FadeInComponent>
+      </div>
+    </>
   );
 }

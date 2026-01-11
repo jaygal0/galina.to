@@ -35,7 +35,7 @@ export default function Age() {
   }
 
   return (
-    <div className="flex w-full justify-between font-mono">
+    <div className="flex gap-5 font-mono">
       <div>
         <Number interval={addLeadingZeros(years, 2)} />
         <Time time="years" />

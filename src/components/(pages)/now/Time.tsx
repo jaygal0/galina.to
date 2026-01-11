@@ -3,5 +3,5 @@ interface TimeProp {
 }
 
 export default function Time({ time }: TimeProp) {
-  return <div className="text-xs capitalize md:text-2xl">{time}</div>;
+  return <div className="text-sm capitalize text-muted-foreground">{time}</div>;
 }
