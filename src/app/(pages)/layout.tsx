@@ -7,17 +7,18 @@ import PlausibleProvider from "next-plausible";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  style: ["normal", "italic"],
+  variable: "--font-dm-sans",
 });
 
 const shareTechMono = Share_Tech_Mono({
   subsets: ["latin"],
+  variable: "--font-share-tech-mono",
   weight: "400",
 });
 
 const kronaOne = Krona_One({
   subsets: ["latin"],
+  variable: "--font-krona-one",
   weight: "400",
 });
 
@@ -54,16 +55,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <PlausibleProvider domain="galina.to" />
       </head>
       <body
-        className={`${kronaOne.className} ${dmSans.className} ${shareTechMono.className} relative`}
+        className={`${kronaOne.variable} ${dmSans.variable} ${shareTechMono.variable} relative`}
       >
         <BreakpointIndicator />
-        <NavigationMenu />
-        <main>{children}</main>
+        <main className="max-w-screen-3xl mx-auto p-12 pb-40 text-xl">
+          <div className="w-5/12">{children}</div>
+        </main>
       </body>
     </html>
   );

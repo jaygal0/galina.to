@@ -65,7 +65,7 @@ export default function Face() {
     <svg
       xmlns="http://www.w4.org/2000/svg"
       viewBox="0 0 265.06 279.34"
-      className="-order-1 w-1/2 overflow-visible md:w-1/3 lg:order-1"
+      className="w-[80px]"
     >
       <style>
         {`
