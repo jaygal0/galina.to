@@ -9,7 +9,7 @@ export default function GeneralCard({
 }) {
   return (
     <div className="space-y-1">
-      <h2 className="">{heading}</h2>
+      <h2 className="text-muted-foreground">{heading}</h2>
       {children}
     </div>
   );

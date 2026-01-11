@@ -5,6 +5,7 @@ import FadeInComponent from "@/components/global/FadeIn";
 import CardData from "@/components/(pages)/now/CardData";
 import ContentDiv from "@/components/global/ContentDiv";
 import { Metadata } from "next";
+import Text from "@/components/(pages)/now/Text";
 
 export const metadata: Metadata = {
   title: "Joshua Galinato | Now",
@@ -79,6 +80,7 @@ export default async function Page() {
   return (
     <>
       <div className="flex flex-col gap-12">
+        <Text desc={now[0].desc} date={now[0].date} />
         <GeneralCard heading="Age">
           <Age />
         </GeneralCard>
