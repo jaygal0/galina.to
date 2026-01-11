@@ -4,8 +4,9 @@ export default function Projects({ data }: any) {
   return (
     <div>
       <p>
-        If I&apos;m not hanging out with the wife, I&apos;m trying to figure out
-        how to bring in more money so she can spend it all:
+        If I&apos;m not hanging out with the wife, I&apos;m working on my own
+        projects and figuring out how to bring in more money so she can spend it
+        all:
       </p>
       {data.map((data: any, idx: any) => {
         const { project, url, status, desc, summary } = data;

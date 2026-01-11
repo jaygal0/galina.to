@@ -4,8 +4,8 @@ export default function Experience({ data }: any) {
   return (
     <div>
       <p>
-        Since none of my projects are generating any revenue, I still need to
-        figure out how to pay the bills.
+        Since none of my projects are generating revenue, I still need to figure
+        out how to pay the bills:
       </p>
       {data.map((data: any, idx: any) => {
         const { position, company, url, startDate, endDate, location, desc } =
