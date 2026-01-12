@@ -6,8 +6,7 @@ import Text from "@/components/(pages)/now/Text";
 
 export const metadata: Metadata = {
   title: "Joshua Galinato | Now",
-  description:
-    "Find out what's happening now with Joshua Galinato on his /now page.",
+  description: "What I'm up to right now",
 };
 
 async function getChessData() {
@@ -27,17 +26,6 @@ async function getChessData() {
 
 async function getBookData() {
   const res = await fetch(`${process.env.WEB_SITE}/api/books`, {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return data;
-}
-
-async function getCareerData() {
-  const res = await fetch(`${process.env.WEB_SITE}/api/career`, {
     cache: "no-store",
   });
   const data = await res.json();
@@ -70,13 +58,12 @@ async function getNowData() {
 export default async function Page() {
   const lichess = await getChessData();
   const book = await getBookData();
-  const career = await getCareerData();
   const location = await getLocationData();
   const now = await getNowData();
 
   return (
     <>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-12">
         <Text desc={now[now.length - 1].desc} date={now[now.length - 1].date} />
 
         <GeneralCard heading="Age">
@@ -85,11 +72,6 @@ export default async function Page() {
         <GeneralCard heading="Location">
           <CardData
             nowData={`${location[location.length - 1].city}, ${location[location.length - 1].country}`}
-          />
-        </GeneralCard>
-        <GeneralCard heading="Career">
-          <CardData
-            nowData={`${career[career.length - 1].role} at ${career[career.length - 1].company}`}
           />
         </GeneralCard>
         <GeneralCard heading="Reading">

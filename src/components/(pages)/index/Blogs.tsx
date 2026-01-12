@@ -28,7 +28,7 @@ export default function Blogs() {
     <div>
       <p>
         Occasionally I like to write about tech, life and the projects I work
-        on. You can view it all on my{" "}
+        on. Check out my{" "}
         <Link href="/blog" className="underline">
           blog
         </Link>

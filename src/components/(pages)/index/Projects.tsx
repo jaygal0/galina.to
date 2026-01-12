@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function Projects({ data }: any) {
@@ -12,10 +13,20 @@ export default function Projects({ data }: any) {
         const { project, url, status, desc, summary } = data;
         return (
           <div key={idx} className="mb-7 space-y-1">
-            <div className="flex gap-2">
-              <a href={url} target="_blank">
-                <h3 className="font-semibold underline">{project}</h3>
-              </a>
+            <div className="flex items-center gap-2">
+              {url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1"
+                >
+                  <h3 className="font-semibold underline">{project}</h3>
+                  <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                </a>
+              ) : (
+                <h3 className="font-semibold">{project}</h3>
+              )}
               <Badge variant="outline">{status}</Badge>
             </div>
             <p className="mb-0 text-base">{desc}</p>

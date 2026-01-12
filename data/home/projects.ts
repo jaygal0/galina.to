@@ -17,7 +17,6 @@ export default [
   },
   {
     project: "Kawaii Corner Shop",
-    url: "",
     status: "Closed",
     desc: "An e-commerce store focused entirely on Japanese culture.",
     summary:
@@ -25,7 +24,6 @@ export default [
   },
   {
     project: "Galiway",
-    url: "https://pathtodesign.com",
     status: "Closed",
     desc: "A blog dedicated to documenting all the different types of skills I learned in a short amount of time.",
     summary: "I learned a lot about CMS, Wordpress and the art of blogging.",

@@ -10,17 +10,14 @@ export default function Footer() {
     <footer className="max-w-screen-3xl mx-auto p-12 text-xl text-muted-foreground">
       {pathname !== "/now" && (
         <p>
-          Want to know what I&apos;m currently up to?{" "}
-          <span className="block">
-            Check out my{" "}
-            <Link
-              href="/now"
-              className="underline transition-all hover:text-foreground"
-            >
-              /now
-            </Link>{" "}
-            page.
-          </span>
+          Check out what I'm up to{" "}
+          <Link
+            href="/now"
+            className="underline transition-all hover:text-foreground"
+          >
+            /now
+          </Link>
+          .
         </p>
       )}
       <p>

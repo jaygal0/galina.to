@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { ExternalLink } from "lucide-react";
 
 export default function Experience({ data }: any) {
   return (
@@ -15,11 +16,19 @@ export default function Experience({ data }: any) {
             <div className="flex gap-2">
               <h3 className="font-semibold">{position}</h3>
               <div className="text-muted-foreground">-</div>
-              <a href={url} target="_blank">
-                <div className="text-muted-foreground underline transition-all hover:text-white">
+              {url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-muted-foreground underline transition-all hover:text-white"
+                >
                   {company}
-                </div>
-              </a>
+                  <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                </a>
+              ) : (
+                <span className="text-muted-foreground">{company}</span>
+              )}
             </div>
             <div className="mb-0 text-base">
               {dayjs(startDate).format("MMM YYYY")} -{" "}

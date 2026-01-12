@@ -32,7 +32,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="space-y-20">
+      <div className="space-y-28">
         <Heading heading="Joshua Galinato" oneLiner="This is a test" />
         <Intro />
         <Blogs />
