@@ -10,7 +10,6 @@ export default function GeneralCardBlog({
   subtitle,
   posted,
   updated,
-  tags,
   category,
 }: {
   link: string;

@@ -7,6 +7,7 @@ import ContentDiv from "@/components/global/ContentDiv";
 import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
 import { Metadata } from "next";
 import Face from "@/components/(pages)/index/Face";
+import BlogFilterClient from "@/components/(pages)/blog/BlogFilterClient";
 
 export const metadata: Metadata = {
   title: "Joshua Galinato | Blog",
@@ -14,46 +15,34 @@ export const metadata: Metadata = {
     "A collection of musings, insights, and spontaneous reflections—welcome to the blog where anything goes.",
 };
 
-export default async function Page({ posts }: any) {
-  const blogDir = path.join("data", "blogs");
+type BlogMeta = {
+  title: string;
+  subtitle?: string;
+  posted: string;
+  updated?: string;
+  tags?: string[];
+  category?: string;
+  draft?: boolean;
+};
 
-  // Read the files from the `data/blogs` directory
+export default async function Page() {
+  const blogDir = path.join("data", "blogs");
   const files = fs.readdirSync(blogDir);
 
   const blogs = files.map((filename) => {
-    // Read each markdown file content
     const fileContent = fs.readFileSync(path.join(blogDir, filename), "utf-8");
 
-    // Extract front matter and slug from the filename and content
-    const { data: frontMatter } = matter(fileContent);
+    const { data } = matter(fileContent);
+
+    const meta = data as BlogMeta;
+
     return {
-      meta: frontMatter,
-      slug: filename.replace(".mdx", ""), // Create slug from the filename
+      slug: filename.replace(".mdx", ""),
+      meta,
     };
   });
 
-  return (
-    <>
-      <div className="flex flex-col gap-12">
-        {blogs
-          .map((blog: any, index: any) => {
-            return (
-              <GeneralCardBlog
-                key={index}
-                link={blog.slug}
-                title={blog.meta.title}
-                subtitle={blog.meta.subtitle}
-                posted={blog.meta.posted}
-                updated={blog.meta.updated}
-                tags={blog.meta.tags}
-                category={blog.meta.category}
-              />
-            );
-          })
-          .sort((a: any, b: any) => {
-            return a.props.posted < b.props.posted ? 1 : -1;
-          })}
-      </div>
-    </>
-  );
+  const publishedBlogs = blogs.filter((blog) => !blog.meta.draft);
+
+  return <BlogFilterClient blogs={publishedBlogs} />;
 }
