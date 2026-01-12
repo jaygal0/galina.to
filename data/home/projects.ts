@@ -13,7 +13,7 @@ export default [
     status: "Closed",
     desc: "An agency that handles the tech headaches so you can focus on growing your business.",
     summary:
-      "I decided that I didn't want to trade time for money, so I shut this project down and focused on other ideas.",
+      "I didn't want to trade time for money, so I shut this project down and focused on other ideas.",
   },
   {
     project: "Kawaii Corner Shop",
