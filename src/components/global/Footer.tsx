@@ -14,9 +14,9 @@ export default function Footer() {
           <span className="block">
             Check out my{" "}
             <Link href="/now" className="underline">
-              /now page
-            </Link>
-            .
+              /now
+            </Link>{" "}
+            page.
           </span>
         </p>
       )}
