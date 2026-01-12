@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+import { Badge } from "@/components/ui/badge";
 import { compileMDX } from "@/lib/mdx";
 import { notFound } from "next/navigation";
 import path from "path";
@@ -10,7 +12,7 @@ type Frontmatter = {
   posted: string;
   updated?: boolean;
   tags?: boolean;
-  category?: boolean;
+  categories?: string[];
   draft?: boolean;
 };
 
@@ -64,7 +66,20 @@ export default async function BlogPost({ params }: Props) {
   return (
     <article className="prose prose-invert text-xl">
       <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.subtitle}</h2>
+      <p className="-mt-8 text-2xl text-muted-foreground">
+        {frontmatter.subtitle}
+      </p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <Badge variant="outline">
+          {dayjs(frontmatter.posted).format("MMM YYYY")}
+        </Badge>
+
+        {(frontmatter.categories ?? []).map((category) => (
+          <Badge key={category} variant="outline" className="capitalize">
+            {category}
+          </Badge>
+        ))}
+      </div>
       {Content.default({
         components: {},
       })}

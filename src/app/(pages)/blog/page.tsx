@@ -28,7 +28,7 @@ type BlogMeta = {
 export default async function Page({
   searchParams,
 }: {
-  searchParams?: { category?: string };
+  searchParams?: Promise<{ category?: string }>;
 }) {
   const blogDir = path.join("data", "blogs");
   const files = fs.readdirSync(blogDir);
@@ -48,9 +48,13 @@ export default async function Page({
 
   const publishedBlogs = blogs
     .filter((blog) => !blog.meta.draft)
-    .sort((a, b) => (a.meta.posted < b.meta.posted ? 1 : -1));
+    .sort(
+      (a, b) =>
+        new Date(b.meta.posted).getTime() - new Date(a.meta.posted).getTime(),
+    );
 
-  const initialCategory = searchParams?.category ?? null;
+  const resolvedSearchParams = await searchParams;
+  const initialCategory = resolvedSearchParams?.category ?? null;
 
   return (
     <BlogFilterClient

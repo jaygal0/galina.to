@@ -50,13 +50,6 @@ export default function Intro() {
         . Designing every interface and helping build the product to over
         250,000 users.
       </p>
-      <p>
-        Occasionally, I like to write about what I get up to on my{" "}
-        <Link href="/blog" className="underline">
-          blog
-        </Link>
-        .
-      </p>
     </div>
   );
 }
