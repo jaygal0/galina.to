@@ -16,10 +16,12 @@ export default function Experience({ data }: any) {
               <h3 className="font-semibold">{position}</h3>
               <div className="text-muted-foreground">-</div>
               <a href={url} target="_blank">
-                <div className="text-muted-foreground underline">{company}</div>
+                <div className="text-muted-foreground underline transition-all hover:text-white">
+                  {company}
+                </div>
               </a>
             </div>
-            <div className="mb-0 text-base text-muted-foreground">
+            <div className="mb-0 text-base">
               {dayjs(startDate).format("MMM YYYY")} -{" "}
               {endDate ? dayjs(endDate).format("MMM YYYY") : "Present"} •{" "}
               {location}

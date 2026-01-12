@@ -6,7 +6,7 @@ export default [
     startDate: "2025-09-01",
     endDate: null,
     location: "Sweden",
-    desc: "Focusing on the entire customer journey across every phase, from awareness to retention. I'm bringing teams together around a shared vision to deliver great experiences and achieve our company goals.",
+    desc: "From awareness to retention, improving the experience of the entire customer journey.",
   },
   {
     position: "Lead UX Designer",
@@ -15,7 +15,7 @@ export default [
     startDate: "2022-06-01",
     endDate: "2025-09-01",
     location: "Sweden",
-    desc: "Add a short sentence here.",
+    desc: "Designed every digital product, improving the user experience for all our users.",
   },
   {
     position: "Competence Lead",
@@ -24,7 +24,7 @@ export default [
     startDate: "2022-01-01",
     endDate: "2022-06-01",
     location: "Sweden",
-    desc: "Add a short sentence here.",
+    desc: "Lead a team of designers and kept up the level of quality across the team.",
   },
   {
     position: "UX/UI Designer",
@@ -33,7 +33,7 @@ export default [
     startDate: "2021-04-01",
     endDate: "2022-06-01",
     location: "Sweden",
-    desc: "Add a short sentence here.",
+    desc: "Designed B2B web apps for multiple clients such as Volvo, Delaval and Elite Hotel.",
   },
   {
     position: "Creative Director",
@@ -42,7 +42,7 @@ export default [
     startDate: "2018-10-01",
     endDate: "2020-10-01",
     location: "United Kingdom",
-    desc: "Add a short sentence here.",
+    desc: "Helped build the online presence of a vegan blog. It stands as one of the biggest platforms across London.",
   },
   {
     position: "Co-Founder",
@@ -51,7 +51,7 @@ export default [
     startDate: "2012-09-01",
     endDate: "2018-09-01",
     location: "United Kingdom",
-    desc: "Add a short sentence here.",
+    desc: "Built a video production company. It was an established brand in the London music scene that generated a lot of attention.",
   },
   {
     position: "Graphic Designer Intern",
@@ -60,6 +60,6 @@ export default [
     startDate: "2013-07-01",
     endDate: "2013-08-01",
     location: "United Kingdom",
-    desc: "Add a short sentence here.",
+    desc: "Designed several pitch decks for potential sponsors.",
   },
 ];

@@ -18,7 +18,7 @@ export default function Projects({ data }: any) {
               </a>
               <Badge variant="outline">{status}</Badge>
             </div>
-            <p className="mb-0 text-base text-muted-foreground">{desc}</p>
+            <p className="mb-0 text-base">{desc}</p>
             <p className="mb-0 text-base text-muted-foreground">{summary}</p>
           </div>
         );
