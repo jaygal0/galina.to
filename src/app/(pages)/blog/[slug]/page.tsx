@@ -1,73 +1,73 @@
-import fs from "fs";
+import { compileMDX } from "@/lib/mdx";
+import { notFound } from "next/navigation";
 import path from "path";
+import fs from "fs/promises";
 import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import FadeInComponent from "@/components/global/FadeIn";
-import Link from "next/link";
-import CreatedAt from "@/components/global/CreatedAt";
-import Category from "@/components/(pages)/blog/Category";
-import Birthday from "@/components/(pages)/blog/Birthday";
 
-export async function generateStaticParams() {
-  // Update the path to read from "data/blogs"
-  const files = fs.readdirSync(path.join("data", "blogs"));
+type Frontmatter = {
+  title: string;
+  subtitle?: string;
+  posted: string;
+  updated?: boolean;
+  tags?: boolean;
+  category?: boolean;
+  draft?: boolean;
+};
 
-  // Generate slugs based on the file names
-  const paths = files.map((filename) => ({
-    slug: filename.replace(".mdx", ""),
-  }));
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
-  return paths;
-}
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
 
-function getPost({ slug }: { slug: string }) {
-  // Read the markdown file from "data/blogs" directory
-  const markdownFile = fs.readFileSync(
-    path.join("data", "blogs", slug + ".mdx"),
-    "utf-8",
-  );
+  const filePath = path.join(process.cwd(), "data", "blogs", `${slug}.mdx`);
+  const raw = await fs.readFile(filePath, "utf8");
+  const { data } = matter(raw);
 
-  // Use gray-matter to parse the markdown file and extract the front matter and content
-  const { data: fontMatter, content } = matter(markdownFile);
+  if (data.draft && process.env.NODE_ENV === "production") {
+    return {};
+  }
 
   return {
-    fontMatter,
-    slug,
-    content,
+    title: data.title,
+    subtitle: data.subtitle,
+    posted: data.posted,
+    updated: data.updated,
+    tags: data.tags,
+    category: data.category,
   };
 }
 
-export default async function Page({ params }: any) {
-  const props = getPost(params);
+export default async function BlogPost({ params }: Props) {
+  const { slug } = await params;
+
+  const filePath = path.join(process.cwd(), "data", "blogs", `${slug}.mdx`);
+
+  let raw: string;
+
+  try {
+    raw = await fs.readFile(filePath, "utf8");
+  } catch {
+    notFound();
+  }
+
+  const { content, data } = matter(raw);
+  const frontmatter = data as Frontmatter;
+
+  if (frontmatter.draft && process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
+  const Content = await compileMDX(content);
 
   return (
-    <div className="prose mb-20 w-full px-6 py-72 font-sans md:px-0">
-      <FadeInComponent>
-        <Link
-          href="/blog"
-          className="text-md font-sans font-thin no-underline hover:underline"
-        >
-          &#60; Blog
-        </Link>
-        <div className="mb-10">
-          <div className="mb-8 flex flex-col gap-3">
-            <h1 className="mb-0 mt-8 text-4xl font-bold lg:text-5xl ">
-              {props.fontMatter.title}
-            </h1>
-            <h3 className="my-0 text-lg font-light md:text-2xl">
-              {props.fontMatter.subtitle}.
-            </h3>
-            <Category label={props.fontMatter.category} />
-          </div>
-          <CreatedAt
-            created={props.fontMatter.posted}
-            updated={props.fontMatter.updated}
-          />
-          {/* @ts-expect-error Server Component */}
-          <MDXRemote source={props.content} />
-          {props.fontMatter.category == "birthday" && <Birthday />}
-        </div>
-      </FadeInComponent>
-    </div>
+    <article className="prose prose-invert text-xl">
+      <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.subtitle}</h2>
+      {Content.default({
+        components: {},
+      })}
+    </article>
   );
 }
