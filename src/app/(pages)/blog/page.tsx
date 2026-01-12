@@ -25,7 +25,11 @@ type BlogMeta = {
   draft?: boolean;
 };
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: { category?: string };
+}) {
   const blogDir = path.join("data", "blogs");
   const files = fs.readdirSync(blogDir);
 
@@ -42,7 +46,16 @@ export default async function Page() {
     };
   });
 
-  const publishedBlogs = blogs.filter((blog) => !blog.meta.draft);
+  const publishedBlogs = blogs
+    .filter((blog) => !blog.meta.draft)
+    .sort((a, b) => (a.meta.posted < b.meta.posted ? 1 : -1));
 
-  return <BlogFilterClient blogs={publishedBlogs} />;
+  const initialCategory = searchParams?.category ?? null;
+
+  return (
+    <BlogFilterClient
+      blogs={publishedBlogs}
+      initialCategory={initialCategory}
+    />
+  );
 }
