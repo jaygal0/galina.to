@@ -26,9 +26,9 @@ const kronaOne = Krona_One({
 });
 
 export const metadata: Metadata = {
-  title: "Joshua Galinato | Creative Designer & Problem-Solving Tinkerer",
+  title: "Joshua Galinato | Indie Maker",
   description:
-    "Discover the inventive world of Joshua Galinato, a creative designer and passionate tinkerer specializing in design and problem-solving. Explore projects, ideas, and more at https://galina.to.",
+    "My little corner of the internet where I get to experiment and try things out.",
   keywords: "blog, thoughts, ideas, galinato, joshua, joshua galinato",
   icons: {
     icon: "/favicon.ico",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Joshua Galinato | Creative Designer & Problem-Solving Tinkerer",
     description:
-      "Discover the inventive world of Joshua Galinato, a creative designer and passionate tinkerer specializing in design and problem-solving. Explore projects, ideas, and more at https://galina.to.",
+      "My little corner of the internet where I get to experiment and try things out.",
     url: "https://www.galina.to",
     siteName: "Galina.to",
     images: [

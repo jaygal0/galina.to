@@ -1,10 +1,7 @@
-import Face from "@/components/(pages)/index/Face";
-import { Badge } from "@/components/ui/badge";
 import Heading from "@/components/(pages)/index/Heading";
 import Intro from "@/components/(pages)/index/Intro";
 import Projects from "@/components/(pages)/index/Projects";
 import Experience from "@/components/(pages)/index/Experience";
-import Footer from "@/components/global/Footer";
 import Blogs from "@/components/(pages)/index/Blogs";
 
 async function getProjectsData() {
