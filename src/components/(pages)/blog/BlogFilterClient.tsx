@@ -9,7 +9,7 @@ type BlogMeta = {
   posted: string;
   updated?: string;
   tags?: string[];
-  category?: string;
+  categories?: string[];
   draft?: boolean;
 };
 
@@ -27,7 +27,7 @@ export default function BlogFilterClient({ blogs }: Props) {
     return Array.from(
       new Set(
         blogs
-          .map((blog) => blog.meta.category)
+          .flatMap((blog) => blog.meta.categories ?? [])
           .filter((category): category is string => Boolean(category)),
       ),
     );
@@ -39,7 +39,9 @@ export default function BlogFilterClient({ blogs }: Props) {
     const publishedBlogs = blogs.filter((blog) => blog.meta.draft !== true);
 
     const result = activeCategory
-      ? publishedBlogs.filter((blog) => blog.meta.category === activeCategory)
+      ? publishedBlogs.filter((blog) =>
+          blog.meta.categories?.includes(activeCategory),
+        )
       : publishedBlogs;
 
     return [...result].sort((a, b) => (a.meta.posted < b.meta.posted ? 1 : -1));
@@ -47,13 +49,13 @@ export default function BlogFilterClient({ blogs }: Props) {
 
   return (
     <>
-      <div className="flex flex-wrap gap-2">
+      <div className="mb-20 flex flex-wrap gap-3">
         <button
           onClick={() => setActiveCategory(null)}
           className={`rounded-full px-3 py-1 text-sm ${
             activeCategory === null
-              ? "bg-black text-white"
-              : "bg-gray-100 text-gray-700"
+              ? "bg-white text-black"
+              : "border border-white text-white"
           }`}
         >
           All
@@ -63,10 +65,10 @@ export default function BlogFilterClient({ blogs }: Props) {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`rounded-full px-3 py-1 text-sm ${
+            className={`rounded-full px-3 py-1 text-sm capitalize ${
               activeCategory === category
-                ? "bg-black text-white"
-                : "bg-gray-100 text-gray-700"
+                ? "bg-white text-black"
+                : "border border-white text-white"
             }`}
           >
             {category}
@@ -83,7 +85,7 @@ export default function BlogFilterClient({ blogs }: Props) {
             subtitle={blog.meta.subtitle ?? ""}
             posted={blog.meta.posted}
             updated={blog.meta.updated}
-            category={blog.meta.category ?? ""}
+            categories={blog.meta.categories ?? []}
           />
         ))}
       </div>

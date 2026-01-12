@@ -10,7 +10,7 @@ export default function GeneralCardBlog({
   subtitle,
   posted,
   updated,
-  category,
+  categories,
 }: {
   link: string;
   title: string;
@@ -18,17 +18,25 @@ export default function GeneralCardBlog({
   posted: string;
   updated?: string;
   tags?: string;
-  category: string;
+  categories: string[];
 }) {
   return (
     <Link href={`/blog/${link}`}>
       <div className="space-y-1">
         <h2 className="underline">{title}</h2>
         <div className="text-base text-muted-foreground">{subtitle}</div>
-        <Badge variant="outline">{dayjs(posted).format("MMM YYYY")}</Badge>
-        <Badge variant="outline" className="w-min">
-          {category}
-        </Badge>
+        <div className="flex flex-wrap gap-2">
+          <Badge variant="outline">{dayjs(posted).format("MMM YYYY")}</Badge>
+          {categories.map((category) => (
+            <Badge
+              key={category}
+              variant="outline"
+              className="w-auto capitalize"
+            >
+              {category}
+            </Badge>
+          ))}
+        </div>
       </div>
     </Link>
   );
