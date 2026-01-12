@@ -35,7 +35,7 @@ export default function Intro() {
       </p>
       <p>
         I&apos;ve designed and helped build apps for Volvo, DeLaval, Elite
-        Hotels.
+        Hotels and a few other recognisable brands.
       </p>
       <p>
         Currently, for the past 4 years I&apos;ve been working at{" "}
@@ -47,8 +47,8 @@ export default function Intro() {
         >
           Orbi
         </a>
-        . Designing every interface and helping build the product to over
-        250,000 users.
+        . Designing every UI, working closely with our users and growing the
+        userbase to over 250,000 users.
       </p>
     </div>
   );

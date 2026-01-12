@@ -26,6 +26,7 @@ const kronaOne = Krona_One({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://galina.to"),
   title: "Joshua Galinato | Indie Maker",
   description:
     "My little corner of the internet where I get to experiment and try things out.",
@@ -37,7 +38,6 @@ export const metadata: Metadata = {
     title: "Joshua Galinato | Creative Designer & Problem-Solving Tinkerer",
     description:
       "My little corner of the internet where I get to experiment and try things out.",
-    url: "https://www.galina.to",
     siteName: "Galina.to",
     images: [
       {
