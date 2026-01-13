@@ -2,7 +2,7 @@ export default function Intro() {
   return (
     <div>
       <p>
-        For the past decade, I have worked in the music, vegan and now tech
+        For the past decade, I have worked in the music, vegan and tech
         industry. I have picked up a unique set of skills from the many roles I
         have worked on.
       </p>
