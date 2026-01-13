@@ -33,7 +33,7 @@ export default [
     startDate: "2021-04-01",
     endDate: "2022-06-01",
     location: "Sweden",
-    desc: "Designed B2B web apps for multiple clients such as Volvo, Delaval and Elite Hotels.",
+    desc: "Designed B2B web apps for multiple clients such as Volvo, DeLaval and Elite Hotels.",
   },
   {
     position: "Creative Director",
