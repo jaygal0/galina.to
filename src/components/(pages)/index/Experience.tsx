@@ -10,9 +10,9 @@ export default function Experience({ data }: any) {
           data;
         return (
           <div key={idx} className="mb-7 space-y-1">
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               <h3 className="font-semibold">{position}</h3>
-              <div className="text-muted-foreground">-</div>
+              <div className="inline-block text-muted-foreground">-</div>
               {url ? (
                 <a
                   href={url}
