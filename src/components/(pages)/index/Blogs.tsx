@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { ChevronRight } from "lucide-react";
 
 const HIGHLIGHTED_BLOGS = [
   {
@@ -26,13 +27,11 @@ const HIGHLIGHTED_BLOGS = [
 export default function Blogs() {
   return (
     <div>
-      <p>
-        Occasionally I like to write about tech, life and the projects I work
-        on. Check out my{" "}
-        <Link href="/blog" className="underline">
-          blog
+      <p className="flex text-muted-foreground transition-all hover:text-white">
+        <Link href="/blog" className="flex items-center gap-1 underline">
+          Blog
+          <ChevronRight />
         </Link>
-        :
       </p>
       {HIGHLIGHTED_BLOGS.map((blog: any, idx: any) => {
         const { title, subtitle, categories } = blog;

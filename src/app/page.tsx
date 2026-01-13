@@ -38,9 +38,9 @@ export default async function Page() {
           oneLiner="Designer, Developer & Indie Maker"
         />
         <Intro />
-        <Blogs />
         <Projects data={projects} />
         <Experience data={experience} />
+        <Blogs />
       </div>
     </>
   );
