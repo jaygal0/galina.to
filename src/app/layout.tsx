@@ -1,6 +1,5 @@
 import "@/app/globals.css";
 import { BreakpointIndicator } from "@/components/global/BreakpointIndicator";
-import NavigationMenu from "@/components/global/NavigationMenu";
 import { DM_Sans, Krona_One, Share_Tech_Mono } from "next/font/google";
 import { Metadata } from "next";
 import PlausibleProvider from "next-plausible";
@@ -27,7 +26,7 @@ const kronaOne = Krona_One({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://galina.to"),
-  title: "Joshua Galinato | Indie Maker",
+  title: "Joshua Galinato | Designer, Developer & Indie Maker",
   description:
     "My little corner of the internet where I get to experiment and try things out.",
   keywords: "blog, thoughts, ideas, galinato, joshua, joshua galinato",
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Joshua Galinato | Creative Designer & Problem-Solving Tinkerer",
+    title: "Joshua Galinato | Designer, Developer & Indie Maker",
     description:
       "My little corner of the internet where I get to experiment and try things out.",
     siteName: "Galina.to",
@@ -69,7 +68,7 @@ export default function RootLayout({
         <main className="max-w-screen-3xl mx-auto p-12 pb-40 text-xl">
           <Face />
           <Breadcrumbs />
-          <div className="w-5/12">{children}</div>
+          <div className="xl:w-5/12">{children}</div>
         </main>
         <Footer />
       </body>

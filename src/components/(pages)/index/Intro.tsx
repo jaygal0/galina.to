@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Intro() {
   return (
     <div>
@@ -21,9 +19,10 @@ export default function Intro() {
         Hotels and a few other recognisable brands.
       </p>
       <p>
-        Currently, for the past 4 years I&apos;ve been working at Orbi.
-        Designing every UI, working closely with our users and growing the
-        userbase to over 250,000 users.
+        Currently, for the past 4 years I&apos;ve been working at Orbi, an
+        events management platform. I'm designing the latest digital products,
+        working closely with our users, and growing the userbase to over 250,000
+        users.
       </p>
     </div>
   );

@@ -39,4 +39,9 @@ export default [
     author: "Pieter Levels",
     date: "2026-01-11",
   },
+  {
+    title: "The Personal MBA",
+    author: "Josh Kaufman",
+    date: "2026-01-13",
+  },
 ];

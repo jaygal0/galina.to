@@ -1,18 +1,13 @@
-import HeroText from "../../../components/global/HeroText";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import FadeInComponent from "@/components/global/FadeIn";
-import ContentDiv from "@/components/global/ContentDiv";
-import GeneralCardBlog from "@/components/(pages)/blog/GeneralCard";
 import { Metadata } from "next";
-import Face from "@/components/(pages)/index/Face";
 import BlogFilterClient from "@/components/(pages)/blog/BlogFilterClient";
 
 export const metadata: Metadata = {
   title: "Joshua Galinato | Blog",
   description:
-    "A collection of musings, insights, and spontaneous reflections—welcome to the blog where anything goes.",
+    "I like to write about my thoughts, ideas and experiments in design, development and indie making.",
 };
 
 type BlogMeta = {
