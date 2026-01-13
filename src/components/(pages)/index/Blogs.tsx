@@ -49,7 +49,7 @@ export default function Blogs() {
                 <Badge
                   key={category}
                   variant="outline"
-                  className="h-min capitalize"
+                  className="h-auto w-auto capitalize"
                 >
                   {category}
                 </Badge>

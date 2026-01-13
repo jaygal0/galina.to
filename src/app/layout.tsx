@@ -65,10 +65,10 @@ export default function RootLayout({
         className={`${kronaOne.variable} ${dmSans.variable} ${shareTechMono.variable} relative`}
       >
         <BreakpointIndicator />
-        <main className="max-w-screen-3xl mx-auto p-12 pb-40 text-xl">
+        <main className="max-w-screen-3xl mx-auto p-5 pb-40 text-xl md:p-12">
           <Face />
           <Breadcrumbs />
-          <div className="xl:w-5/12">{children}</div>
+          <div className="md:w-3/4 lg:w-1/2 xl:w-5/12">{children}</div>
         </main>
         <Footer />
       </body>

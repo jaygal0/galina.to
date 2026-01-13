@@ -1,6 +1,4 @@
-import React from "react";
 import Link from "next/link";
-import CreatedAt from "@/components/global/CreatedAt";
 import { Badge } from "@/components/ui/badge";
 import dayjs from "dayjs";
 

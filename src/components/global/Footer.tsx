@@ -7,7 +7,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="max-w-screen-3xl mx-auto p-12 text-xl text-muted-foreground">
+    <footer className="max-w-screen-3xl mx-auto mb-8 p-5 text-xl text-muted-foreground md:p-12">
       {pathname !== "/now" && (
         <p>
           Check out what I'm up to{" "}
@@ -20,8 +20,20 @@ export default function Footer() {
           .
         </p>
       )}
+      {pathname !== "/blog" && (
+        <p>
+          Read my latest thoughts on my{" "}
+          <Link
+            href="/blog"
+            className="underline transition-all hover:text-foreground"
+          >
+            blog
+          </Link>
+          .
+        </p>
+      )}
       <p>
-        I left social media back in 2012. If you'd like to reach out, send me an{" "}
+        Send me an{" "}
         <a
           href="mailto:joshua@galina.to"
           className="underline transition-all hover:text-foreground"
