@@ -21,8 +21,8 @@ export default function Intro() {
       <p>
         For the past 4 years I&apos;ve been working at Orbi, an events
         management platform, designing the latest digital products, working
-        closely with our users, and have helping grow the user base to over
-        250,000 people.
+        closely with our users, and helping scale the platform to more than
+        250,000 users.
       </p>
     </div>
   );
