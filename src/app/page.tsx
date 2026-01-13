@@ -35,7 +35,7 @@ export default async function Page() {
       <div className="space-y-28">
         <Heading
           heading="Joshua Galinato"
-          oneLiner="Designer, Developer & Indie Maker"
+          oneLiner="Designer, Developer & Indie Maker."
         />
         <Intro />
         <Projects data={projects} />
