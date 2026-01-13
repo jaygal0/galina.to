@@ -16,12 +16,12 @@ export default function Intro() {
       </p>
       <p>
         I&apos;ve designed and helped build apps for Volvo, DeLaval, Elite
-        Hotels and a few other recognisable brands.
+        Hotels.
       </p>
       <p>
         For the past 4 years I&apos;ve been working at Orbi, an events
         management platform, designing the latest digital products, working
-        closely with our users, and have helping grow the userbase to over
+        closely with our users, and have helping grow the user base to over
         250,000 people.
       </p>
     </div>

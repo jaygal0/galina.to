@@ -25,7 +25,7 @@ export default [
   {
     project: "Galiway",
     status: "Closed",
-    desc: "A blog dedicated to documenting all the different types of skills I learned in a short amount of time.",
+    desc: "Documented all the different types of skills I learned in a short amount of time.",
     summary: "I learned a lot about CMS, Wordpress and the art of blogging.",
   },
 ];
