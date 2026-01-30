@@ -12,7 +12,7 @@ export default function Intro() {
       </p>
       <p>
         I helped grow a vegan page to be one of the leading vegan brands across
-        London that ganered over 100,000 followers on Instagram.
+        London that garnered over 100,000 followers on Instagram.
       </p>
       <p>
         I designed and helped build web apps and ecommerce solutions for Volvo,
