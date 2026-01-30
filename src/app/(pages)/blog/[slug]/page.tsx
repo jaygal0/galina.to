@@ -5,39 +5,70 @@ import { notFound } from "next/navigation";
 import path from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
+import type { Metadata } from "next";
 
 type Frontmatter = {
   title: string;
   subtitle?: string;
   posted: string;
-  updated?: boolean;
-  tags?: boolean;
   categories?: string[];
   draft?: boolean;
+  ogImage?: string;
 };
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
   const filePath = path.join(process.cwd(), "data", "blogs", `${slug}.mdx`);
-  const raw = await fs.readFile(filePath, "utf8");
-  const { data } = matter(raw);
 
-  if (data.draft && process.env.NODE_ENV === "production") {
+  let raw: string;
+
+  try {
+    raw = await fs.readFile(filePath, "utf8");
+  } catch {
     return {};
   }
 
+  const { data } = matter(raw);
+  const frontmatter = data as Frontmatter;
+
+  if (frontmatter.draft && process.env.NODE_ENV === "production") {
+    return {};
+  }
+
+  const title = `Joshua Galinato | ${frontmatter.title}`;
+  const description = frontmatter.subtitle ?? "";
+  const url = `https://galina.to/blog/${slug}`;
+  const image = frontmatter.ogImage ?? "/og-image.jpg";
+
   return {
-    title: data.title,
-    subtitle: data.subtitle,
-    posted: data.posted,
-    updated: data.updated,
-    tags: data.tags,
-    category: data.category,
+    title,
+    description,
+
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
   };
 }
 
@@ -66,9 +97,13 @@ export default async function BlogPost({ params }: Props) {
   return (
     <article className="prose prose-invert text-xl">
       <h1>{frontmatter.title}</h1>
-      <p className="-mt-8 text-2xl text-muted-foreground">
-        {frontmatter.subtitle}
-      </p>
+
+      {frontmatter.subtitle && (
+        <p className="-mt-8 text-2xl text-muted-foreground">
+          {frontmatter.subtitle}
+        </p>
+      )}
+
       <div className="mt-4 flex flex-wrap gap-2">
         <Badge variant="outline">
           {dayjs(frontmatter.posted).format("MMM YYYY")}
@@ -80,9 +115,8 @@ export default async function BlogPost({ params }: Props) {
           </Badge>
         ))}
       </div>
-      {Content.default({
-        components: {},
-      })}
+
+      {Content.default({ components: {} })}
     </article>
   );
 }
