@@ -7,22 +7,22 @@ export default function Intro() {
         have worked on.
       </p>
       <p>
-        I co-founded Reload Sessions, where we provided a digital stage to over
-        300+ independent musicians.
+        I co-founded Reload Sessions, that provided a digital stage to over 300
+        independent artists that generated over 16,000,000 views on YouTube.
       </p>
       <p>
-        I helped grow a vegan Instagram page to be one of the leading vegan
-        brands across London.
+        I helped grow a vegan page to be one of the leading vegan brands across
+        London that ganered over 100,000 followers on Instagram.
       </p>
       <p>
-        I&apos;ve designed and helped build apps for Volvo, DeLaval, Elite
-        Hotels.
+        I designed and helped build web apps and ecommerce solutions for Volvo,
+        DeLaval, and Elite Hotels.
       </p>
       <p>
         For the past 4 years I&apos;ve been working at Orbi, an events
         management platform, designing the latest digital products, working
-        closely with our users, and helping scale the platform to more than
-        250,000 users.
+        closely with our users, and helping scale the platform to over 250,000
+        users across Europe.
       </p>
     </div>
   );
