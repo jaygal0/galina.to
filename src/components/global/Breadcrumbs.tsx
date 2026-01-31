@@ -41,15 +41,18 @@ export function Breadcrumbs() {
           {i > 0 && (
             <ChevronRight className="mx-1 h-4 w-4 text-muted-foreground" />
           )}
-          <Link
-            href={crumb.href}
-            className={cn(
-              "transition-colors hover:underline",
-              i === breadcrumbs.length - 1 && "font-medium text-primary",
-            )}
-          >
-            {crumb.name}
-          </Link>
+          {i === breadcrumbs.length - 1 ? (
+            <span className="font-medium text-primary">{crumb.name}</span>
+          ) : crumb.href === "/projects" ? (
+            <span className="text-muted-foreground">{crumb.name}</span>
+          ) : (
+            <Link
+              href={crumb.href}
+              className="transition-colors hover:underline"
+            >
+              {crumb.name}
+            </Link>
+          )}
         </div>
       ))}
     </nav>

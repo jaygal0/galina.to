@@ -6,6 +6,8 @@ import path from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import type { Metadata } from "next";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 type Frontmatter = {
   title: string;
@@ -13,6 +15,8 @@ type Frontmatter = {
   category?: string;
   draft?: boolean;
   ogImage?: string;
+  status?: string;
+  url?: string;
 };
 
 type Props = {
@@ -147,26 +151,51 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <article className="prose prose-invert text-xl">
-      <h1>{frontmatter.title}</h1>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <h1 className="mb-0">{frontmatter.title}</h1>
+
+        {frontmatter.url && (
+          <Button
+            asChild
+            variant="outline"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <a
+              href={frontmatter.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit external site"
+            >
+              View site
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        )}
+      </div>
 
       {frontmatter.subtitle && (
-        <p className="-mt-8 text-2xl text-muted-foreground">
+        <p className="mt-2 text-2xl text-muted-foreground">
           {frontmatter.subtitle}
         </p>
       )}
 
       <div className="mt-4 flex flex-wrap gap-2">
         {frontmatter.category && (
-          <Badge variant="outline" className="capitalize">
-            {frontmatter.category}
-          </Badge>
+          <div>
+            <Badge variant="outline" className="capitalize">
+              {frontmatter.category}
+            </Badge>
+            <Badge variant="outline" className="capitalize">
+              {frontmatter.status}
+            </Badge>
+          </div>
         )}
       </div>
 
       {Content.default({ components: {} })}
 
       {relatedBlogs.length > 0 && (
-        <section className="mt-16 border-t pt-8">
+        <section className="mt-8">
           <h2 className="mb-4 text-2xl font-semibold">Related writing</h2>
 
           <ul className="space-y-2">
@@ -174,7 +203,7 @@ export default async function BlogPost({ params }: Props) {
               <li key={post.slug}>
                 <a
                   href={`/blog/${post.slug}`}
-                  className="underline underline-offset-4"
+                  className="text-neutral-200 underline underline-offset-4"
                 >
                   {post.title}
                 </a>
