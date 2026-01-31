@@ -181,14 +181,9 @@ export default async function BlogPost({ params }: Props) {
 
       <div className="mt-4 flex flex-wrap gap-2">
         {frontmatter.category && (
-          <div>
-            <Badge variant="outline" className="capitalize">
-              {frontmatter.category}
-            </Badge>
-            <Badge variant="outline" className="capitalize">
-              {frontmatter.status}
-            </Badge>
-          </div>
+          <Badge variant="outline" className="capitalize">
+            {frontmatter.status}
+          </Badge>
         )}
       </div>
 

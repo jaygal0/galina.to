@@ -71,4 +71,8 @@ export default [
     desc: "Decided to redesign my website and make it super simple. Addition by omission.",
     date: "2026-01-11",
   },
+  {
+    desc: "It's now the end of the month and we've yet to move back into our renovated home. Patience is a virtue, but this carpenter is making it hard for me to be patient.",
+    date: "2026-01-31",
+  },
 ];

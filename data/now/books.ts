@@ -44,4 +44,9 @@ export default [
     author: "Josh Kaufman",
     date: "2026-01-13",
   },
+  {
+    title: "The 5 Types of Wealth",
+    author: "Sahil Bloom ",
+    date: "2026-01-31",
+  },
 ];
