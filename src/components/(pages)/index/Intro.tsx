@@ -7,8 +7,9 @@ export default function Intro() {
         have worked on.
       </p>
       <p>
-        I co-founded Reload Sessions, that provided a digital stage to over 300
-        independent artists that generated over 16,000,000 views on YouTube.
+        I co-founded Reload Sessions Ltd, a digital stage for over 300
+        independent artists that generated more than 16 million views on
+        YouTube.
       </p>
       <p>
         I helped grow a vegan page to be one of the leading vegan brands across
