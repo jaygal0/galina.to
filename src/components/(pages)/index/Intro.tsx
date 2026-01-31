@@ -2,9 +2,9 @@ export default function Intro() {
   return (
     <div>
       <p>
-        For the past decade, I have worked in the music, vegan and tech
-        industry. I have picked up a unique set of skills from the many roles I
-        have worked on.
+        For the past decade, I have worked across the music, vegan, and tech
+        industries, picking up a unique set of skills through a wide range of
+        roles.
       </p>
       <p>
         I co-founded Reload Sessions Ltd, a digital stage for over 300
@@ -12,18 +12,18 @@ export default function Intro() {
         YouTube.
       </p>
       <p>
-        I helped grow a vegan page to be one of the leading vegan brands across
-        London that garnered over 100,000 followers on Instagram.
+        I helped grow a vegan page into one of the leading vegan brands in
+        London, garnering over 100,000 followers on Instagram.
       </p>
       <p>
-        I designed and helped build web apps and ecommerce solutions for Volvo,
+        I designed and helped build web apps and e‑commerce solutions for Volvo,
         DeLaval, and Elite Hotels.
       </p>
       <p>
-        For the past 4 years I&apos;ve been working at Orbi, an events
-        management platform, designing the latest digital products, working
-        closely with our users, and helping scale the platform to over 250,000
-        users across Europe.
+        For the past four years, I have been working at Orbi, an events
+        management platform, designing digital products, working closely with
+        users, and helping scale the platform to over 250,000 users across
+        Europe.
       </p>
     </div>
   );
