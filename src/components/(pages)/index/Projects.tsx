@@ -5,20 +5,16 @@ export default function Projects({ data }: any) {
     <div>
       <p className="text-muted-foreground">Personal Projects</p>
       {data.map((data: any, idx: any) => {
-        const { project, url, status, desc, summary } = data;
+        const { title, slug, status, subtitle, summary } = data;
         return (
           <div key={idx} className="mb-7 space-y-1">
             <div className="flex items-center gap-2">
-              {url ? (
-                <a href={url} className="flex items-center gap-1">
-                  <h3 className="font-semibold underline">{project}</h3>
-                </a>
-              ) : (
-                <h3 className="font-semibold">{project}</h3>
-              )}
+              <a href={`/projects/${slug}`} className="flex items-center gap-1">
+                <h3 className="font-semibold underline">{title}</h3>
+              </a>
               <Badge variant="outline">{status}</Badge>
             </div>
-            <p className="mb-0 text-base text-muted-foreground">{desc}</p>
+            <p className="mb-0 text-base text-muted-foreground">{subtitle}</p>
             <p className="mb-0 text-base text-muted-foreground">{summary}</p>
           </div>
         );
