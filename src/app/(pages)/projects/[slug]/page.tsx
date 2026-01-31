@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { Badge } from "@/components/ui/badge";
 import { compileMDX } from "@/lib/mdx";
 import { notFound } from "next/navigation";
@@ -69,6 +68,17 @@ async function getRelatedBlogs(category: string) {
     (a, b) =>
       new Date(b.posted ?? 0).getTime() - new Date(a.posted ?? 0).getTime(),
   );
+}
+
+export async function generateStaticParams() {
+  const projectsDir = path.join(process.cwd(), "data", "projects");
+  const files = await fs.readdir(projectsDir);
+
+  return files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => ({
+      slug: file.replace(".mdx", ""),
+    }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
