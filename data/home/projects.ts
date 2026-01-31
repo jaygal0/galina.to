@@ -1,11 +1,9 @@
 export default [
   {
     project: "Path to Design",
-    url: "https://pathtodesign.com",
+    url: "/projects/path-to-design",
     status: "On-going",
     desc: "A directory of designers sharing how they made it into the industry.",
-    summary:
-      "A recent highlight was seeing TLDR, UX Weekly and a few other recognisable publications sharing the site.",
   },
   {
     project: "Presence",

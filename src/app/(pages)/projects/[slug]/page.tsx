@@ -10,8 +10,7 @@ import type { Metadata } from "next";
 type Frontmatter = {
   title: string;
   subtitle?: string;
-  posted: string;
-  categories?: string[];
+  category?: string;
   draft?: boolean;
   ogImage?: string;
 };
@@ -19,6 +18,54 @@ type Frontmatter = {
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+async function getRelatedBlogs(category: string) {
+  const blogsDir = path.join(process.cwd(), "data", "blogs");
+  const files = await fs.readdir(blogsDir);
+
+  const posts = await Promise.all(
+    files.map(async (file) => {
+      const slug = file.replace(".mdx", "");
+      const raw = await fs.readFile(path.join(blogsDir, file), "utf8");
+      const { data } = matter(raw);
+      const frontmatter = data as {
+        title: string;
+        posted?: string;
+        categories?: string[];
+        draft?: boolean;
+      };
+
+      if (frontmatter.draft) return null;
+
+      const normalise = (value: string) =>
+        value.toLowerCase().replace(/\s+/g, "-");
+
+      if (
+        !frontmatter.categories?.some(
+          (c) => normalise(c) === normalise(category),
+        )
+      )
+        return null;
+
+      return {
+        slug,
+        title: frontmatter.title,
+        posted: frontmatter.posted,
+      };
+    }),
+  );
+
+  return (
+    posts.filter(Boolean) as {
+      slug: string;
+      title: string;
+      posted?: string;
+    }[]
+  ).sort(
+    (a, b) =>
+      new Date(b.posted ?? 0).getTime() - new Date(a.posted ?? 0).getTime(),
+  );
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -42,7 +89,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `Joshua Galinato | ${frontmatter.title}`;
   const description = frontmatter.subtitle ?? "";
-  const url = `https://galina.to/blog/${slug}`;
+  const url = `https://galina.to/projects/${slug}`;
   const image = frontmatter.ogImage ?? "/og-image.jpg";
 
   return {
@@ -75,7 +122,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BlogPost({ params }: Props) {
   const { slug } = await params;
 
-  const filePath = path.join(process.cwd(), "data", "blogs", `${slug}.mdx`);
+  const filePath = path.join(process.cwd(), "data", "projects", `${slug}.mdx`);
 
   let raw: string;
 
@@ -92,6 +139,10 @@ export default async function BlogPost({ params }: Props) {
     notFound();
   }
 
+  const relatedBlogs = frontmatter.category
+    ? await getRelatedBlogs(frontmatter.category)
+    : [];
+
   const Content = await compileMDX(content);
 
   return (
@@ -105,18 +156,33 @@ export default async function BlogPost({ params }: Props) {
       )}
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <Badge variant="outline">
-          {dayjs(frontmatter.posted).format("MMM YYYY")}
-        </Badge>
-
-        {(frontmatter.categories ?? []).map((category) => (
-          <Badge key={category} variant="outline" className="capitalize">
-            {category}
+        {frontmatter.category && (
+          <Badge variant="outline" className="capitalize">
+            {frontmatter.category}
           </Badge>
-        ))}
+        )}
       </div>
 
       {Content.default({ components: {} })}
+
+      {relatedBlogs.length > 0 && (
+        <section className="mt-16 border-t pt-8">
+          <h2 className="mb-4 text-2xl font-semibold">Related writing</h2>
+
+          <ul className="space-y-2">
+            {relatedBlogs.map((post) => (
+              <li key={post.slug}>
+                <a
+                  href={`/blog/${post.slug}`}
+                  className="underline underline-offset-4"
+                >
+                  {post.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
   );
 }
