@@ -75,4 +75,8 @@ export default [
     desc: "It's now the end of the month and we've yet to move back into our renovated home. Patience is a virtue, but this carpenter is making it hard for me to be patient.",
     date: "2026-01-31",
   },
+  {
+    desc: "A lot has happened with the house, but not much with my personal projects unfortunately. It's time to get back on track and start working on the things that I want to work on.",
+    date: "2026-03-04",
+  },
 ];
