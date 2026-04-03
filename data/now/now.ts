@@ -79,4 +79,8 @@ export default [
     desc: "A lot has happened with the house, but not much with my personal projects unfortunately. It's time to get back on track and start working on the things that I want to work on.",
     date: "2026-03-04",
   },
+  {
+    desc: "For the past month I've been able to get back on track with my personal projects. At the same time, I've had to be balance working on the house. Hopefully, in the next few weeks we'll be able to move back in. Meaning I can spend more time working on Path to Design.",
+    date: "2026-04-03",
+  },
 ];
