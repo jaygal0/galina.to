@@ -83,4 +83,8 @@ export default [
     desc: "For the past month I've been able to get back on track with my personal projects. At the same time, I've had to be balance working on the house. Hopefully, in the next few weeks we'll be able to move back in. Meaning I can spend more time working on Path to Design.",
     date: "2026-04-03",
   },
+  {
+    desc: "For the past two months, I've been working every evening and weekend on the house renovations. Fixing the mistakes of the carpenter has been a nightmare, but I'm glad that it's almost over. I can't wait to get back to working on Path to Design and other personal projects.",
+    date: "2026-05-23",
+  },
 ];
