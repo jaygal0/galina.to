@@ -87,4 +87,8 @@ export default [
     desc: "For the past two months, I've been working every evening and weekend on the house renovations. Fixing the mistakes of the carpenter has been a nightmare, but I'm glad that it's almost over. I can't wait to get back to working on Path to Design and other personal projects.",
     date: "2026-05-23",
   },
+  {
+    desc: "I'm starting to get back to being organised, despite everything that's going on with life. It helps to have systems in place to keep you in check.",
+    date: "2026-09-06",
+  },
 ];
